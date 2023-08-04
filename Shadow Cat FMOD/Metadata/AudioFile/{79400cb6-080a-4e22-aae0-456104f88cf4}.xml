@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{79400cb6-080a-4e22-aae0-456104f88cf4}">
+		<property name="assetPath">
+			<value>Sfx/Player/Cat/Miau_1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.8734693877551019</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d9bd23d7-4e30-4531-87a1-c793bf604172}</destination>
+		</relationship>
+	</object>
+</objects>

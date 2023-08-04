@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{285f98be-6c7c-4ce3-93a2-e61a70fc5087}">
+		<property name="assetPath">
+			<value>Sfx/Player/Cat/Dash_3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.3006875</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d9bd23d7-4e30-4531-87a1-c793bf604172}</destination>
+		</relationship>
+	</object>
+</objects>

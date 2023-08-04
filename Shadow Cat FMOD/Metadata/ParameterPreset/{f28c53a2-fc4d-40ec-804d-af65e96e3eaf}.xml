@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f28c53a2-fc4d-40ec-804d-af65e96e3eaf}">
+		<property name="note" />
+		<property name="name">
+			<value>estadoTransformacion</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8788bb9a-0096-4263-8957-b60b41d1d192}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8344a79c-d0f7-4114-a530-d48dc0b5a2f2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8344a79c-d0f7-4114-a530-d48dc0b5a2f2}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>3.5</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
