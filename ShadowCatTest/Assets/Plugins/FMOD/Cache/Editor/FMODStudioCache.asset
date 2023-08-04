@@ -1,0 +1,670 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7313346855929128025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Typewriter
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Typewriter
+  Guid:
+    Data1: 1456653469
+    Data2: 1164118267
+    Data3: 336053895
+    Data4: -80155654
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 304
+--- !u!114 &-6528044597725321734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Sounds/Stone steps
+  m_EditorClassIdentifier: 
+  Path: event:/Game Sounds/Stone steps
+  Guid:
+    Data1: 1536043911
+    Data2: 1112346165
+    Data3: 261977004
+    Data4: 1459003060
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3532780089687300857}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5246091047823549202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Sounds/Transform
+  m_EditorClassIdentifier: 
+  Path: event:/Game Sounds/Transform
+  Guid:
+    Data1: -1158092860
+    Data2: 1246618830
+    Data3: -1011778141
+    Data4: 835035117
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &-4647419172066955407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Sounds/Cat death
+  m_EditorClassIdentifier: 
+  Path: event:/Game Sounds/Cat death
+  Guid:
+    Data1: -1876499418
+    Data2: 1119322333
+    Data3: 1352170152
+    Data4: -1514088974
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1950
+--- !u!114 &-1763841206117203118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stone steps (Loop)/Footsteps
+  m_EditorClassIdentifier: 
+  Name: Footsteps
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2264722478
+    data2: 2171808859
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Stone
+  - Floor
+  Exists: 1
+--- !u!114 &-1642350582136124446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Sounds/Stone steps (Loop)
+  m_EditorClassIdentifier: 
+  Path: event:/Game Sounds/Stone steps (Loop)
+  Guid:
+    Data1: 1612468339
+    Data2: 1306010642
+    Data3: -334268771
+    Data4: 9688609
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1763841206117203118}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 3068328027322920208}
+  - {fileID: 660701981979788130}
+  - {fileID: 2981522071532785400}
+  EditorEvents:
+  - {fileID: 2922829474967091922}
+  - {fileID: 8885280808448978587}
+  - {fileID: -4647419172066955407}
+  - {fileID: 5046488095260015967}
+  - {fileID: -1642350582136124446}
+  - {fileID: -6528044597725321734}
+  - {fileID: 3034668247984084979}
+  - {fileID: 1165118942642783114}
+  - {fileID: -7313346855929128025}
+  - {fileID: 7868234997963141145}
+  - {fileID: 1901150034305505856}
+  - {fileID: -5246091047823549202}
+  - {fileID: 3065610345374382918}
+  - {fileID: 5703326219488856719}
+  - {fileID: 675882881725693984}
+  - {fileID: 6241483744573702373}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 660701981979788130}
+  StringsBanks:
+  - {fileID: 3068328027322920208}
+  cacheTime: 638233011114781077
+  cacheVersion: 131603
+--- !u!114 &660701981979788130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../../FMOD Studio/Shadow Cat FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638233011088074433
+  FileSizes:
+  - Name: Desktop
+    Value: 2915328
+  - Name: Mobile
+    Value: 5466112
+  Exists: 1
+--- !u!114 &675882881725693984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainMenu
+  m_EditorClassIdentifier: 
+  Path: event:/MainMenu
+  Guid:
+    Data1: -1896428668
+    Data2: 1106207839
+    Data3: -482027873
+    Data4: -1730053130
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 35121
+--- !u!114 &1165118942642783114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/UI/Pesta\xF1a"
+  m_EditorClassIdentifier: 
+  Path: "event:/UI/Pesta\xF1a"
+  Guid:
+    Data1: 564885402
+    Data2: 1123923078
+    Data3: -40942683
+    Data4: 1723354203
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
+--- !u!114 &1901150034305505856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Sounds/Cat dash
+  m_EditorClassIdentifier: 
+  Path: event:/Game Sounds/Cat dash
+  Guid:
+    Data1: 1172356279
+    Data2: 1341976430
+    Data3: 1462308774
+    Data4: 43056104
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &2673966482694280975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level music/nivel
+  m_EditorClassIdentifier: 
+  Name: nivel
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 187540172
+    data2: 551250871
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - enNivel
+  - victoria
+  - derrota
+  Exists: 1
+--- !u!114 &2922829474967091922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Sounds/Sin balas
+  m_EditorClassIdentifier: 
+  Path: event:/Game Sounds/Sin balas
+  Guid:
+    Data1: -298434815
+    Data2: 1086514603
+    Data3: -1175947364
+    Data4: 525365623
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 190
+--- !u!114 &2981522071532785400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Videos.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../../FMOD Studio/Shadow Cat FMOD/Build/Desktop/Videos.bank
+  Name: Videos
+  StudioPath: bank:/Videos
+  lastModified: 638233011114781077
+  FileSizes:
+  - Name: Desktop
+    Value: 3731232
+  Exists: 1
+--- !u!114 &3034668247984084979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/inWater
+  m_EditorClassIdentifier: 
+  Path: snapshot:/inWater
+  Guid:
+    Data1: 1164977298
+    Data2: 1113622575
+    Data3: -1090693244
+    Data4: 2069030980
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &3065610345374382918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Sounds/Surprised enemy
+  m_EditorClassIdentifier: 
+  Path: event:/Game Sounds/Surprised enemy
+  Guid:
+    Data1: 1058321906
+    Data2: 1192270777
+    Data3: -1855862654
+    Data4: 1599596511
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1100
+--- !u!114 &3068328027322920208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../../FMOD Studio/Shadow Cat FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638233011088114247
+  FileSizes:
+  - Name: Desktop
+    Value: 1876
+  - Name: Mobile
+    Value: 1876
+  Exists: 1
+--- !u!114 &3532780089687300857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stone steps/Footsteps
+  m_EditorClassIdentifier: 
+  Name: Footsteps
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2264722478
+    data2: 2171808859
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Stone
+  - Floor
+  Exists: 1
+--- !u!114 &5046488095260015967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/pause
+  m_EditorClassIdentifier: 
+  Path: snapshot:/pause
+  Guid:
+    Data1: -1223847831
+    Data2: 1120685390
+    Data3: 528301469
+    Data4: 264377358
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &5100175661629169563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level music/enPausa
+  m_EditorClassIdentifier: 
+  Name: enPausa
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2876010053
+    data2: 3101461660
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5703326219488856719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Video
+  m_EditorClassIdentifier: 
+  Path: event:/Video
+  Guid:
+    Data1: 1808904070
+    Data2: 1196707528
+    Data3: 1776376462
+    Data4: -1605981767
+  Banks:
+  - {fileID: 2981522071532785400}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6241483744573702373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LevelTemp
+  m_EditorClassIdentifier: 
+  Path: event:/LevelTemp
+  Guid:
+    Data1: -1867846148
+    Data2: 1107444985
+    Data3: -1383832686
+    Data4: 1502156619
+  Banks:
+  - {fileID: 2981522071532785400}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 70243
+--- !u!114 &6588640486414907029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level music/estadoTransformacion
+  m_EditorClassIdentifier: 
+  Name: estadoTransformacion
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1914237894
+    data2: 38571899
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7868234997963141145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Sounds/Disparo
+  m_EditorClassIdentifier: 
+  Path: event:/Game Sounds/Disparo
+  Guid:
+    Data1: 1367611556
+    Data2: 1201060086
+    Data3: -1363152205
+    Data4: 2127427288
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &8885280808448978587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Level music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Level music
+  Guid:
+    Data1: -411645947
+    Data2: 1300269321
+    Data3: -557442165
+    Data4: -469612273
+  Banks:
+  - {fileID: 660701981979788130}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5100175661629169563}
+  - {fileID: 6588640486414907029}
+  - {fileID: 2673966482694280975}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 90731
