@@ -34,4 +34,8 @@ public class StateGameController : MonoBehaviour
     // Levels Key To Unlock
 
     public static bool level2Key = false;
+
+    // Transform to cat
+
+    public static bool isCat = false;
 }

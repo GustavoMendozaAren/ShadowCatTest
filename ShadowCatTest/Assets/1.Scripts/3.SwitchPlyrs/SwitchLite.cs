@@ -139,11 +139,13 @@ public class SwitchLite : MonoBehaviour
         {
             BttnsDetective.SetActive(true);
             BttnsCat.SetActive(false);
+            StateGameController.isCat = false;
         }
         if (currentPlayerIndex == 1)
         {
             BttnsDetective.SetActive(false);
             BttnsCat.SetActive(true);
+            StateGameController.isCat = true;
         }
     }
 
@@ -249,6 +251,7 @@ public class SwitchLite : MonoBehaviour
     {
         if (JumpBttn)
         {
+            Debug.Log("JumpBttn");
             if (isOnGround)
             {
                 hasJumped = true;

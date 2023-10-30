@@ -29,6 +29,15 @@ public class MapsCarpet : MonoBehaviour
     {
         comingSoon.SetTrigger("Coming");
     }
+    public void PlayLeve5()
+    {
+        comingSoon.SetTrigger("Coming");
+    }
+
+    public void PlayLeve6()
+    {
+        comingSoon.SetTrigger("Coming");
+    }
 
 
     public void MapsPanel()
@@ -59,6 +68,8 @@ public class MapsCarpet : MonoBehaviour
         comingSoon.SetTrigger("Coming");
     }
 
+    // SMALL AND BIG BUTTONS
+
     public void Level1Small()
     {
         buttons[0].SetActive(false);
@@ -80,7 +91,7 @@ public class MapsCarpet : MonoBehaviour
         blackCourtine.SetActive(true);
     }
 
-    public void Leve21Big()
+    public void Leve2BigBack()
     {
         buttons[2].SetActive(true);
         buttons[3].SetActive(false);
@@ -89,23 +100,53 @@ public class MapsCarpet : MonoBehaviour
 
     public void Level3Small()
     {
-        comingSoon.SetTrigger("Coming");
+        buttons[4].SetActive(false);
+        buttons[5].SetActive(true);
+        blackCourtine.SetActive(true);
     }
 
-    /*public void Level3Big()
+    public void Level3BigBack()
     {
         buttons[4].SetActive(true);
         buttons[5].SetActive(false);
-    }*/
+        blackCourtine.SetActive(false);
+    }
 
     public void Level4Small()
     {
-        comingSoon.SetTrigger("Coming");
+        buttons[6].SetActive(false);
+        buttons[7].SetActive(true);
+        blackCourtine.SetActive(true);
     }
 
-    /*public void Level4Big()
+    public void Level4BigBack()
     {
         buttons[6].SetActive(true);
         buttons[7].SetActive(false);
-    }*/
+        blackCourtine.SetActive(false);
+    }
+    public void Level5Small()
+    {
+        buttons[8].SetActive(false);
+        buttons[9].SetActive(true);
+        blackCourtine.SetActive(true);
+    }
+    public void Level5BigBack()
+    {
+        buttons[8].SetActive(true);
+        buttons[9].SetActive(false);
+        blackCourtine.SetActive(false);
+    }
+    public void Level6Small()
+    {
+        buttons[10].SetActive(false);
+        buttons[11].SetActive(true);
+        blackCourtine.SetActive(true);
+    }
+    public void Level6BigBack()
+    {
+        buttons[10].SetActive(true);
+        buttons[11].SetActive(false);
+        blackCourtine.SetActive(false);
+    }
 }
