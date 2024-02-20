@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwitchLite : MonoBehaviour
 {
@@ -65,6 +66,17 @@ public class SwitchLite : MonoBehaviour
     private MusicBehaviour musicBehaviour;
     float transformMusicValue = 0;
 
+    //Dash button image fill
+    [SerializeField] private Image fillImage;
+    float waitTime = 30.0f;
+    float timerCatBttn = 0f;
+    bool slowBttn = false;
+
+    //Slow Button Barrier
+
+    public GameObject slowbutonbarrier;
+    float slowMultiplayer = 2f;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -96,6 +108,7 @@ public class SwitchLite : MonoBehaviour
         //PlayerJump();
         Player1Stats();
         DeadAnimation();
+        SlowMechanic();
     }
 
     void FixedUpdate()
@@ -160,7 +173,7 @@ public class SwitchLite : MonoBehaviour
             h = 1f;
             //AnimationIntParameters("Speed");
             //rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.position += new Vector3(h * speed * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(h * speed * Time.fixedDeltaTime * StateGameController.playerTime, 0, 0);
 
             ChangeDirection(1);
             Anim[0].SetBool("Run", false);
@@ -168,20 +181,20 @@ public class SwitchLite : MonoBehaviour
             {
                 Anim[0].SetBool("Run", true);
                 //rb.velocity = new Vector2(speed *1.5f, rb.velocity.y);
-                transform.position += new Vector3(h * speed * Time.deltaTime, 0, 0);
+                transform.position += new Vector3(h * speed * Time.fixedDeltaTime * StateGameController.playerTime, 0, 0);
             }
             //Dash
-            if ((dashBttn || Input.GetKeyDown(KeyCode.LeftShift)) && canDash && currentPlayerIndex == 1)
+            /*if ((dashBttn || Input.GetKeyDown(KeyCode.LeftShift)) && canDash && currentPlayerIndex == 1)
             {
                 StartCoroutine(Dash());
-            }
+            }*/
         }   //if (h < 0)
         else if (joystick.Horizontal < 0)
         {
             h = -1f;
             //AnimationIntParameters("Speed");
             //rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.position += new Vector3(h * speed * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(h * speed * Time.fixedDeltaTime * StateGameController.playerTime, 0, 0);
 
             ChangeDirection(-1);
             Anim[0].SetBool("Run", false);
@@ -189,19 +202,19 @@ public class SwitchLite : MonoBehaviour
             {
                 Anim[0].SetBool("Run", true);
                 //rb.velocity = new Vector2(-speed * 1.5f, rb.velocity.y);
-                transform.position += new Vector3(h * speed * Time.deltaTime, 0, 0);
+                transform.position += new Vector3(h * speed * Time.fixedDeltaTime * StateGameController.playerTime, 0, 0);
             }
             //Dash
-            if ((dashBttn || Input.GetKeyDown(KeyCode.LeftShift)) && canDash && currentPlayerIndex == 1)
+            /*if ((dashBttn || Input.GetKeyDown(KeyCode.LeftShift)) && canDash && currentPlayerIndex == 1)
             {
                 StartCoroutine(Dash());
-            }
+            }*/
         }
         else
         {
             h = 0;
             //rb.velocity = new Vector2(0f, rb.velocity.y);
-            transform.position += new Vector3(h * speed * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(h * speed * Time.fixedDeltaTime * StateGameController.playerTime, 0, 0);
             Anim[0].SetBool("Run", false);
         }
 
@@ -346,7 +359,7 @@ public class SwitchLite : MonoBehaviour
         }
     }
 
-    private IEnumerator Dash()
+    /*private IEnumerator Dash()
     {
         canDash = false;
 
@@ -363,7 +376,54 @@ public class SwitchLite : MonoBehaviour
         yield return new WaitForSeconds(dashWait);
         canDash = true;
         dashBttn = false;
+    }*/
+
+    private void SlowMechanic()
+    {
+        if (slowBttn)
+        {
+            slowbutonbarrier.SetActive(false);
+            StateGameController.enemiesTime = 0.2f;
+            StateGameController.playerTime = 0.8f;
+            Anim[0].speed = 0.8f;
+            Anim[1].speed = 0.8f;
+            StartCoroutine(SlowMechanicCo());
+            slowBttn = false;
+            
+
+            /*
+            //timerCatBttn = 0f;
+            fillImage.fillAmount = 0f;
+            timerCatBttn += Time.deltaTime * .5f;
+            
+            fillImage.fillAmount = timerCatBttn;
+            Debug.Log(timerCatBttn);
+            Debug.Log(fillImage.fillAmount);
+
+            if (timerCatBttn >= 1f)
+            {
+                fillImage.fillAmount = 1f;
+                timerCatBttn = 1f;
+            }
+            
+            StartCoroutine(SlowMechanicCo());
+            */
+        }
     }
+
+    IEnumerator SlowMechanicCo()
+    {
+        yield return new WaitForSeconds(4f);
+        slowbutonbarrier.SetActive(true);
+        StateGameController.enemiesTime = 1f;
+        StateGameController.playerTime = 1f;
+        Anim[0].speed = 1f;
+        Anim[1].speed = 1f;
+        //Time.fixedDeltaTime = 1f;
+
+        //timerCatBttn = 0f;
+    }
+
     public void Player1Stats()
     {
         speed = players[currentPlayerIndex].GetComponent<Player>().speed;
@@ -409,4 +469,8 @@ public class SwitchLite : MonoBehaviour
         dashBttn = true;
     }
 
+    public void SlowButton()
+    {
+        slowBttn = true;
+    }
 }

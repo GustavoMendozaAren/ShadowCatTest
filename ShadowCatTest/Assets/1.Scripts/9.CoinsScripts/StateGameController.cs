@@ -38,4 +38,10 @@ public class StateGameController : MonoBehaviour
     // Transform to cat
 
     public static bool isCat = false;
+
+    // TimeScale
+
+    public static float playerTime = 1f;
+    public static float enemiesTime = 1f;
+    public static float globalTime = 1f;
 }
