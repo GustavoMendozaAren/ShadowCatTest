@@ -59,6 +59,7 @@ public class BandidoPlatform : MonoBehaviour
         MoveEnemy();
         GroundDetection();
         PlayerDead();
+        Anim.speed = StateGameController.enemiesTime;
     }
 
     void MoveEnemy()
@@ -70,14 +71,14 @@ public class BandidoPlatform : MonoBehaviour
             if (leftDir)
             {
                 //rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-                transform.Translate(moveSpeed * Time.deltaTime * moveDirection);
+                transform.Translate(moveSpeed * Time.deltaTime * moveDirection * StateGameController.enemiesTime);
                 FireBallRot = new Vector3(0, 0, 0);
                 moveDirection = Vector3.right;
             }
             else
             {
                 //rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-                transform.Translate(moveSpeed * Time.deltaTime * moveDirection);
+                transform.Translate(moveSpeed * Time.deltaTime * moveDirection * StateGameController.enemiesTime);
                 FireBallRot = new Vector3(0, 0, 180f);
                 moveDirection = Vector3.left;
             }

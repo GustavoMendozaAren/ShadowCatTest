@@ -19,7 +19,7 @@ public class FireBallEnemy : MonoBehaviour
     void Move()
     {
         Vector3 temp = transform.position;
-        temp.x += speed * Time.deltaTime;
+        temp.x += speed * Time.deltaTime * StateGameController.enemiesTime;
         transform.position = temp;
     }
 

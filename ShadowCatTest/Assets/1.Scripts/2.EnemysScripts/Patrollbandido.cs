@@ -53,6 +53,7 @@ public class Patrollbandido : MonoBehaviour
     {
         MoveEnemy();
         PlayerDead();
+        Anim.speed = StateGameController.enemiesTime;
     }
 
     void MoveEnemy()
@@ -60,7 +61,7 @@ public class Patrollbandido : MonoBehaviour
         if(!Physics2D.Raycast(transform.position, moveDirection, 7f, playerLayer) && canMove)
         {
             Exclamacion.SetActive(false);
-            transform.Translate(moveSpeed * Time.deltaTime * moveDirection);
+            transform.Translate(moveSpeed * Time.deltaTime * moveDirection * StateGameController.enemiesTime);
             //Debug.DrawRay(transform.position, moveDirection * 7f);
             if ( transform.position.x >= originPosition.x)
             {

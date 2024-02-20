@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/VideoScena.unity
     guid: abe92fda24ed4e44bad4803333defa4a
   - enabled: 1
+    path: Assets/Scenes/TutScene.unity
+    guid: a3b1008d9150bde44b98fea2db9807cc
+  - enabled: 1
     path: Assets/Scenes/SampleScene Jacob.unity
     guid: d5138dd9158dbbe45bcdc045e7b18a4b
   m_configObjects: {}
