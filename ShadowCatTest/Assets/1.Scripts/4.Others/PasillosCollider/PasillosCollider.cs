@@ -5,6 +5,9 @@ using UnityEngine;
 public class PasillosCollider : MonoBehaviour
 {
     public GameObject Letras;
+    public GameObject Escena1, Escena2;
+    public GameObject ButtonEnter, ButtonExit;
+
     //public WriteText writeText;
     void Update()
     {
@@ -29,5 +32,21 @@ public class PasillosCollider : MonoBehaviour
             //writeText.enabled = false;
 
         }
+    }
+
+    public void EnterButton()
+    {
+        Escena1.SetActive(false);
+        Escena2.SetActive(true);
+        ButtonEnter.SetActive(false);
+        ButtonExit.SetActive(true);
+    }
+
+    public void ExitButton()
+    {
+        Escena1.SetActive(true);
+        Escena2.SetActive(false);
+        ButtonEnter.SetActive(true);
+        ButtonExit.SetActive(false);
     }
 }

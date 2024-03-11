@@ -13,12 +13,12 @@ public class MapsCarpet : MonoBehaviour
 
     public void PlayLevel1()
     {
-        SceneManager.LoadScene("VideoScena");
+        SceneManager.LoadScene(2);
     }
 
     public void PlayLeve2()
     {
-        SceneManager.LoadScene("SampleScene Jacob");
+        SceneManager.LoadScene(3);
     }
     public void PlayLeve3()
     {

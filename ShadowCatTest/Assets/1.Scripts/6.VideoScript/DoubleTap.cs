@@ -24,6 +24,6 @@ public class DoubleTap : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }
