@@ -31,7 +31,7 @@ public class Patrollbandido : MonoBehaviour
     public LightEnemy LES;
 
     //Life
-    private float enemyLife = 4f;
+    private float enemyLife = 2f;
 
     private void Awake()
     {

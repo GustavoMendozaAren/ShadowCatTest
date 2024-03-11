@@ -159,6 +159,7 @@ public class SwitchLite : MonoBehaviour
             BttnsDetective.SetActive(false);
             BttnsCat.SetActive(true);
             StateGameController.isCat = true;
+
         }
     }
 
