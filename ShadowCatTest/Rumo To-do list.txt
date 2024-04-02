@@ -1,0 +1,14 @@
+1. Sistema de volumenes para música, sfx y sonido ambiental.
+2. Implementar comportamientos a la música:
+	- Jugador con baja vida.
+3. Revisar las llamadas a SFX.
+4. Parámetro de reverb en los SFX durante el nivel del túnel.
+5. SFX
+	- Hit al enemigo.
+	- Hit al jugador.
+6. Hacer documentación para la clase MusicBehaviour.
+
+
+//---BUGS---//
+
+7. Cuando el jugador reinicia el nivel después de haber ganado como gato, el estado de la música no se actualiza.

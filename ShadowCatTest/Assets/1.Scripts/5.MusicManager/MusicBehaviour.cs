@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using System;
+using System.Data;
 public interface IMusicObserver
 {
     void OnPlayerTransformed(bool isCat);
@@ -29,7 +30,6 @@ public class MusicBehaviour : MonoBehaviour, IMusicObserver
             levelMusic.SetParameter("capaTransformacion", 0f);
         }
         else levelMusic.SetParameter("capaTransformacion", 1f);
-        Debug.Log("Notificación de transformación recibida en MusicBehavior.");
     }
     public void OnSlowMotionEnabled(bool isSlowMotionEnabled)
     {
@@ -55,18 +55,20 @@ public class MusicBehaviour : MonoBehaviour, IMusicObserver
             case 2: // Perder
                 levelMusic.SetParameter("estadoNivel", 2);
                 break;
+            default:
+                throw new ArgumentException("ERROR. MusicNotificarFinJuego() solo debe tener como parámetro los valores 0, 1 o 2.");
         }
     }
     public void OnGamePaused(bool isGamePaused)
     {
         if (!isGamePaused)
         {
-            Debug.Log("Musica en modo normal.");
+            //Debug.Log("Musica en modo normal.");
             levelMusic.SetParameter("enPausa", 0);
         }
         else
         {
-            Debug.Log("Musica en modo pausa.");
+            //Debug.Log("Musica en modo pausa.");
             levelMusic.SetParameter("enPausa", 1);
         }
     }

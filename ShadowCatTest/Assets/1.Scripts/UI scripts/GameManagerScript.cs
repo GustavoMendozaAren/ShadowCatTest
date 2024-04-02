@@ -106,7 +106,6 @@ public class GameManagerScript : MonoBehaviour
 
     public void MusicNotificarPausa(bool estaPausado)
     {
-        Debug.Log($"Notificación de pausa: {estaPausado}.");
         musicObserver.OnGamePaused(estaPausado);
     }
     public void MusicNotificarFinJuego(int estadoJuego)
