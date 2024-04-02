@@ -420,7 +420,7 @@ MonoBehaviour:
   sourceProjectPath: ../Shadow Cat FMOD/Shadow Cat.fspro
   sourceBankPath: ../Shadow Cat FMOD/Build
   sourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
+  BankRefreshCooldown: 1
   ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -442,6 +442,8 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Music
+  - SoundEffects
   - Videos
   BanksToLoad: []
   LiveUpdatePort: 9264

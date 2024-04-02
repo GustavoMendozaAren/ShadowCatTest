@@ -1,27 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class MusicBehaviour : MonoBehaviour
+using FMODUnity;
+using System;
+public interface IMusicObserver
 {
-    public FMODUnity.StudioEventEmitter levelMusic;
+    void OnPlayerTransformed(bool isCat);
+    void OnSlowMotionEnabled(bool isSlowMotionEnabled);
+    void OnGamePaused(bool isGamePaused);
+    void OnGameStateChanged(int gameState); // 0 = playing, 1 = victory, 2 = defeat
+}
 
-    public float estadoTransform = 0f;
-    public int estadoPausa = 0;
-    public int estadoJuego; // 0 = en juego, 1 = Victoria, 2 = Derrota
+public class MusicBehaviour : MonoBehaviour, IMusicObserver
+{
+    public StudioEventEmitter levelMusic;
 
-    void Start()
+    void Awake()
     {
-        levelMusic = GetComponent<FMODUnity.StudioEventEmitter>();
+        levelMusic = GetComponent<FMODUnity.StudioEventEmitter>(); 
     }
 
 
-    void Update()
+    #region Métodos para actualizar
+    public void OnPlayerTransformed(bool isCat) // 0 = Detective, 1 = Gato
     {
-        levelMusic.EventInstance.setParameterByName("estadoTransformacion", estadoTransform);
-        levelMusic.EventInstance.setParameterByName("enPausa", estadoPausa);
-        levelMusic.EventInstance.setParameterByName("nivel", estadoJuego);
+        if (!isCat)
+        {
+            levelMusic.SetParameter("capaTransformacion", 0f);
+        }
+        else levelMusic.SetParameter("capaTransformacion", 1f);
+        Debug.Log("Notificación de transformación recibida en MusicBehavior.");
     }
+    public void OnSlowMotionEnabled(bool isSlowMotionEnabled)
+    {
+        if (!isSlowMotionEnabled)
+        {
+            levelMusic.SetParameter("capaRalentizado", 0);
+        } 
+        else
+        {
+            levelMusic.EventInstance.setParameterByName("capaRalentizado", 1);
+        }
+    }
+    public void OnGameStateChanged(int gameState)
+    {
+        switch (gameState)
+        {
+            case 0: // Normal
+                levelMusic.SetParameter("estadoNivel", 0);
+                break;
+            case 1: // Ganar
+                levelMusic.SetParameter("estadoNivel", 1);
+                break;
+            case 2: // Perder
+                levelMusic.SetParameter("estadoNivel", 2);
+                break;
+        }
+    }
+    public void OnGamePaused(bool isGamePaused)
+    {
+        if (!isGamePaused)
+        {
+            Debug.Log("Musica en modo normal.");
+            levelMusic.SetParameter("enPausa", 0);
+        }
+        else
+        {
+            Debug.Log("Musica en modo pausa.");
+            levelMusic.SetParameter("enPausa", 1);
+        }
+    }
+    #endregion
 
     public void MusicStart()
     {
@@ -30,10 +79,5 @@ public class MusicBehaviour : MonoBehaviour
     public void MusicStop()
     {
         levelMusic.Stop();
-    }
-
-    public void setEstadoJuego(int winMusicEstado)
-    {
-        estadoJuego = winMusicEstado;
     }
 }

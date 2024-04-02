@@ -10,6 +10,9 @@ public class GameManagerScript : MonoBehaviour
     public GameObject[] deadPanel;
     public GameObject[] fotosSprites;
 
+    public MusicBehaviour musicBehaviour;
+    private IMusicObserver musicObserver;
+
     [HideInInspector]
     public bool playerIsDead = false;
 
@@ -17,10 +20,13 @@ public class GameManagerScript : MonoBehaviour
 
     //IEnumerator deadCoroutine;
 
-    //private void Start()
-    //{
-    //    deadCoroutine = DeadCorutine();
-    //}
+    private void Start()
+    {
+        //    deadCoroutine = DeadCorutine();
+        GameObject instanciaMusic = GameObject.Find("Music");
+        musicBehaviour = instanciaMusic.GetComponent<MusicBehaviour>();
+        musicObserver = musicBehaviour;
+    }
 
     private void Update()
     {
@@ -30,6 +36,7 @@ public class GameManagerScript : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("SampleScene Jacob");
+        MusicNotificarFinJuego(0);
         Time.timeScale = 1f;
     }
 
@@ -43,9 +50,10 @@ public class GameManagerScript : MonoBehaviour
 
     public void PauseButton()
     {
-        PausePanel.SetActive(true);
+        PausePanel.SetActive(true);        
         Time.timeScale = 0f;
         pauseButton.SetActive(false);
+        MusicNotificarPausa(true);
     }
 
     public void ExitButton()
@@ -57,6 +65,7 @@ public class GameManagerScript : MonoBehaviour
     {
         PausePanel.SetActive(false);
         pauseButton.SetActive(true);
+        MusicNotificarPausa(false);
         Time.timeScale = 1f;
     }
 
@@ -95,5 +104,13 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    
+    public void MusicNotificarPausa(bool estaPausado)
+    {
+        Debug.Log($"Notificación de pausa: {estaPausado}.");
+        musicObserver.OnGamePaused(estaPausado);
+    }
+    public void MusicNotificarFinJuego(int estadoJuego)
+    {
+        musicObserver.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
+    }
 }

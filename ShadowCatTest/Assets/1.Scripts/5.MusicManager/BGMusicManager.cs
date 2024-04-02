@@ -38,7 +38,7 @@ public class BGMusicManager : MonoBehaviour
 
     public void MusicToGo()
     {
-        Initializelevel1BG(FMODEvents.instance.level1BG);
+        //Initializelevel1BG(FMODEvents.instance.level1BG);
         //InitializeCharacters(FMODEvents.instance.characters);
     }
     private void Initializelevel1BG(EventReference level1BGEventreference)

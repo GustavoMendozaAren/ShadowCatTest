@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{f28c53a2-fc4d-40ec-804d-af65e96e3eaf}">
-		<property name="note" />
 		<property name="name">
-			<value>estadoTransformacion</value>
+			<value>capaTransformacion</value>
 		</property>
 		<relationship name="folder">
 			<destination>{8788bb9a-0096-4263-8957-b60b41d1d192}</destination>
@@ -17,10 +16,18 @@
 			<value>0</value>
 		</property>
 		<property name="seekSpeed">
-			<value>3.5</value>
+			<value>2.7999999523162842</value>
 		</property>
 		<property name="isExposedRecursively">
 			<value>false</value>
+		</property>
+		<relationship name="automators">
+			<destination>{b2aa545e-1c0f-4781-8be3-93f3f2932f8a}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{b2aa545e-1c0f-4781-8be3-93f3f2932f8a}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
 		</property>
 	</object>
 </objects>

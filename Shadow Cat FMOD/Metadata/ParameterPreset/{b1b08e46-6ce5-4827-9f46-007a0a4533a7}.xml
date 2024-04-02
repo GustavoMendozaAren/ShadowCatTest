@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b1b08e46-6ce5-4827-9f46-007a0a4533a7}">
+		<property name="name">
+			<value>capaRalentizado</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8788bb9a-0096-4263-8957-b60b41d1d192}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f1841e9a-97f1-44d2-bf0d-4f9449add254}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f1841e9a-97f1-44d2-bf0d-4f9449add254}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
