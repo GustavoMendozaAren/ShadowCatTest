@@ -4,50 +4,28 @@ using UnityEngine;
 using FMODUnity;
 using System;
 using System.Data;
-interface IMusicObserved // Esta interfaz será dada a toda clase que quiera interactuar con MusicBehaviour.
-{
-    public MusicBehaviour MusicBehaviourInstance { get; set; }
-    public IMusicObserver MusicObserverInstance { get; set; }
 
-    public void MusicNotificarTransformGato(bool isCat)
-    {
-        MusicObserverInstance.OnPlayerTransformed(isCat);
-    }
-    public void MusicNotificarRalentizado(bool estaRalentizando)
-    {
-        MusicObserverInstance.OnSlowMotionEnabled(estaRalentizando);
-    }
-    public void MusicNotificarPausa(bool estaPausado)
-    {
-        MusicObserverInstance.OnGamePaused(estaPausado);
-    }
-    public void MusicNotificarFinJuego(int estadoJuego)
-    {
-        MusicObserverInstance.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
-    }
-    void Start()
-    {
-        GameObject instanciaMusic = GameObject.Find("Music");
-        MusicBehaviourInstance = instanciaMusic.GetComponent<MusicBehaviour>();
-        MusicObserverInstance = MusicBehaviourInstance;
-    }
-}
-public interface IMusicObserver // Está inferfaz será dada a MusicBehaviour o cualquier clase similar o que herede de ella.
-{    
-    void OnPlayerTransformed(bool isCat);
-    void OnSlowMotionEnabled(bool isSlowMotionEnabled);
-    void OnGamePaused(bool isGamePaused);
-    void OnGameStateChanged(int gameState); // 0 = playing, 1 = victory, 2 = defeat
-}
-
-[RequireComponent(typeof(StudioEventEmitter))]
-public class MusicBehaviour : MonoBehaviour, IMusicObserver
+[RequireComponent(typeof(StudioEventEmitter), typeof(MusicBridge))]
+public class MusicBehaviour : MonoBehaviour
 {
     
     public StudioEventEmitter levelMusic;
+    public static MusicBehaviour instance { get; private set; }
 
-    void Awake()
+    private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+
+
         levelMusic = GetComponent<FMODUnity.StudioEventEmitter>(); 
     }
 
@@ -93,12 +71,10 @@ public class MusicBehaviour : MonoBehaviour, IMusicObserver
     {
         if (!isGamePaused)
         {
-            //Debug.Log("Musica en modo normal.");
             levelMusic.SetParameter("enPausa", 0);
         }
         else
         {
-            //Debug.Log("Musica en modo pausa.");
             levelMusic.SetParameter("enPausa", 1);
         }
     }
@@ -111,6 +87,10 @@ public class MusicBehaviour : MonoBehaviour, IMusicObserver
     public void MusicStop()
     {
         levelMusic.Stop();
+    }
+    public void DestroyMusic()
+    {
+        Destroy(gameObject);
     }
 }
 
