@@ -4,16 +4,46 @@ using UnityEngine;
 using FMODUnity;
 using System;
 using System.Data;
-public interface IMusicObserver
+interface IMusicObserved // Esta interfaz será dada a toda clase que quiera interactuar con MusicBehaviour.
 {
+    public MusicBehaviour MusicBehaviourInstance { get; set; }
+    public IMusicObserver MusicObserverInstance { get; set; }
+
+    public void MusicNotificarTransformGato(bool isCat)
+    {
+        MusicObserverInstance.OnPlayerTransformed(isCat);
+    }
+    public void MusicNotificarRalentizado(bool estaRalentizando)
+    {
+        MusicObserverInstance.OnSlowMotionEnabled(estaRalentizando);
+    }
+    public void MusicNotificarPausa(bool estaPausado)
+    {
+        MusicObserverInstance.OnGamePaused(estaPausado);
+    }
+    public void MusicNotificarFinJuego(int estadoJuego)
+    {
+        MusicObserverInstance.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
+    }
+    void Start()
+    {
+        GameObject instanciaMusic = GameObject.Find("Music");
+        MusicBehaviourInstance = instanciaMusic.GetComponent<MusicBehaviour>();
+        MusicObserverInstance = MusicBehaviourInstance;
+    }
+}
+public interface IMusicObserver // Está inferfaz será dada a MusicBehaviour o cualquier clase similar o que herede de ella.
+{    
     void OnPlayerTransformed(bool isCat);
     void OnSlowMotionEnabled(bool isSlowMotionEnabled);
     void OnGamePaused(bool isGamePaused);
     void OnGameStateChanged(int gameState); // 0 = playing, 1 = victory, 2 = defeat
 }
 
+[RequireComponent(typeof(StudioEventEmitter))]
 public class MusicBehaviour : MonoBehaviour, IMusicObserver
 {
+    
     public StudioEventEmitter levelMusic;
 
     void Awake()
@@ -83,3 +113,4 @@ public class MusicBehaviour : MonoBehaviour, IMusicObserver
         levelMusic.Stop();
     }
 }
+

@@ -1607,11 +1607,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2961025481325771457, guid: 5d7ac951437cfc94d97abd6383602838, type: 3}
   m_PrefabInstance: {fileID: 4473803937117383689}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &176179944 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6670107445197905288, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
-  m_PrefabInstance: {fileID: 1242725941159386357}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &181061550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,8 +3414,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 176179944}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330207636
 GameObject:
@@ -5843,7 +5838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7599452, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 4.1513815, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8606,7 +8601,6 @@ MonoBehaviour:
   fotosSprites:
   - {fileID: 1317418137}
   - {fileID: 1254924616}
-  musicBehaviour: {fileID: 0}
   playerIsDead: 0
 --- !u!114 &760383218
 MonoBehaviour:
@@ -9649,7 +9643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917275495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7599452, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 4.1513815, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15356,7 +15350,6 @@ MonoBehaviour:
   - {fileID: 890439333}
   - {fileID: 83088984}
   Pista1Win: {fileID: 200874821}
-  musicBehaviour: {fileID: 0}
 --- !u!61 &1521781998
 BoxCollider2D:
   m_ObjectHideFlags: 0

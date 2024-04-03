@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static IMusicObserved;
 
-public class SwitchLite : MonoBehaviour
+public class SwitchLite : MonoBehaviour, IMusicObserved
 {
     //Players Array
     public GameObject[] players;
@@ -64,8 +65,8 @@ public class SwitchLite : MonoBehaviour
     public GameObject BtnJmpCat, BtnDblCat;
 
     //Music
-    public MusicBehaviour musicBehaviour;
-    private IMusicObserver musicObserver;
+    public MusicBehaviour MusicBehaviourInstance { get; set; }
+    public IMusicObserver MusicObserverInstance { get; set; }
 
     //Dash button image fill
     [SerializeField] private Image fillImage;
@@ -87,11 +88,10 @@ public class SwitchLite : MonoBehaviour
 
     void Start()
     {
-        GameObject instanciaMusic = GameObject.Find("Music");
-        musicBehaviour = instanciaMusic.GetComponent<MusicBehaviour>();
-        musicObserver = musicBehaviour;
-
-        musicObserver = musicBehaviour;
+        GameObject music = GameObject.Find("Music");
+        MusicBehaviourInstance = music.GetComponent<MusicBehaviour>();
+        MusicObserverInstance = MusicBehaviourInstance;
+        MusicNotificarFinJuego(0);
         for (int i = 0; i < players.Length; i++)
         {
             if (i == currentPlayerIndex)
@@ -490,20 +490,19 @@ public class SwitchLite : MonoBehaviour
     #region Notificar cambios de música.
     public void MusicNotificarTransformGato(bool isCat)
     {
-        Debug.Log($"Notificación transformación: {isCat}.");
-        musicObserver.OnPlayerTransformed(isCat);        
+        MusicObserverInstance.OnPlayerTransformed(isCat);        
     }
     public void MusicNotificarRalentizado(bool estaRalentizando)
     {
-        musicObserver.OnSlowMotionEnabled(estaRalentizando);
+        MusicObserverInstance.OnSlowMotionEnabled(estaRalentizando);
     }
-    //public void MusicNotificarPausa(bool estaPausado)
-    //{
-    //    musicObserver.OnGamePaused(estaPausado);
-    //}
+    public void MusicNotificarPausa(bool estaPausado)
+    {
+        MusicObserverInstance.OnGamePaused(estaPausado);
+    }
     public void MusicNotificarFinJuego(int estadoJuego)
     {
-        musicObserver.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
+        MusicObserverInstance.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
     }
     #endregion
 }

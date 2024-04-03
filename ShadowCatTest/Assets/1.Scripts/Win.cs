@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Win : MonoBehaviour
+public class Win : MonoBehaviour, IMusicObserved
 {
     public GameObject[] panel;
 
     public GameObject Pista1Win;
 
-    public MusicBehaviour musicBehaviour;
-    private IMusicObserver musicObserver;
+    public MusicBehaviour MusicBehaviourInstance { get; set; }
+    public IMusicObserver MusicObserverInstance { get; set; }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -37,13 +37,28 @@ public class Win : MonoBehaviour
     }
     private void Start()
     {
-        GameObject instanciaMusic = GameObject.Find("Music");
-        musicBehaviour = instanciaMusic.GetComponent<MusicBehaviour>();
-        musicObserver = musicBehaviour;
+        GameObject music = GameObject.Find("Music");
+        MusicBehaviourInstance = music.GetComponent<MusicBehaviour>();
+        MusicObserverInstance = MusicBehaviourInstance;
+    }
+    //*******Notificar cambios para la música *******
+
+    #region Notificar cambios de música.
+    public void MusicNotificarTransformGato(bool isCat)
+    {
+        MusicObserverInstance.OnPlayerTransformed(isCat);
+    }
+    public void MusicNotificarRalentizado(bool estaRalentizando)
+    {
+        MusicObserverInstance.OnSlowMotionEnabled(estaRalentizando);
+    }
+    public void MusicNotificarPausa(bool estaPausado)
+    {
+        MusicObserverInstance.OnGamePaused(estaPausado);
     }
     public void MusicNotificarFinJuego(int estadoJuego)
     {
-        musicObserver.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
+        MusicObserverInstance.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
     }
-
+    #endregion
 }

@@ -11,4 +11,5 @@
 
 //---BUGS---//
 
-7. Cuando el jugador reinicia el nivel después de haber ganado como gato, el estado de la música no se actualiza.
+1. Cuando el jugador reinicia el nivel después de haber ganado como gato, el estado de la música no se actualiza.
+2. Se percibe un cambio de volumen entre las capas de detective y gato.
