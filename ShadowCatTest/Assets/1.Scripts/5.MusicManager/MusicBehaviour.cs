@@ -4,20 +4,29 @@ using UnityEngine;
 using FMODUnity;
 using System;
 using System.Data;
-public interface IMusicObserver
-{
-    void OnPlayerTransformed(bool isCat);
-    void OnSlowMotionEnabled(bool isSlowMotionEnabled);
-    void OnGamePaused(bool isGamePaused);
-    void OnGameStateChanged(int gameState); // 0 = playing, 1 = victory, 2 = defeat
-}
 
-public class MusicBehaviour : MonoBehaviour, IMusicObserver
+[RequireComponent(typeof(StudioEventEmitter), typeof(MusicBridge))]
+[HelpURL("")]
+public class MusicBehaviour : MonoBehaviour
 {
+    
     public StudioEventEmitter levelMusic;
+    public static MusicBehaviour instance { get; private set; }
 
-    void Awake()
+    private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+
+
         levelMusic = GetComponent<FMODUnity.StudioEventEmitter>(); 
     }
 
@@ -63,12 +72,10 @@ public class MusicBehaviour : MonoBehaviour, IMusicObserver
     {
         if (!isGamePaused)
         {
-            //Debug.Log("Musica en modo normal.");
             levelMusic.SetParameter("enPausa", 0);
         }
         else
         {
-            //Debug.Log("Musica en modo pausa.");
             levelMusic.SetParameter("enPausa", 1);
         }
     }
@@ -82,4 +89,9 @@ public class MusicBehaviour : MonoBehaviour, IMusicObserver
     {
         levelMusic.Stop();
     }
+    public void DestroyMusic()
+    {
+        Destroy(gameObject);
+    }
 }
+

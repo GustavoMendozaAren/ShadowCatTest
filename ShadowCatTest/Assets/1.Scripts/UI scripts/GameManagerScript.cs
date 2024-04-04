@@ -10,8 +10,7 @@ public class GameManagerScript : MonoBehaviour
     public GameObject[] deadPanel;
     public GameObject[] fotosSprites;
 
-    public MusicBehaviour musicBehaviour;
-    private IMusicObserver musicObserver;
+    public MusicBridge levelMusic;
 
     [HideInInspector]
     public bool playerIsDead = false;
@@ -24,8 +23,7 @@ public class GameManagerScript : MonoBehaviour
     {
         //    deadCoroutine = DeadCorutine();
         GameObject instanciaMusic = GameObject.Find("Music");
-        musicBehaviour = instanciaMusic.GetComponent<MusicBehaviour>();
-        musicObserver = musicBehaviour;
+        levelMusic = instanciaMusic.GetComponent<MusicBridge>();
     }
 
     private void Update()
@@ -35,13 +33,15 @@ public class GameManagerScript : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("SampleScene Jacob");
-        MusicNotificarFinJuego(0);
+        levelMusic.NotificarCambioMusica("Pausa", false);
+        levelMusic.NotificarCambioMusica("EsGato", false);
+        SceneManager.LoadScene("SampleScene Jacob");       
         Time.timeScale = 1f;
     }
 
     public void MenuOption()
     {
+        levelMusic.DestroyMusic();
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
     }
@@ -53,7 +53,7 @@ public class GameManagerScript : MonoBehaviour
         PausePanel.SetActive(true);        
         Time.timeScale = 0f;
         pauseButton.SetActive(false);
-        MusicNotificarPausa(true);
+        levelMusic.NotificarCambioMusica("Pausa", true);
     }
 
     public void ExitButton()
@@ -65,7 +65,7 @@ public class GameManagerScript : MonoBehaviour
     {
         PausePanel.SetActive(false);
         pauseButton.SetActive(true);
-        MusicNotificarPausa(false);
+        levelMusic.NotificarCambioMusica("Pausa", false);
         Time.timeScale = 1f;
     }
 
@@ -102,14 +102,5 @@ public class GameManagerScript : MonoBehaviour
         {
             StartCoroutine(DeadCorutine());
         }
-    }
-
-    public void MusicNotificarPausa(bool estaPausado)
-    {
-        musicObserver.OnGamePaused(estaPausado);
-    }
-    public void MusicNotificarFinJuego(int estadoJuego)
-    {
-        musicObserver.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
     }
 }

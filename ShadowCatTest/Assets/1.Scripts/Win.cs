@@ -9,8 +9,7 @@ public class Win : MonoBehaviour
 
     public GameObject Pista1Win;
 
-    public MusicBehaviour musicBehaviour;
-    private IMusicObserver musicObserver;
+    public MusicBridge levelMusic;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -25,7 +24,7 @@ public class Win : MonoBehaviour
 
     IEnumerator WinConditionCo()
     {
-        MusicNotificarFinJuego(1);
+        levelMusic.NotificarCambioMusica("Ganar");
         panel[0].SetActive(true);
         yield return new WaitForSeconds(1f);
         panel[1].SetActive(true);
@@ -38,12 +37,6 @@ public class Win : MonoBehaviour
     private void Start()
     {
         GameObject instanciaMusic = GameObject.Find("Music");
-        musicBehaviour = instanciaMusic.GetComponent<MusicBehaviour>();
-        musicObserver = musicBehaviour;
+        levelMusic = instanciaMusic.GetComponent<MusicBridge>();
     }
-    public void MusicNotificarFinJuego(int estadoJuego)
-    {
-        musicObserver.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
-    }
-
 }

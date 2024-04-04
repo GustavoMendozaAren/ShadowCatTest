@@ -3704,10 +3704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cabc247bd535f46bf1d892e66a672a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelMusic: {fileID: 0}
-  estadoTransform: 0
-  estadoPausa: 0
-  estadoJuego: 0
+  levelMusic: {fileID: 300508676}
 --- !u!114 &300508676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3727,10 +3724,10 @@ MonoBehaviour:
       Data2: 1300269321
       Data3: -557442165
       Data4: -469612273
-    Path: event:/Music/Level music
+    Path: event:/Music/Level 1 music
   Event: 
-  PlayEvent: 0
-  StopEvent: 0
+  PlayEvent: 1
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -6390,7 +6387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.225001, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 4.1513815, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10034,6 +10031,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Letras: {fileID: 566912008}
+  Escena1: {fileID: 0}
+  Escena2: {fileID: 0}
+  ButtonEnter: {fileID: 0}
+  ButtonExit: {fileID: 0}
 --- !u!1 &812359744
 GameObject:
   m_ObjectHideFlags: 0
@@ -11073,7 +11074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917275495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.225001, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 4.1513815, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

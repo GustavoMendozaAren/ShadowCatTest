@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{949285c5-5580-44f2-8708-944c908f02fb}">
+		<property name="name">
+			<value>Cinematic</value>
+		</property>
+		<relationship name="masters">
+			<destination>{6efe0d79-0799-463f-b993-77c6753adf30}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{e2ab4de3-bcf9-4631-9680-14d219d95223}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{a84b4ce6-b849-4c06-8171-cab7eba37561}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{c81aad1c-5c85-4f71-a610-78a43db62f5f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{e2ab4de3-bcf9-4631-9680-14d219d95223}">
+		<relationship name="effects">
+			<destination>{c28a371f-92de-4b71-9d89-7994125936f4}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{a84b4ce6-b849-4c06-8171-cab7eba37561}" />
+	<object class="MixerBusFader" id="{c28a371f-92de-4b71-9d89-7994125936f4}" />
+</objects>

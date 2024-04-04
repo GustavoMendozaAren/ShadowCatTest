@@ -31,7 +31,7 @@ public class MainMenuMusic : MonoBehaviour
 
     private void Start()
     {
-        InitializeMainMenu(FMODEvents.instance.mainMenu);
+        //InitializeMainMenu(FMODEvents.instance.mainMenu);
     }
     private void InitializeMainMenu(EventReference mainMenuEventreference)
     {
