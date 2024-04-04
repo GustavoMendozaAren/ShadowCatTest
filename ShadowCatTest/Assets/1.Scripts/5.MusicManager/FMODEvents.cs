@@ -6,21 +6,11 @@ using System;
 
 public class FMODEvents : MonoBehaviour
 {
-    private float estadoTransform = 0f; // 0 = Detective, 1 = Gato
-    private int estadoPausa = 0; // 0 = Juego, 1 = Pausa.
-    private int estadoJuego; // 0 = en juego, 1 = Victoria, 2 = Derrota.
-
-    [field: Header("Level 1 music")]
-
-    FMOD.Studio.EventInstance levelMusic;   
-    //public StudioEventEmitter levelMusic;
-    //[field: SerializeField] public EventReference level1BG { get; private set; }
-
     /*[field: Header("Characters")]
     [field: SerializeField] public EventReference characters { get; private set; }*/
 
-    [field: Header("MainMenu")]
-    [field: SerializeField] public EventReference mainMenu { get; private set; }
+    //[field: Header("MainMenu")]
+    //[field: SerializeField] public EventReference mainMenu { get; private set; }
 
     [field: Header("Video")]
     [field: SerializeField] public EventReference video { get; private set; }
@@ -60,31 +50,10 @@ public class FMODEvents : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-            //levelMusic = GetComponent<StudioEventEmitter>();
-            levelMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Level 1 music");
+
         }
         
-        
-        //levelMusic.start();
+
     }
-    public void FixUpdate()
-    {
-        SetCapaMusica();
-        levelMusic.setParameterByName("enPausa", estadoPausa);
-        levelMusic.setParameterByName("nivel", estadoJuego);
-    }
-    public void SetCapaMusica() // 0 = Detective, 1 = Gato
-    {
-        if (!StateGameController.isCat)
-        {
-            estadoTransform = 0f;
-            Debug.Log("Detective!");
-        }        
-        else 
-        {
-            estadoTransform = 1f;
-            Debug.Log("Gato!");
-        }
-        levelMusic.setParameterByName("estadoTransformacion", estadoTransform);
-    }
+
 }

@@ -6,6 +6,7 @@ using System;
 using System.Data;
 
 [RequireComponent(typeof(StudioEventEmitter), typeof(MusicBridge))]
+[HelpURL("")]
 public class MusicBehaviour : MonoBehaviour
 {
     

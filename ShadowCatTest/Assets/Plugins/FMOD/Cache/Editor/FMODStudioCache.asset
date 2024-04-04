@@ -20,6 +20,7 @@ MonoBehaviour:
     Data4: 264377358
   Banks:
   - {fileID: -4746038032085203646}
+  - {fileID: 1437287984153991905}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -46,7 +47,7 @@ MonoBehaviour:
     Data3: -557442165
     Data4: -469612273
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: 1437287984153991905}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -128,7 +129,7 @@ MonoBehaviour:
     Data3: 336053895
     Data4: -80155654
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -182,7 +183,7 @@ MonoBehaviour:
     Data3: 261977004
     Data4: 1459003060
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -237,7 +238,7 @@ MonoBehaviour:
     Data3: -1011778141
     Data4: 835035117
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -260,12 +261,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638477571130429414
+  lastModified: 638477652569998787
   FileSizes:
   - Name: Desktop
-    Value: 3467776
+    Value: 5812
   - Name: Mobile
-    Value: 7467584
+    Value: 5812
   Exists: 1
 --- !u!114 &-4697599843495632321
 MonoBehaviour:
@@ -310,7 +311,7 @@ MonoBehaviour:
     Data3: 1352170152
     Data4: -1514088974
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -333,12 +334,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/SoundEffects.bank
   Name: SoundEffects
   StudioPath: bank:/SoundEffects
-  lastModified: 638477571130568299
+  lastModified: 638477652574428061
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 403840
   - Name: Mobile
-    Value: 494
+    Value: 870528
   Exists: 1
 --- !u!114 &-1763841206117203118
 MonoBehaviour:
@@ -385,7 +386,7 @@ MonoBehaviour:
     Data3: -334268771
     Data4: 9688609
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -394,6 +395,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &-1449818416812222822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainMenu
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MainMenu
+  Guid:
+    Data1: -1896428668
+    Data2: 1106207839
+    Data3: -482027873
+    Data4: -1730053130
+  Banks:
+  - {fileID: 1437287984153991905}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 35121
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,47 +451,20 @@ MonoBehaviour:
   - {fileID: 1901150034305505856}
   - {fileID: -5246091047823549202}
   - {fileID: 3065610345374382918}
-  - {fileID: 5703326219488856719}
-  - {fileID: 675882881725693984}
-  - {fileID: 6241483744573702373}
   - {fileID: -8672546202200713148}
   - {fileID: -8962186150196344662}
   - {fileID: -6160866134104873819}
   - {fileID: -7906726299674675985}
+  - {fileID: -1449818416812222822}
+  - {fileID: 7771623007280424398}
+  - {fileID: 5560751964229018071}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4746038032085203646}
   StringsBanks:
   - {fileID: 4720704121527451629}
-  cacheTime: 638477571131039499
+  cacheTime: 638477652574790132
   cacheVersion: 131603
---- !u!114 &675882881725693984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MainMenu
-  m_EditorClassIdentifier: 
-  Path: event:/MainMenu
-  Guid:
-    Data1: -1896428668
-    Data2: 1106207839
-    Data3: -482027873
-    Data4: -1730053130
-  Banks:
-  - {fileID: -4746038032085203646}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 35121
 --- !u!114 &1165118942642783114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +484,7 @@ MonoBehaviour:
     Data3: -40942683
     Data4: 1723354203
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -506,12 +507,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638477571130533573
+  lastModified: 638477652571308225
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 3139680
   - Name: Mobile
-    Value: 494
+    Value: 6777024
   Exists: 1
 --- !u!114 &1901150034305505856
 MonoBehaviour:
@@ -532,7 +533,7 @@ MonoBehaviour:
     Data3: 1462308774
     Data4: 43056104
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -559,7 +560,7 @@ MonoBehaviour:
     Data3: -1175947364
     Data4: 525365623
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -610,7 +611,7 @@ MonoBehaviour:
     Data3: -1855862654
     Data4: 1599596511
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -659,12 +660,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638477571130493898
+  lastModified: 638477652570043428
   FileSizes:
   - Name: Desktop
-    Value: 2066
+    Value: 2404
   - Name: Mobile
-    Value: 2066
+    Value: 2404
   Exists: 1
 --- !u!114 &4771104988525878001
 MonoBehaviour:
@@ -681,14 +682,14 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Videos.bank
   Name: Videos
   StudioPath: bank:/Videos
-  lastModified: 638477571131039499
+  lastModified: 638477652574790132
   FileSizes:
   - Name: Desktop
-    Value: 3731232
+    Value: 830176
   - Name: Mobile
-    Value: 8121024
+    Value: 2586720
   Exists: 1
---- !u!114 &5703326219488856719
+--- !u!114 &5560751964229018071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -698,9 +699,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Video
+  m_Name: event:/Video/Video
   m_EditorClassIdentifier: 
-  Path: event:/Video
+  Path: event:/Video/Video
   Guid:
     Data1: 1808904070
     Data2: 1196707528
@@ -715,7 +716,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6241483744573702373
+--- !u!114 &7771623007280424398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -725,23 +726,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/LevelTemp
+  m_Name: "event:/Game Sounds/Coraz\xF3n"
   m_EditorClassIdentifier: 
-  Path: event:/LevelTemp
+  Path: "event:/Game Sounds/Coraz\xF3n"
   Guid:
-    Data1: -1867846148
-    Data2: 1107444985
-    Data3: -1383832686
-    Data4: 1502156619
+    Data1: 568420837
+    Data2: 1077470404
+    Data3: -545954678
+    Data4: -1602729816
   Banks:
-  - {fileID: 4771104988525878001}
-  IsStream: 1
+  - {fileID: -2728180484521358524}
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 70243
+  Length: 6896
 --- !u!114 &7868234997963141145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,7 +762,7 @@ MonoBehaviour:
     Data3: -1363152205
     Data4: 2127427288
   Banks:
-  - {fileID: -4746038032085203646}
+  - {fileID: -2728180484521358524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

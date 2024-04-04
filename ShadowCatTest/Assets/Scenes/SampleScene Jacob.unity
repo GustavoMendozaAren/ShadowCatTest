@@ -2532,50 +2532,6 @@ Transform:
   m_Father: {fileID: 1053121761}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &246439198 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6670107446210615941, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
-  m_PrefabInstance: {fileID: 1242725941159386357}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &246439201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246439198}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -411645947
-      Data2: 1300269321
-      Data3: -557442165
-      Data4: -469612273
-    Path: event:/Music/Level 1 music
-  Event: 
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params:
-  - Name: estadoTransformacion
-    Value: 0
-  - Name: enPausa
-    Value: 0
-  - Name: Ralentizado
-    Value: 0
-  - Name: nivel
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &246708347
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,6 +3300,7 @@ GameObject:
   - component: {fileID: 300508675}
   - component: {fileID: 300508676}
   - component: {fileID: 300508678}
+  - component: {fileID: 300508679}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -3430,7 +3387,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03806bc6c0f8e0d4d973744710cbbc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicBehaviourInstance: {fileID: 0}
+  musicBehaviourInstance: {fileID: 300508675}
+--- !u!114 &300508679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300508674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994f5a8c8df6ff848ab4274e4f5b2e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330207636
 GameObject:
   m_ObjectHideFlags: 0
@@ -5852,7 +5821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1513815, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 4.1442, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9658,7 +9627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917275495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1513815, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 4.1442, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22304,8 +22273,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 300508676}
     - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <video>k__BackingField.Path
+      value: event:/Video/Video
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
       propertyPath: <level1BG>k__BackingField.Path
       value: event:/Music/Level music
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <mainMenu>k__BackingField.Path
+      value: event:/Music/MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
       propertyPath: <level1BG>k__BackingField.Guid.Data1

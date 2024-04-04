@@ -20511,12 +20511,20 @@ PrefabInstance:
       value: event:/Game Sounds/Disparo
       objectReference: {fileID: 0}
     - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <video>k__BackingField.Path
+      value: event:/Video/Video
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
       propertyPath: <catDeath>k__BackingField.Path
       value: event:/Game Sounds/Cat death
       objectReference: {fileID: 0}
     - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
       propertyPath: <emptyGun>k__BackingField.Path
       value: event:/Game Sounds/Sin balas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <mainMenu>k__BackingField.Path
+      value: event:/Music/MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
       propertyPath: "<pesta\xF1aUI>k__BackingField.Path"
@@ -37620,6 +37628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1792211287}
   - component: {fileID: 1792211286}
+  - component: {fileID: 1792211288}
   m_Layer: 0
   m_Name: MainMenuMusic
   m_TagString: Untagged
@@ -37634,7 +37643,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792211285}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c34b75e93610774ab25926053592673, type: 3}
   m_Name: 
@@ -37654,6 +37663,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1792211288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792211285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1896428668
+      Data2: 1106207839
+      Data3: -482027873
+      Data4: -1730053130
+    Path: event:/Music/MainMenu
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1796253357
 GameObject:
   m_ObjectHideFlags: 0
