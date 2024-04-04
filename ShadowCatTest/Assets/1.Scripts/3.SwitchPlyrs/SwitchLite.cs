@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,8 @@ using UnityEngine.UI;
 public class SwitchLite : MonoBehaviour
 {
     //Players Array
-    public GameObject[] players; 
-    private int currentPlayerIndex = 0; 
+    public GameObject[] players;
+    private int currentPlayerIndex = 0;
     public GameObject RevolverBullet;
 
     //CheckIfOnGround
@@ -63,8 +64,8 @@ public class SwitchLite : MonoBehaviour
     public GameObject BtnJmpCat, BtnDblCat;
 
     //Music
-    private MusicBehaviour musicBehaviour;
-    float transformMusicValue = 0;
+    public MusicBehaviour musicBehaviour;
+    private IMusicObserver musicObserver;
 
     //Dash button image fill
     [SerializeField] private Image fillImage;
@@ -77,6 +78,8 @@ public class SwitchLite : MonoBehaviour
     public GameObject slowbutonbarrier;
     float slowMultiplayer = 2f;
 
+    
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -84,13 +87,17 @@ public class SwitchLite : MonoBehaviour
 
     void Start()
     {
-        GameObject estadoDetective = GameObject.Find("Music");
-        musicBehaviour = estadoDetective.GetComponent<MusicBehaviour>();
+        GameObject instanciaMusic = GameObject.Find("Music");
+        musicBehaviour = instanciaMusic.GetComponent<MusicBehaviour>();
+        musicObserver = musicBehaviour;
+
+        musicObserver = musicBehaviour;
         for (int i = 0; i < players.Length; i++)
         {
             if (i == currentPlayerIndex)
             {
                 players[i].SetActive(true);
+
             }
             else
             {
@@ -129,37 +136,37 @@ public class SwitchLite : MonoBehaviour
         if (currentPlayerIndex >= players.Length)
         {
             currentPlayerIndex = 0;
-            transformMusicValue = 0f;
+            MusicNotificarTransformGato(false);
             //AudioManager.instance.PlayOneShot(FMODEvents.instance.detectiveSong, this.transform.position);
         }
         else
         {
             //AudioManager.instance.PlayOneShot(FMODEvents.instance.catSong, this.transform.position);
-            transformMusicValue = 1f;
+            MusicNotificarTransformGato(true);
         }
 
         players[currentPlayerIndex].SetActive(true);
         Anim[currentPlayerIndex].SetTrigger("Puff");
         AudioManager.instance.PlayOneShot(FMODEvents.instance.transformFX, this.transform.position);
- 
-        musicBehaviour.estadoTransform = transformMusicValue;
+
+        //musicBehaviour.estadoTransform = transformMusicValue;
         //}
     }
 
     private void SwitchButtons()
     {
-        if(currentPlayerIndex == 0)
+        if (currentPlayerIndex == 0)
         {
             BttnsDetective.SetActive(true);
             BttnsCat.SetActive(false);
-            StateGameController.isCat = false;
+            StateGameController.isCat = false;    
+            
         }
         if (currentPlayerIndex == 1)
         {
             BttnsDetective.SetActive(false);
             BttnsCat.SetActive(true);
             StateGameController.isCat = true;
-
         }
     }
 
@@ -178,7 +185,7 @@ public class SwitchLite : MonoBehaviour
 
             ChangeDirection(1);
             Anim[0].SetBool("Run", false);
-            if (currentPlayerIndex == 0 && (Input.GetKey(KeyCode.LeftShift)|| RunBttn))
+            if (currentPlayerIndex == 0 && (Input.GetKey(KeyCode.LeftShift) || RunBttn))
             {
                 Anim[0].SetBool("Run", true);
                 //rb.velocity = new Vector2(speed *1.5f, rb.velocity.y);
@@ -199,7 +206,7 @@ public class SwitchLite : MonoBehaviour
 
             ChangeDirection(-1);
             Anim[0].SetBool("Run", false);
-            if (currentPlayerIndex == 0 && (Input.GetKey(KeyCode.LeftShift)|| RunBttn))
+            if (currentPlayerIndex == 0 && (Input.GetKey(KeyCode.LeftShift) || RunBttn))
             {
                 Anim[0].SetBool("Run", true);
                 //rb.velocity = new Vector2(-speed * 1.5f, rb.velocity.y);
@@ -220,7 +227,7 @@ public class SwitchLite : MonoBehaviour
         }
 
         AnimationIntParameters("Speed");
-        
+
     }
 
     void ChangeDirection(int direction)
@@ -276,7 +283,7 @@ public class SwitchLite : MonoBehaviour
                 BtnJmpCat.SetActive(false);
                 BtnDblCat.SetActive(true);
             }
-            else 
+            else
             {
                 if ((JumpBttn || Input.GetKeyDown(KeyCode.Space)) && currentPlayerIndex == 1 && doubleJump)
                 {
@@ -304,7 +311,7 @@ public class SwitchLite : MonoBehaviour
 
     private void ShootAnim()
     {
-        if(currentPlayerIndex != 0)
+        if (currentPlayerIndex != 0)
         {
             BalasJugador1.SetActive(false);
             gunImage.SetActive(false);
@@ -315,7 +322,7 @@ public class SwitchLite : MonoBehaviour
             gunImage.SetActive(true);
         }
 
-        if(currentPlayerIndex == 0 && (Input.GetKeyDown(KeyCode.W) || ShootBttn))
+        if (currentPlayerIndex == 0 && (Input.GetKeyDown(KeyCode.W) || ShootBttn))
         {
             if (BalasIndex < 7)
             {
@@ -334,9 +341,9 @@ public class SwitchLite : MonoBehaviour
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.emptyGun, this.transform.position);
             }
             ShootBttn = false;
-            
+
         }
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -356,7 +363,7 @@ public class SwitchLite : MonoBehaviour
             }
 
             Balas[BalasIndex].SetActive(true);
-            
+
         }
     }
 
@@ -390,7 +397,7 @@ public class SwitchLite : MonoBehaviour
             Anim[1].speed = 0.8f;
             StartCoroutine(SlowMechanicCo());
             slowBttn = false;
-            
+
 
             /*
             //timerCatBttn = 0f;
@@ -414,12 +421,14 @@ public class SwitchLite : MonoBehaviour
 
     IEnumerator SlowMechanicCo()
     {
-        yield return new WaitForSeconds(4f);
+        MusicNotificarRalentizado(true);
+        yield return new WaitForSeconds(4f);        
         slowbutonbarrier.SetActive(true);
         StateGameController.enemiesTime = 1f;
         StateGameController.playerTime = 1f;
         Anim[0].speed = 1f;
         Anim[1].speed = 1f;
+        MusicNotificarRalentizado(false);
         //Time.fixedDeltaTime = 1f;
 
         //timerCatBttn = 0f;
@@ -439,11 +448,12 @@ public class SwitchLite : MonoBehaviour
     {
         if (PDS.PlayerDead)
         {
-            if(currentPlayerIndex == 1)
+            if (currentPlayerIndex == 1)
             {
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.catDeath, this.transform.position);
             }
             Anim[currentPlayerIndex].SetBool("Dead", true);
+            MusicNotificarFinJuego(2);
             this.enabled = false;
         }
     }
@@ -474,4 +484,26 @@ public class SwitchLite : MonoBehaviour
     {
         slowBttn = true;
     }
+
+    //*******Notificar cambios para la música *******
+
+    #region Notificar cambios de música.
+    public void MusicNotificarTransformGato(bool isCat)
+    {
+        Debug.Log($"Notificación transformación: {isCat}.");
+        musicObserver.OnPlayerTransformed(isCat);        
+    }
+    public void MusicNotificarRalentizado(bool estaRalentizando)
+    {
+        musicObserver.OnSlowMotionEnabled(estaRalentizando);
+    }
+    //public void MusicNotificarPausa(bool estaPausado)
+    //{
+    //    musicObserver.OnGamePaused(estaPausado);
+    //}
+    public void MusicNotificarFinJuego(int estadoJuego)
+    {
+        musicObserver.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
+    }
+    #endregion
 }

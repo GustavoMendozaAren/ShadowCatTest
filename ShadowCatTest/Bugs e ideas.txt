@@ -1,0 +1,20 @@
+//---BUGS---//
+
+Es posible que el jugador gane la partida e inmediato sea asesinado por el disparo de un enemigo. 
+Esto causa que las dos pantallas (victoria y derrota) sean activadas y que el juego se trabe.
+La solución que se me ocurre es hacer al jugador invunerable una vez toque la meta.
+
+Hay errores en la comprobación de suelo en los extremos de las plataformas, lo que general los siguientes errores:
+	- No puedes saltar desde la oriilla.
+	- A veces no se queda trabada la animación de caída.
+
+
+
+//---IDEAS---//
+
+Sería genial que estando en modo gato pudieses atravesar las plataformas por debajo, creo que daría más
+la sensación de agilidad siendo gato. De la misma manera, sería interesante poder agacharnos y saltar para atravesar
+las plataformas de arriba a abajo (Como en Shantae: Half Genie Hero).
+
+Que los disparos de enemigos tengan caída o desaparezcan con el tiempo. Esto añadiría la posibilidad de que el jugador
+evada disparos solo llendo en dirección contraria.
