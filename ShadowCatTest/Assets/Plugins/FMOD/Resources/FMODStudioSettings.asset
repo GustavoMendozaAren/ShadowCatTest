@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 1
+  HasSourceProject: 0
   HasPlatforms: 1
   sourceProjectPath: ../Shadow Cat FMOD/Shadow Cat.fspro
   sourceBankPath: ../Shadow Cat FMOD/Build
