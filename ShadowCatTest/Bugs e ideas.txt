@@ -18,3 +18,10 @@ las plataformas de arriba a abajo (Como en Shantae: Half Genie Hero).
 
 Que los disparos de enemigos tengan caída o desaparezcan con el tiempo. Esto añadiría la posibilidad de que el jugador
 evada disparos solo llendo en dirección contraria.
+
+Reemplazar la habilidad de correr del detective por una de dar una voltereta que lo hará invulnerable durante un
+breve periodo de tiempo. Basado en Dark Souls.
+
+Items para comprar:
+	Furia felina: Cuando el jugador está bajo en vida, adquiere buffs como más velocidad siendo gato o más daño siendo
+detective. Basado en los amuletos de Hollow Knight.

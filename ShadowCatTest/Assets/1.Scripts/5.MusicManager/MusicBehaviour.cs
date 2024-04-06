@@ -68,6 +68,12 @@ public class MusicBehaviour : MonoBehaviour
                 throw new ArgumentException("ERROR. MusicNotificarFinJuego() solo debe tener como parámetro los valores 0, 1 o 2.");
         }
     }
+    public void OnItemPickedUp()
+    {
+        levelMusic.SetParameter("triggerChord", 1);
+        new WaitForSeconds(0.1f);
+        levelMusic.SetParameter("triggerChord", 0);
+    }
     public void OnGamePaused(bool isGamePaused)
     {
         if (!isGamePaused)
@@ -76,10 +82,11 @@ public class MusicBehaviour : MonoBehaviour
         }
         else
         {
-            levelMusic.SetParameter("enPausa", 1);
+            levelMusic.SetParameter("enPausa", 1);            
         }
     }
     #endregion
+
 
     public void MusicStart()
     {
