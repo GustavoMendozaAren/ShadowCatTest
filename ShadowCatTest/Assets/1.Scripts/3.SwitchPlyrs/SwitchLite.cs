@@ -94,8 +94,10 @@ public class SwitchLite : MonoBehaviour
 
         GameObject instanciaMusic = GameObject.Find("Music");
         levelMusic = instanciaMusic.GetComponent<MusicBridge>();
-
         levelMusic.NotificarCambioMusica("JuegoEnCurso");
+
+        PDS.PuedeRecibirDaño(true);
+
         for (int i = 0; i < players.Length; i++)
         {
             if (i == currentPlayerIndex)
@@ -113,13 +115,13 @@ public class SwitchLite : MonoBehaviour
     void Update()
     {
         //SwitchPlayers();
-        SwitchButtons();
+        //SwitchButtons();
         ShootAnim();
         CheckIfOnGround();
         //PlayerJump();
         Player1Stats();
         DeadAnimation();
-        SlowMechanic();
+        //SlowMechanic();
     }
 
     void FixedUpdate()
@@ -127,6 +129,8 @@ public class SwitchLite : MonoBehaviour
         PlayerWalk();
         PlayerJump();
 
+        SwitchButtons(); //Estaba en Update(), pero lo moví para disminuir el desfase entre las capas de audio cuando el jugador cambia mucho entre gato y detective.
+        SlowMechanic(); //Estaba en Update(), pero lo moví para disminuir el desfase entre las capas de audio cuando el jugador cambia mucho entre gato y detective.
     }
 
     public void SwitchPlayers()

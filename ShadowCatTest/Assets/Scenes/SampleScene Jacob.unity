@@ -3300,7 +3300,6 @@ GameObject:
   - component: {fileID: 300508675}
   - component: {fileID: 300508676}
   - component: {fileID: 300508678}
-  - component: {fileID: 300508679}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -3346,7 +3345,7 @@ MonoBehaviour:
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
-  Preload: 0
+  Preload: 1
   AllowNonRigidbodyDoppler: 0
   Params:
   - Name: capaRalentizado
@@ -3388,18 +3387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicBehaviourInstance: {fileID: 300508675}
---- !u!114 &300508679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300508674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 994f5a8c8df6ff848ab4274e4f5b2e3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &330207636
 GameObject:
   m_ObjectHideFlags: 0
@@ -5821,7 +5808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1442, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 3.7814922, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9627,7 +9614,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917275495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1442, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 3.7814922, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13622,6 +13609,28 @@ MonoBehaviour:
   timeBtwChars: 0.15
   leadingChar: 
   leadingCharBeforeDelay: 0
+--- !u!1 &1355175666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6670107446210615941, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+  m_PrefabInstance: {fileID: 1242725941159386357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1355175668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355175666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994f5a8c8df6ff848ab4274e4f5b2e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 0.75
+  musicVolume: 0.75
+  sfxVolume: 0.75
+  ambientVolume: 0.75
+  cinematicVolume: 0.75
 --- !u!1 &1372747719
 GameObject:
   m_ObjectHideFlags: 0

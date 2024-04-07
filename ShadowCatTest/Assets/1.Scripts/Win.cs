@@ -11,6 +11,9 @@ public class Win : MonoBehaviour
 
     public MusicBridge levelMusic;
 
+    public PlayerDamage damageInstance;
+
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
@@ -24,6 +27,7 @@ public class Win : MonoBehaviour
 
     IEnumerator WinConditionCo()
     {
+        damageInstance.PuedeRecibirDaño(false);
         levelMusic.NotificarCambioMusica("Ganar");
         panel[0].SetActive(true);
         yield return new WaitForSeconds(1f);
@@ -33,10 +37,15 @@ public class Win : MonoBehaviour
         panel[3].SetActive(true);
         yield return new WaitForSeconds(2f);
         Time.timeScale = 0f;
+        //damageInstance.PuedeRecibirDaño(true);
     }
     private void Start()
     {
         GameObject instanciaMusic = GameObject.Find("Music");
         levelMusic = instanciaMusic.GetComponent<MusicBridge>();
+
+        GameObject playerDamageInstance = GameObject.Find("Player v3 Switcher (1)");
+        damageInstance = playerDamageInstance.GetComponent<PlayerDamage>();
     }
+
 }

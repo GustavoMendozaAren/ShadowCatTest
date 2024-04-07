@@ -15,7 +15,7 @@ public class MusicBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        /*if (instance == null)
         {
             instance = this;
         }
@@ -24,7 +24,7 @@ public class MusicBehaviour : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);*/
 
 
         levelMusic = GetComponent<FMODUnity.StudioEventEmitter>(); 
@@ -71,7 +71,7 @@ public class MusicBehaviour : MonoBehaviour
     public void OnItemPickedUp()
     {
         levelMusic.SetParameter("triggerChord", 1);
-        new WaitForSeconds(0.1f);
+        new WaitForSeconds(0.1f); //Hacer con Corrutina
         levelMusic.SetParameter("triggerChord", 0);
     }
     public void OnGamePaused(bool isGamePaused)
@@ -99,6 +99,10 @@ public class MusicBehaviour : MonoBehaviour
     public void DestroyMusic()
     {
         Destroy(gameObject);
+    }
+    public void DontDestroyMusic()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 }
 

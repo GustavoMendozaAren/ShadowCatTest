@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
@@ -52,5 +53,11 @@ public class PlayerDamage : MonoBehaviour
             damagePanel.SetActive(false);
             canDamage = true;
         }
+    }
+
+    public void PuedeRecibirDaño(bool valor)
+    {
+        if (!valor) canDamage = false;
+        else canDamage = true;
     }
 }

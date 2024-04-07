@@ -28,6 +28,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-8874835188948826386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tutorial Music/Estadonivel
+  m_EditorClassIdentifier: 
+  Name: Estadonivel
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 187540172
+    data2: 551250871
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - enNivel
+  - victoria
+  - derrota
+  Exists: 1
 --- !u!114 &-8672546202200713148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,9 +83,10 @@ MonoBehaviour:
   - {fileID: -4697599843495632321}
   - {fileID: 3039324191356051324}
   - {fileID: -7228299580058188636}
+  - {fileID: -337210845619927124}
   MinDistance: 1
   MaxDistance: 20
-  Length: 90731
+  Length: 76097
 --- !u!114 &-8207171013429360728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +153,7 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638479432491110245
+  lastModified: 638480857342180476
   FileSizes:
   - Name: Desktop
     Value: 1572160
@@ -307,7 +335,7 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638479432491239201
+  lastModified: 638480857342360017
   FileSizes:
   - Name: Desktop
     Value: 5812
@@ -365,6 +393,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1950
+--- !u!114 &-2850130900156265940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tutorial Music/capaRalentizado
+  m_EditorClassIdentifier: 
+  Name: capaRalentizado
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2947133405
+    data2: 3992033372
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2728180484521358524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,12 +432,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/SoundEffects.bank
   Name: SoundEffects
   StudioPath: bank:/SoundEffects
-  lastModified: 638479432494433443
+  lastModified: 638480857346508847
   FileSizes:
   - Name: Desktop
-    Value: 403840
+    Value: 326752
   - Name: Mobile
-    Value: 870528
+    Value: 689216
   Exists: 1
 --- !u!114 &-2016292583396091375
 MonoBehaviour:
@@ -397,9 +449,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Tutorial Music/TriggerChord
+  m_Name: parameter:/Tutorial Music/triggerChord
   m_EditorClassIdentifier: 
-  Name: TriggerChord
+  Name: triggerChord
   StudioPath: 
   Min: 0
   Max: 1
@@ -492,6 +544,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 39048
+--- !u!114 &-337210845619927124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 1 music/bajoEnVida
+  m_EditorClassIdentifier: 
+  Name: bajoEnVida
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2952745488
+    data2: 525992252
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +612,7 @@ MonoBehaviour:
   - {fileID: -4746038032085203646}
   StringsBanks:
   - {fileID: 4720704121527451629}
-  cacheTime: 638479432494810418
+  cacheTime: 638480857346788103
   cacheVersion: 131603
 --- !u!114 &1165118942642783114
 MonoBehaviour:
@@ -580,12 +656,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638479432492841281
+  lastModified: 638480857345387085
   FileSizes:
   - Name: Desktop
-    Value: 4206304
+    Value: 4139648
   - Name: Mobile
-    Value: 9343776
+    Value: 8706016
   Exists: 1
 --- !u!114 &1901150034305505856
 MonoBehaviour:
@@ -686,7 +762,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -2728180484521358524}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -760,12 +836,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638479432491288807
+  lastModified: 638480857342405049
   FileSizes:
   - Name: Desktop
-    Value: 2588
+    Value: 2628
   - Name: Mobile
-    Value: 2588
+    Value: 2628
   Exists: 1
 --- !u!114 &4771104988525878001
 MonoBehaviour:
@@ -782,7 +858,7 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Videos.bank
   Name: Videos
   StudioPath: bank:/Videos
-  lastModified: 638479432494810418
+  lastModified: 638480857346788103
   FileSizes:
   - Name: Desktop
     Value: 830176
@@ -867,9 +943,11 @@ MonoBehaviour:
   - {fileID: 5280164548845404263}
   - {fileID: -2016292583396091375}
   - {fileID: -5287866478403045443}
+  - {fileID: -2850130900156265940}
+  - {fileID: -8874835188948826386}
   MinDistance: 1
   MaxDistance: 20
-  Length: 39512
+  Length: 43902
 --- !u!114 &7771623007280424398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,7 +974,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6896
+  Length: 0
 --- !u!114 &7868234997963141145
 MonoBehaviour:
   m_ObjectHideFlags: 0

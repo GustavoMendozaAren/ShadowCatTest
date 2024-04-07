@@ -20,6 +20,7 @@ namespace FSPRO
         public static readonly FMOD.GUID Game_Sounds_Transform = new FMOD.GUID { Data1 = -1158092860, Data2 = 1246618830, Data3 = -1011778141, Data4 = 835035117 };
         public static readonly FMOD.GUID Music_Level_1_music = new FMOD.GUID { Data1 = -411645947, Data2 = 1300269321, Data3 = -557442165, Data4 = -469612273 };
         public static readonly FMOD.GUID Music_MainMenu = new FMOD.GUID { Data1 = -1896428668, Data2 = 1106207839, Data3 = -482027873, Data4 = -1730053130 };
+        public static readonly FMOD.GUID Music_Tutorial_Music = new FMOD.GUID { Data1 = -1452920394, Data2 = 1303859557, Data3 = 434649232, Data4 = -445878339 };
         public static readonly FMOD.GUID UI_Pesta_a = new FMOD.GUID { Data1 = 564885402, Data2 = 1123923078, Data3 = -40942683, Data4 = 1723354203 };
         public static readonly FMOD.GUID UI_Typewriter = new FMOD.GUID { Data1 = 1456653469, Data2 = 1164118267, Data3 = 336053895, Data4 = -80155654 };
         public static readonly FMOD.GUID Video_Video = new FMOD.GUID { Data1 = 1808904070, Data2 = 1196707528, Data3 = 1776376462, Data4 = -1605981767 };

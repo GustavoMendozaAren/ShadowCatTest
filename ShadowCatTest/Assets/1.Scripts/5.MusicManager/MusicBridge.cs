@@ -48,6 +48,9 @@ public class MusicBridge : MonoBehaviour // MusicBridge conecta los distintos sc
             case "Acorde":
                 MusicNotificarAcorde();
                 break;
+            case "NoDestruir":
+                musicBehaviourInstance.DontDestroyMusic();
+                break;
             default:
                 throw new ArgumentException("ERROR.Parámetro no válido.");
         }
