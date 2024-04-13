@@ -28,7 +28,6 @@ public class MusicBridge : MonoBehaviour // MusicBridge conecta los distintos sc
                 break;
             case "BajoEnVida":
                 throw new NotImplementedException();
-                break;
             default:
                 throw new ArgumentException("ERROR.Parámetro no válido.");
         }
@@ -45,6 +44,12 @@ public class MusicBridge : MonoBehaviour // MusicBridge conecta los distintos sc
                 break;
             case "Perder":
                 MusicNotificarFinJuego(2);
+                break;
+            case "Acorde":
+                MusicNotificarAcorde();
+                break;
+            case "NoDestruir":
+                musicBehaviourInstance.DontDestroyMusic();
                 break;
             default:
                 throw new ArgumentException("ERROR.Parámetro no válido.");
@@ -71,6 +76,10 @@ public class MusicBridge : MonoBehaviour // MusicBridge conecta los distintos sc
     private void MusicNotificarFinJuego(int estadoJuego)
     {
         musicBehaviourInstance.OnGameStateChanged(estadoJuego); // 0 = en juego, 1 = Victoria, 2 = Derrota. 
+    }
+    private void MusicNotificarAcorde()
+    {
+        musicBehaviourInstance.OnItemPickedUp();       
     }
 } 
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fb4346f7-c6be-41ad-9ad4-1f9ee4bd41cd}">
+		<property name="assetPath">
+			<value>Ambience/Stapler 4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d9bd23d7-4e30-4531-87a1-c793bf604172}</destination>
+		</relationship>
+	</object>
+</objects>

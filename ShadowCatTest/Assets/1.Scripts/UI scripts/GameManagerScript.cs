@@ -33,8 +33,10 @@ public class GameManagerScript : MonoBehaviour
 
     public void Restart()
     {
+        levelMusic.NotificarCambioMusica("NoDestruir");
         levelMusic.NotificarCambioMusica("Pausa", false);
         levelMusic.NotificarCambioMusica("EsGato", false);
+        levelMusic.NotificarCambioMusica("JuegoEnCurso");
         SceneManager.LoadScene("SampleScene Jacob");       
         Time.timeScale = 1f;
     }

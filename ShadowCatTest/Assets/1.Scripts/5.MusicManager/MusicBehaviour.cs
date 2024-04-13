@@ -15,7 +15,7 @@ public class MusicBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        /*if (instance == null)
         {
             instance = this;
         }
@@ -24,7 +24,7 @@ public class MusicBehaviour : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);*/
 
 
         levelMusic = GetComponent<FMODUnity.StudioEventEmitter>(); 
@@ -68,6 +68,12 @@ public class MusicBehaviour : MonoBehaviour
                 throw new ArgumentException("ERROR. MusicNotificarFinJuego() solo debe tener como parámetro los valores 0, 1 o 2.");
         }
     }
+    public void OnItemPickedUp()
+    {
+        levelMusic.SetParameter("triggerChord", 1);
+        new WaitForSeconds(0.1f); //Hacer con Corrutina
+        levelMusic.SetParameter("triggerChord", 0);
+    }
     public void OnGamePaused(bool isGamePaused)
     {
         if (!isGamePaused)
@@ -76,10 +82,11 @@ public class MusicBehaviour : MonoBehaviour
         }
         else
         {
-            levelMusic.SetParameter("enPausa", 1);
+            levelMusic.SetParameter("enPausa", 1);            
         }
     }
     #endregion
+
 
     public void MusicStart()
     {
@@ -92,6 +99,10 @@ public class MusicBehaviour : MonoBehaviour
     public void DestroyMusic()
     {
         Destroy(gameObject);
+    }
+    public void DontDestroyMusic()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 }
 
