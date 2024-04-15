@@ -28,33 +28,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &-8874835188948826386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Tutorial Music/Estadonivel
-  m_EditorClassIdentifier: 
-  Name: Estadonivel
-  StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 187540172
-    data2: 551250871
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - enNivel
-  - victoria
-  - derrota
-  Exists: 1
 --- !u!114 &-8672546202200713148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,10 +56,34 @@ MonoBehaviour:
   - {fileID: -4697599843495632321}
   - {fileID: 3039324191356051324}
   - {fileID: -7228299580058188636}
-  - {fileID: -337210845619927124}
+  - {fileID: 8044120732603325361}
   MinDistance: 1
   MaxDistance: 20
   Length: 76097
+--- !u!114 &-8488205783795527842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tutorial Music/capaTransformacion
+  m_EditorClassIdentifier: 
+  Name: capaTransformacion
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1914237894
+    data2: 38571899
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-8207171013429360728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,28 +135,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &-7810979661942697952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: ../Shadow Cat FMOD/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 638480857342180476
-  FileSizes:
-  - Name: Desktop
-    Value: 1572160
-  - Name: Mobile
-    Value: 3759200
-  Exists: 1
 --- !u!114 &-7313346855929128025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,30 +244,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &-5287866478403045443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Tutorial Music/enPausa
-  m_EditorClassIdentifier: 
-  Name: enPausa
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2876010053
-    data2: 3101461660
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-5246091047823549202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,30 +344,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1950
---- !u!114 &-2850130900156265940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Tutorial Music/capaRalentizado
-  m_EditorClassIdentifier: 
-  Name: capaRalentizado
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2947133405
-    data2: 3992033372
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-2728180484521358524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +366,7 @@ MonoBehaviour:
   - Name: Mobile
     Value: 689216
   Exists: 1
---- !u!114 &-2016292583396091375
+--- !u!114 &-2216200209924866689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -544,7 +471,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 39048
---- !u!114 &-337210845619927124
+--- !u!114 &-871649025749022670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -554,20 +481,55 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level 1 music/bajoEnVida
+  m_Name: parameter:/Tutorial Music/Estadonivel
   m_EditorClassIdentifier: 
-  Name: bajoEnVida
+  Name: Estadonivel
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 2
   Default: 0
   ID:
-    data1: 2952745488
-    data2: 525992252
-  Type: 1
+    data1: 187540172
+    data2: 551250871
+  Type: 2
   IsGlobal: 0
-  Labels: []
+  Labels:
+  - enNivel
+  - victoria
+  - derrota
   Exists: 1
+--- !u!114 &-343507749696132671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Tutorial Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Tutorial Music
+  Guid:
+    Data1: -1452920394
+    Data2: 1303859557
+    Data3: 434649232
+    Data4: -445878339
+  Banks:
+  - {fileID: 1437287984153991905}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8488205783795527842}
+  - {fileID: 4694284539457319424}
+  - {fileID: -871649025749022670}
+  - {fileID: -2216200209924866689}
+  - {fileID: 5603366374657712698}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 43902
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +548,7 @@ MonoBehaviour:
   - {fileID: 4771104988525878001}
   - {fileID: 1437287984153991905}
   - {fileID: -2728180484521358524}
-  - {fileID: -7810979661942697952}
+  - {fileID: 254510753497958981}
   EditorEvents:
   - {fileID: 2922829474967091922}
   - {fileID: -4647419172066955407}
@@ -605,8 +567,8 @@ MonoBehaviour:
   - {fileID: -1449818416812222822}
   - {fileID: 7771623007280424398}
   - {fileID: 5560751964229018071}
-  - {fileID: 3500243153521724819}
-  - {fileID: 6334046101555430425}
+  - {fileID: 72779031897601583}
+  - {fileID: -343507749696132671}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4746038032085203646}
@@ -614,6 +576,55 @@ MonoBehaviour:
   - {fileID: 4720704121527451629}
   cacheTime: 638480857346788103
   cacheVersion: 131603
+--- !u!114 &72779031897601583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/MainMenu Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/MainMenu Ambience
+  Guid:
+    Data1: 237775289
+    Data2: 1172423706
+    Data3: 1065063082
+    Data4: 803774139
+  Banks:
+  - {fileID: 254510753497958981}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 134712
+--- !u!114 &254510753497958981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: ../Shadow Cat FMOD/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638480857342180476
+  FileSizes:
+  - Name: Desktop
+    Value: 1572160
+  - Name: Mobile
+    Value: 3759200
+  Exists: 1
 --- !u!114 &1165118942642783114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,33 +779,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1100
---- !u!114 &3500243153521724819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/MainMenu Ambience
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience/MainMenu Ambience
-  Guid:
-    Data1: 237775289
-    Data2: 1172423706
-    Data3: 1065063082
-    Data4: 803774139
-  Banks:
-  - {fileID: -7810979661942697952}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 134712
 --- !u!114 &3532780089687300857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,6 +804,30 @@ MonoBehaviour:
   Labels:
   - Stone
   - Floor
+  Exists: 1
+--- !u!114 &4694284539457319424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tutorial Music/capaRalentizado
+  m_EditorClassIdentifier: 
+  Name: capaRalentizado
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2947133405
+    data2: 3992033372
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &4720704121527451629
 MonoBehaviour:
@@ -865,30 +873,6 @@ MonoBehaviour:
   - Name: Mobile
     Value: 2586720
   Exists: 1
---- !u!114 &5280164548845404263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Tutorial Music/capaTransformacion
-  m_EditorClassIdentifier: 
-  Name: capaTransformacion
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1914237894
-    data2: 38571899
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &5560751964229018071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -916,7 +900,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6334046101555430425
+--- !u!114 &5603366374657712698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -925,29 +909,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Tutorial Music
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tutorial Music/enPausa
   m_EditorClassIdentifier: 
-  Path: event:/Music/Tutorial Music
-  Guid:
-    Data1: -1452920394
-    Data2: 1303859557
-    Data3: 434649232
-    Data4: -445878339
-  Banks:
-  - {fileID: 1437287984153991905}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 5280164548845404263}
-  - {fileID: -2016292583396091375}
-  - {fileID: -5287866478403045443}
-  - {fileID: -2850130900156265940}
-  - {fileID: -8874835188948826386}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 43902
+  Name: enPausa
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2876010053
+    data2: 3101461660
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7771623007280424398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,3 +978,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1500
+--- !u!114 &8044120732603325361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 1 music/bajoEnVida
+  m_EditorClassIdentifier: 
+  Name: bajoEnVida
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2952745488
+    data2: 525992252
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
