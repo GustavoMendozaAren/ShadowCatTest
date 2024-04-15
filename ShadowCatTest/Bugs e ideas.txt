@@ -1,6 +1,6 @@
 //---BUGS---//
 
-Es posible que el jugador gane la partida e inmediato sea asesinado por el disparo de un enemigo. 
+(Solucionado) Es posible que el jugador gane la partida e inmediato sea asesinado por el disparo de un enemigo. 
 Esto causa que las dos pantallas (victoria y derrota) sean activadas y que el juego se trabe.
 La solución que se me ocurre es hacer al jugador invunerable una vez toque la meta.
 
