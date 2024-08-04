@@ -10,6 +10,8 @@ TagManager:
   - DropBala
   - Bullet
   - Coin
+  - Coin1
+  - Coin2
   layers:
   - Default
   - TransparentFX

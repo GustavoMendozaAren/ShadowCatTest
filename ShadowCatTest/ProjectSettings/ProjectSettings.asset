@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 7.85
+  bundleVersion: 2024.2.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -249,8 +249,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/arenm/Documents/GUSTAVO/5.UAQ/7mo_S/5.GameDev3/11.Key/key5/user7.keystore
-  AndroidKeyaliasName: user7k
+  AndroidKeystoreName: C:/Users/arenm/Documents/1.PERSONAL/2.ShadowCat/2.KeyBuilds/2024.2/1/user.keystore
+  AndroidKeyaliasName: userkey
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1

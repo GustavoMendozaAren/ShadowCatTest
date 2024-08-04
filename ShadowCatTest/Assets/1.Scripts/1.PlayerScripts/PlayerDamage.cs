@@ -29,8 +29,8 @@ public class PlayerDamage : MonoBehaviour
     {
         if (canDamage)
         {
-
-        currentHealth--;
+            if(StateGameController.playerCanDie)
+            currentHealth--;
             healthBar.SetHealth(currentHealth);
 
             if (currentHealth == 0)
