@@ -21,10 +21,10 @@ public class StoreEqp1Rev : MonoBehaviour
         coinsText = GameObject.Find("CoinsText").GetComponent<TMP_Text>();
         coinsText.text = StateGameController.coinsTotal.ToString();
 
-        currentPowTxt.text = StateGameController.currentPowerText.ToString();
+        currentPowTxt.text = StateGameController.currentDamageText.ToString();
         nextPowtxt.text = StateGameController.nextPowerText.ToString();
 
-        BarrasIndexActive();
+        BarrasDamageIndexActive();
     }
 
     public void Eqp1RevSmallBttnDeact()
@@ -72,18 +72,18 @@ public class StoreEqp1Rev : MonoBehaviour
             else
             {
                 StateGameController.barrasPowerIndex++;
-                BarrasIndexActive();
+                BarrasDamageIndexActive();
 
                 StateGameController.revolverPower += 0.5f;
                 
                 StateGameController.coinsTotal -= 10;
                 coinsText.text = StateGameController.coinsTotal.ToString();
 
-                // CurrentPoewerTextNumber
-                StateGameController.currentPowerText += 5;
-                currentPowTxt.text = StateGameController.currentPowerText.ToString();
+                // CurrentDamageTextNumber
+                StateGameController.currentDamageText += 5;
+                currentPowTxt.text = StateGameController.currentDamageText.ToString();
 
-                // NextPowerTextnumber
+                // NextDamageTextnumber
                 StateGameController.nextPowerText += 5;
                 nextPowtxt.text = StateGameController.nextPowerText.ToString();
             }
@@ -96,7 +96,7 @@ public class StoreEqp1Rev : MonoBehaviour
         
     }
 
-    public void BarrasIndexActive()
+    public void BarrasDamageIndexActive()
     {
         if (StateGameController.barrasPowerIndex == 0)
         {

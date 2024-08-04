@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class StateGameController : MonoBehaviour
 {
-    public static int coinsTotal;
+
+    //OLD
 
     public static int weaponPower;
     public static int lifeValue;
@@ -12,7 +13,11 @@ public class StateGameController : MonoBehaviour
 
     public static float bulletPower = 1f;
 
-    // ***** New UI Store *****
+    // *************** NEW UI STORE ********************
+
+    // COINS
+
+    public static int coinsTotal;
 
     // Actual Power
 
@@ -24,7 +29,7 @@ public class StateGameController : MonoBehaviour
 
     // Text of power
 
-    public static int currentPowerText = 10;
+    public static int currentDamageText = 10;
     public static int nextPowerText = 15;
 
     // Key to Clue Animation
@@ -39,9 +44,23 @@ public class StateGameController : MonoBehaviour
 
     public static bool isCat = false;
 
+    // Player Can Die
+
+    public static bool playerCanDie = true;
+
+    // Scene Number
+
+    public static int sceneNo = 0; 
+
     // TimeScales
 
     public static float playerTime = 1f;
     public static float enemiesTime = 1f;
     public static float globalTime = 1f;
+
+    // LEVEL 1 
+
+    public static int levelTut = 0;
+    public static int level1Coins = 0;
+    public static int level1Score = 0;
 }

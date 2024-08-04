@@ -280,7 +280,7 @@ public class SwitchLite : MonoBehaviour
     {
         if (JumpBttn)
         {
-            Debug.Log("JumpBttn");
+            //Debug.Log("JumpBttn");
             if (isOnGround)
             {
                 hasJumped = true;

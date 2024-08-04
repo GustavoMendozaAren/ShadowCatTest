@@ -35,7 +35,7 @@ public class ItemsStore : MonoBehaviour
         }
         slider[0].value = StateGameController.weaponPower;
     }*/
-
+    /*
     public void PlusWeaponButton()
     {
         if(StateGameController.coinsTotal >= 10)
@@ -101,5 +101,5 @@ public class ItemsStore : MonoBehaviour
         {
             neeeCoinsAnim[2].SetTrigger("Need30Coins");
         }
-    }
+    }*/
 }

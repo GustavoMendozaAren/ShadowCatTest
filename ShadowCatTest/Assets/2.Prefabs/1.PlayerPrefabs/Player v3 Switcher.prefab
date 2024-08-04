@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 987042752540572856}
   - component: {fileID: 7960696689426930608}
   - component: {fileID: 2489155813636541823}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Player v3 Switcher
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   GroundCheck: {fileID: 5394420143754477503}
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 192
   Anim:
   - {fileID: 7743830476673020576}
   - {fileID: 7743830476564895308}
@@ -130,6 +130,9 @@ MonoBehaviour:
   BttnsCat: {fileID: 0}
   BtnJmpCat: {fileID: 0}
   BtnDblCat: {fileID: 0}
+  levelMusic: {fileID: 0}
+  fillImage: {fileID: 0}
+  slowbutonbarrier: {fileID: 0}
 --- !u!114 &7960696689426930608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +177,7 @@ GameObject:
   - component: {fileID: 7743830476564895346}
   - component: {fileID: 7743830476564895309}
   - component: {fileID: 1352969230}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Player 2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -319,7 +322,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7743830476564895310}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ad8952d6cc79ef4f82e5c72616c19e2, type: 3}
   m_Name: 
@@ -339,7 +342,7 @@ GameObject:
   - component: {fileID: 7743830476673020580}
   - component: {fileID: 7743830476673020581}
   - component: {fileID: 874208159}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -484,7 +487,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7743830476673020579}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ad8952d6cc79ef4f82e5c72616c19e2, type: 3}
   m_Name: 
