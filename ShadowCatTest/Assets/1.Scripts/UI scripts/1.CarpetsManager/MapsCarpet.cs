@@ -14,29 +14,35 @@ public class MapsCarpet : MonoBehaviour
     public void PlayLevel1()
     {
         SceneManager.LoadScene(2);
+        StateGameController.sceneNo = 1;
     }
 
     public void PlayLeve2()
     {
         SceneManager.LoadScene(3);
+        StateGameController.sceneNo = 2;
     }
     public void PlayLeve3()
     {
-        comingSoon.SetTrigger("Coming");
+        SceneManager.LoadScene(5);
+        StateGameController.sceneNo = 3;
     }
 
     public void PlayLeve4()
     {
-        comingSoon.SetTrigger("Coming");
+        SceneManager.LoadScene(5);
+        StateGameController.sceneNo = 4;
     }
     public void PlayLeve5()
     {
-        comingSoon.SetTrigger("Coming");
+        SceneManager.LoadScene(5);
+        StateGameController.sceneNo = 5;
     }
 
     public void PlayLeve6()
     {
-        comingSoon.SetTrigger("Coming");
+        SceneManager.LoadScene(5);
+        StateGameController.sceneNo = 6;
     }
 
 

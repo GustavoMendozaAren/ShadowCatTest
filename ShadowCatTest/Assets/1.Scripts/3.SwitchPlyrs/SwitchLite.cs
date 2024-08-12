@@ -37,7 +37,7 @@ public class SwitchLite : MonoBehaviour
     public GameObject[] Balas;
     int BalasIndex = 0;
 
-    public GameObject BalasJugador1;
+    public GameObject BalasJugador1, extraBulletsObj;
 
 
     //Script
@@ -56,8 +56,6 @@ public class SwitchLite : MonoBehaviour
     bool ShootBttn = false;
     bool JumpBttn = false;
     bool RunBttn = false;
-    bool doubleJumpBttn = false;
-    bool dashBttn = false;
 
     //ButtonsSwhitch
     public GameObject BttnsDetective, BttnsCat;
@@ -110,6 +108,8 @@ public class SwitchLite : MonoBehaviour
                 players[i].SetActive(false);
             }
         }
+
+        BalasIndex = StateGameController.bulletsInGame - 1;
     }
 
     void Update()
@@ -295,7 +295,6 @@ public class SwitchLite : MonoBehaviour
             {
                 if ((JumpBttn || Input.GetKeyDown(KeyCode.Space)) && currentPlayerIndex == 1 && doubleJump)
                 {
-                    doubleJumpBttn = false;
                     hasdoubleJumped = true;
                     AnimationParameters("DoubleJump", true);
                     rb.velocity = new Vector2(rb.velocity.x, jump2Power);
@@ -322,30 +321,34 @@ public class SwitchLite : MonoBehaviour
         if (currentPlayerIndex != 0)
         {
             BalasJugador1.SetActive(false);
+            extraBulletsObj.SetActive(false);
             gunImage.SetActive(false);
         }
         else
         {
             BalasJugador1.SetActive(true);
+            extraBulletsObj.SetActive(true);
             gunImage.SetActive(true);
         }
 
         if (currentPlayerIndex == 0 && (Input.GetKeyDown(KeyCode.W) || ShootBttn))
         {
-            if (BalasIndex < 7)
+            if (BalasIndex > -1)
             {
+                Debug.Log(BalasIndex);
                 GameObject bullet = Instantiate(RevolverBullet, transform.position, Quaternion.identity);
                 bullet.GetComponent<RevolverBullet>().Speed *= transform.localScale.x;
+
                 Anim[0].SetTrigger("Shoot");
                 Balas[BalasIndex].SetActive(false);
 
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.shoot, this.transform.position);
 
-                BalasIndex++;
+                BalasIndex--;
             }
-            else if (BalasIndex >= 7)
+            else if (BalasIndex <= -1)
             {
-                BalasIndex = 7;
+                BalasIndex = -1;
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.emptyGun, this.transform.position);
             }
             ShootBttn = false;
@@ -363,11 +366,11 @@ public class SwitchLite : MonoBehaviour
         }
         if (collision.CompareTag("DropBala"))
         {
-            BalasIndex--;
+            BalasIndex++;
 
-            if (BalasIndex <= 0)
+            if (BalasIndex >= StateGameController.bulletsInGame - 1)
             {
-                BalasIndex = 0;
+                BalasIndex = StateGameController.bulletsInGame - 1;
             }
 
             Balas[BalasIndex].SetActive(true);
@@ -481,11 +484,6 @@ public class SwitchLite : MonoBehaviour
     public void RunButton(bool runBttnCheck)
     {
         RunBttn = runBttnCheck;
-    }
-
-    public void DashButton()
-    {
-        dashBttn = true;
     }
 
     public void SlowButton()

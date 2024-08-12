@@ -4,37 +4,58 @@ using UnityEngine;
 
 public class Pista1 : MonoBehaviour
 {
-    public GameObject pista1Panel, closePistaP1PanelBttn;
+    public GameObject[] pistaPaneles;
+    public GameObject[] closePistaPanelBttn;
 
-    public GameObject level2SmallBttn;
+    public GameObject[] levelUnlocks;
+
+    private int _pistaNo;
 
     private void Start()
     {
-        if (StateGameController.pista1)
+        _pistaNo = StateGameController.sceneNo;
+        if (StateGameController.pista1 && StateGameController.candado[0] == 1)
         {
             StartCoroutine(Pista1Timer());
-            StateGameController.pista1 = false;
+            levelUnlocks[0].SetActive(true);
         }
-        if (StateGameController.level2Key)
+        if (StateGameController.pista2 && StateGameController.candado[1] == 1)
         {
-            level2SmallBttn.SetActive(true);
+            StartCoroutine(Pista1Timer());
+            levelUnlocks[1].SetActive(true);
+        }
+        if (StateGameController.pista3 && StateGameController.candado[2] == 1)
+        {
+            StartCoroutine(Pista1Timer());
+            levelUnlocks[2].SetActive(true);
+        }
+        if (StateGameController.pista4 && StateGameController.candado[3] == 1)
+        {
+            Debug.Log("PistaActivada");
+            StartCoroutine(Pista1Timer());
+            levelUnlocks[3].SetActive(true);
+        }
+        if (StateGameController.pista5 && StateGameController.candado[4] == 1)
+        {
+            StartCoroutine(Pista1Timer());
+            levelUnlocks[4].SetActive(true);
+        }
+        if (StateGameController.pista6 && StateGameController.candado[5] == 1)
+        {
+            StartCoroutine(Pista1Timer());
         }
     }
 
     IEnumerator Pista1Timer()
     {
-        pista1Panel.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        closePistaP1PanelBttn.SetActive(true);
+        Debug.Log("RutinaActivada");
+        pistaPaneles[_pistaNo - 1].SetActive(true);
+        yield return new WaitForSeconds(4f);
+        closePistaPanelBttn[_pistaNo - 1].SetActive(true);
     }
 
     public void ClosePista1PanelBttn()
     {
-        pista1Panel.SetActive(false);
-    }
-
-    public void Pista1Test()
-    {
-        StartCoroutine(Pista1Timer());
+        pistaPaneles[_pistaNo - 1].SetActive(false);
     }
 }
