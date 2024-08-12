@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class SceneID : MonoBehaviour
 {
-
-    void Start()
-    {
-
-        StateGameController.sceneNo = 1;
-
-    }
+   
 
 }

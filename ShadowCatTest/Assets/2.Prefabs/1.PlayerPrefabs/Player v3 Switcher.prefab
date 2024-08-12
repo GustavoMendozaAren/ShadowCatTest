@@ -123,7 +123,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   BalasJugador1: {fileID: 0}
+  extraBulletsObj: {fileID: 0}
   PDS: {fileID: 7960696689426930608}
   joystick: {fileID: 0}
   BttnsDetective: {fileID: 0}

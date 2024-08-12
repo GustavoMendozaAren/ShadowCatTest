@@ -37,7 +37,12 @@ public class GameManagerScript : MonoBehaviour
         levelMusic.NotificarCambioMusica("Pausa", false);
         levelMusic.NotificarCambioMusica("EsGato", false);
         levelMusic.NotificarCambioMusica("JuegoEnCurso");
-        SceneManager.LoadScene("SampleScene Jacob");       
+        if (StateGameController.sceneNo == 1)
+            SceneManager.LoadScene("TutScene");
+        if (StateGameController.sceneNo == 2)
+            SceneManager.LoadScene("SampleScene Jacob");
+        if (StateGameController.sceneNo > 2)
+            SceneManager.LoadScene("SceneLoopTest");
         Time.timeScale = 1f;
     }
 

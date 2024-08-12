@@ -17,7 +17,8 @@ public class StateGameController : MonoBehaviour
 
     // COINS
 
-    public static int coinsTotal;
+    public static int coinsTotal = 50;
+    //public static int coinID = 0;
 
     // Actual Power
 
@@ -26,19 +27,28 @@ public class StateGameController : MonoBehaviour
     // Barras
 
     public static int barrasPowerIndex = -1;
+    public static int barrasAmountIndex = -1;
+
+    public static int bulletsInGame = 6;
 
     // Text of power
 
     public static int currentDamageText = 10;
     public static int nextPowerText = 15;
 
+    public static int currentAmountTxt = 6;
+    public static int nextAmountTxt = 8;
+
     // Key to Clue Animation
 
     public static bool pista1 = false;
+    public static bool pista2 = false;
+    public static bool pista3 = false;
+    public static bool pista4 = false;
+    public static bool pista5 = false;
+    public static bool pista6 = false;
 
-    // Levels Key To Unlock
-
-    public static bool level2Key = false;
+    public static int[] candado = new int [5];
 
     // Transform to cat
 
@@ -60,7 +70,10 @@ public class StateGameController : MonoBehaviour
 
     // LEVEL 1 
 
-    public static int levelTut = 0;
     public static int level1Coins = 0;
-    public static int level1Score = 0;
+    public static int level2Coins = 0;
+    public static int level3Coins = 0;
+    public static int level4Coins = 0;
+    public static int level5Coins = 0;
+    public static int level6Coins = 0;
 }
