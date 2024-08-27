@@ -35,32 +35,26 @@ public class Win : MonoBehaviour
             if (pistaID == 1)
             {
                 StateGameController.pista1 = true;
-                StateGameController.candado[0]++;
             }
             if (pistaID == 2)
             {
                 StateGameController.pista2 = true;
-                StateGameController.candado[1]++;
             }
             if (pistaID == 3)
             {
                 StateGameController.pista3 = true;
-                StateGameController.candado[2]++;
             }
             if (pistaID == 4)
             {
                 StateGameController.pista4 = true;
-                StateGameController.candado[3]++;
             }
             if (pistaID == 5)
             {
                 StateGameController.pista5 = true;
-                StateGameController.candado[4]++;
             }
             if (pistaID == 6)
             {
                 StateGameController.pista6 = true;
-                StateGameController.candado[5]++;
             }
 
             Pista1Win.SetActive(false);
