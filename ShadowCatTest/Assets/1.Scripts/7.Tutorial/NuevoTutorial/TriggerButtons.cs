@@ -7,8 +7,7 @@ public class TriggerButtons : MonoBehaviour
     [SerializeField]
     int identificador = 0;
 
-    [SerializeField]
-    GameObject buttonAppear;
+    [SerializeField] GameObject buttonAppear, luz;
 
     public MusicBridge levelMusic;
 
@@ -26,6 +25,7 @@ public class TriggerButtons : MonoBehaviour
         {
             buttonAppear.SetActive(true);
             gameObject.SetActive(false);
+            luz.SetActive(true);
             levelMusic.NotificarCambioMusica("Acorde");
         }
     }
