@@ -19,8 +19,8 @@ MonoBehaviour:
     Data3: 528301469
     Data4: 264377358
   Banks:
-  - {fileID: -4746038032085203646}
   - {fileID: 1437287984153991905}
+  - {fileID: -4746038032085203646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638480857342360017
+  lastModified: 638618215402670454
   FileSizes:
   - Name: Desktop
     Value: 5812
@@ -359,12 +359,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/SoundEffects.bank
   Name: SoundEffects
   StudioPath: bank:/SoundEffects
-  lastModified: 638480857346508847
+  lastModified: 638618225092927304
   FileSizes:
   - Name: Desktop
-    Value: 326752
+    Value: 380416
   - Name: Mobile
-    Value: 689216
+    Value: 1006720
   Exists: 1
 --- !u!114 &-2216200209924866689
 MonoBehaviour:
@@ -569,12 +569,14 @@ MonoBehaviour:
   - {fileID: 5560751964229018071}
   - {fileID: 72779031897601583}
   - {fileID: -343507749696132671}
+  - {fileID: 4932029859406627786}
+  - {fileID: 2482293873256881879}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4746038032085203646}
   StringsBanks:
   - {fileID: 4720704121527451629}
-  cacheTime: 638480857346788103
+  cacheTime: 638618225092927304
   cacheVersion: 131603
 --- !u!114 &72779031897601583
 MonoBehaviour:
@@ -618,12 +620,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638480857342180476
+  lastModified: 638618215402411130
   FileSizes:
   - Name: Desktop
-    Value: 1572160
+    Value: 1574272
   - Name: Mobile
-    Value: 3759200
+    Value: 3761312
   Exists: 1
 --- !u!114 &1165118942642783114
 MonoBehaviour:
@@ -667,7 +669,7 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638480857345387085
+  lastModified: 638618182148673111
   FileSizes:
   - Name: Desktop
     Value: 4139648
@@ -701,6 +703,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &2482293873256881879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Sounds/CoinPickUp
+  m_EditorClassIdentifier: 
+  Path: event:/Game Sounds/CoinPickUp
+  Guid:
+    Data1: -860269467
+    Data2: 1176864788
+    Data3: -380500335
+    Data4: -923767140
+  Banks:
+  - {fileID: -2728180484521358524}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2922829474967091922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -844,12 +873,12 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638480857342405049
+  lastModified: 638618215402720521
   FileSizes:
   - Name: Desktop
-    Value: 2628
+    Value: 2732
   - Name: Mobile
-    Value: 2628
+    Value: 2732
   Exists: 1
 --- !u!114 &4771104988525878001
 MonoBehaviour:
@@ -866,13 +895,40 @@ MonoBehaviour:
   Path: ../Shadow Cat FMOD/Build/Desktop/Videos.bank
   Name: Videos
   StudioPath: bank:/Videos
-  lastModified: 638480857346788103
+  lastModified: 638618182152725166
   FileSizes:
   - Name: Desktop
     Value: 830176
   - Name: Mobile
     Value: 2586720
   Exists: 1
+--- !u!114 &4932029859406627786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/bajoEnVida
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/bajoEnVida
+  Guid:
+    Data1: -37019873
+    Data2: 1149939893
+    Data3: -2125535071
+    Data4: 1562391053
+  Banks:
+  - {fileID: 254510753497958981}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5560751964229018071
 MonoBehaviour:
   m_ObjectHideFlags: 0

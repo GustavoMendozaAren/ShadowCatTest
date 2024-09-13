@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ee47457e-3e66-4a37-b3e6-3969097aef3d}">
+		<property name="assetPath">
+			<value>retro-coin-3-236679.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.47020408163265304</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d9bd23d7-4e30-4531-87a1-c793bf604172}</destination>
+		</relationship>
+	</object>
+</objects>

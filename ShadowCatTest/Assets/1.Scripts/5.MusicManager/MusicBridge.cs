@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MusicBridge : MonoBehaviour // MusicBridge conecta los distintos scripts del juego con MusicBehaviour.
 {
-    public MusicBehaviour musicBehaviourInstance;
+    MusicBehaviour musicBehaviourInstance;
 
     void Start()
     {
