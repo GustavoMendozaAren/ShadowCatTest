@@ -17,8 +17,7 @@ public class StateGameController : MonoBehaviour
 
     // COINS
 
-    public static int coinsTotal = 50;
-    //public static int coinID = 0;
+    public static int coinsTotal = 0;
 
     // Actual Power
 
@@ -41,13 +40,6 @@ public class StateGameController : MonoBehaviour
 
     // Key to Clue Animation
 
-    public static bool pista1 = false;
-    public static bool pista2 = false;
-    public static bool pista3 = false;
-    public static bool pista4 = false;
-    public static bool pista5 = false;
-    public static bool pista6 = false;
-
     public static int[] candado = new int [5];
 
     // Transform to cat
@@ -60,7 +52,7 @@ public class StateGameController : MonoBehaviour
 
     // Scene Number
 
-    public static int sceneNo = 0; 
+    public static int sceneNo = 0;
 
     // TimeScales
 

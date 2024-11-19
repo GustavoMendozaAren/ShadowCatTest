@@ -8,7 +8,6 @@ public class Win : MonoBehaviour
     public GameObject[] panel;
 
     public GameObject Pista1Win;
-    private int pistaID;
 
     public MusicBridge levelMusic;
 
@@ -23,39 +22,12 @@ public class Win : MonoBehaviour
         damageInstance = playerDamageInstance.GetComponent<PlayerDamage>();
 
         StateGameController.playerCanDie = true;
-
-        pistaID = StateGameController.sceneNo;
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
             StartCoroutine(WinConditionCo());
-
-            if (pistaID == 1)
-            {
-                StateGameController.pista1 = true;
-            }
-            if (pistaID == 2)
-            {
-                StateGameController.pista2 = true;
-            }
-            if (pistaID == 3)
-            {
-                StateGameController.pista3 = true;
-            }
-            if (pistaID == 4)
-            {
-                StateGameController.pista4 = true;
-            }
-            if (pistaID == 5)
-            {
-                StateGameController.pista5 = true;
-            }
-            if (pistaID == 6)
-            {
-                StateGameController.pista6 = true;
-            }
 
             Pista1Win.SetActive(false);
 
