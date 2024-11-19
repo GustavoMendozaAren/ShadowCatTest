@@ -15,8 +15,6 @@ public class TriggerButtons : MonoBehaviour
     {
         GameObject instanciaMusic = GameObject.Find("Music");
         levelMusic = instanciaMusic.GetComponent<MusicBridge>();
-
-        StateGameController.sceneNo = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
