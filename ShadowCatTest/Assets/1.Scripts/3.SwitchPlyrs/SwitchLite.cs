@@ -378,25 +378,6 @@ public class SwitchLite : MonoBehaviour
         }
     }
 
-    /*private IEnumerator Dash()
-    {
-        canDash = false;
-
-        Anim[1].SetTrigger("Dash");
-
-        if (h < 0)
-        {
-            transform.position += new Vector3(dashVelocity * -speed * Time.deltaTime, 0, 0);
-        }else
-        {
-            transform.position += new Vector3(dashVelocity * speed * Time.deltaTime, 0, 0);
-        }
-        yield return new WaitForSeconds(dashTime);
-        yield return new WaitForSeconds(dashWait);
-        canDash = true;
-        dashBttn = false;
-    }*/
-
     private void SlowMechanic()
     {
         if (slowBttn)
@@ -408,25 +389,6 @@ public class SwitchLite : MonoBehaviour
             Anim[1].speed = 0.8f;
             StartCoroutine(SlowMechanicCo());
             slowBttn = false;
-
-
-            /*
-            //timerCatBttn = 0f;
-            fillImage.fillAmount = 0f;
-            timerCatBttn += Time.deltaTime * .5f;
-            
-            fillImage.fillAmount = timerCatBttn;
-            Debug.Log(timerCatBttn);
-            Debug.Log(fillImage.fillAmount);
-
-            if (timerCatBttn >= 1f)
-            {
-                fillImage.fillAmount = 1f;
-                timerCatBttn = 1f;
-            }
-            
-            StartCoroutine(SlowMechanicCo());
-            */
         }
     }
 
@@ -440,9 +402,6 @@ public class SwitchLite : MonoBehaviour
         Anim[0].speed = 1f;
         Anim[1].speed = 1f;
         levelMusic.NotificarCambioMusica("RalentizarEnUso", false);
-        //Time.fixedDeltaTime = 1f;
-
-        //timerCatBttn = 0f;
     }
 
     public void Player1Stats()
