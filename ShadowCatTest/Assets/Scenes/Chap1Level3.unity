@@ -27036,25 +27036,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: RataPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 7937551851458144212, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144213, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144213, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7937551851458144213, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.58
+      value: 25.34
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144213, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.028
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144213, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_LocalPosition.z
