@@ -137,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 419046793, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: LES
       value: 
-      objectReference: {fileID: 676257650701767419}
+      objectReference: {fileID: 0}
     - target: {fileID: 419046793, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: PDS
       value: 
@@ -170,9 +170,53 @@ PrefabInstance:
       propertyPath: transformDelantero
       value: 
       objectReference: {fileID: 7441448082397521210}
+    - target: {fileID: 1660813730, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660813731, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660813731, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.083
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660813733, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660813733, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937551851458143787, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3497452
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937551851458143787, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_Size.y
+      value: 0.18309161
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937551851458143787, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03512737
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937551851458143787, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10845418
+      objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144208, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_Name
       value: RataPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937551851458144208, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937551851458144208, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_TagString
+      value: IgnorePlayer
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144213, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_RootOrder
@@ -218,19 +262,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1660813732, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
---- !u!114 &676257650701767419 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1660813732, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
-  m_PrefabInstance: {fileID: 676257652271354719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 220a7f6637f9fd847a093907c5159eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7441448083108279434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7937551851458144213, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}

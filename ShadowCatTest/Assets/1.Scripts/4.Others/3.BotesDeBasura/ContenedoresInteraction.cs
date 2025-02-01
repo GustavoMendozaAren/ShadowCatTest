@@ -5,6 +5,7 @@ using UnityEngine;
 public class ContenedoresInteraction : MonoBehaviour
 {
     [SerializeField] private GameObject contendorAbierto;
+    [SerializeField] private GameObject objetoOculto;
 
     private SpriteRenderer contendorCerradoSprite;
 
@@ -16,5 +17,6 @@ public class ContenedoresInteraction : MonoBehaviour
     {
         contendorCerradoSprite.enabled = false;
         contendorAbierto.SetActive(true);
+        objetoOculto.SetActive(true);
     }
 }
