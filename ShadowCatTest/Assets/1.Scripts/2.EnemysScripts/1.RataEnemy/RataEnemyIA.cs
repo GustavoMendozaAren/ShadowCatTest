@@ -13,6 +13,7 @@ public class RataEnemyIA : MonoBehaviour
 
     private Transform objetivoActual; 
     private Animator animator;
+    private float direccion;
 
     void Start()
     {
@@ -33,8 +34,8 @@ public class RataEnemyIA : MonoBehaviour
         if (Vector2.Distance(transform.position, objetivoActual.position) < 0.5f)
         {
             objetivoActual = (objetivoActual == transformTrasero) ? transformDelantero : transformTrasero;
-            // Voltear sprite según la dirección del movimiento
-            float direccion = (objetivoActual.position.x > transform.position.x) ? 4f : -4f;
+
+            direccion = (objetivoActual.position.x > transform.position.x) ? 4f : -4f;
             ChangeDirection(direccion);
         }
     }

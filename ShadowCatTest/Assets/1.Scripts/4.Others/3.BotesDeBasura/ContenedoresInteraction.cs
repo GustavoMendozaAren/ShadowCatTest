@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class ContenedoresInteraction : MonoBehaviour
 {
+    [SerializeField] private GameObject contendorAbierto;
+
+    private SpriteRenderer contendorCerradoSprite;
+
+    private void Start()
+    {
+        contendorCerradoSprite = GetComponent<SpriteRenderer>();
+    }
     private void OnMouseDown()
     {
-        gameObject.SetActive(false);
+        contendorCerradoSprite.enabled = false;
+        contendorAbierto.SetActive(true);
     }
 }
