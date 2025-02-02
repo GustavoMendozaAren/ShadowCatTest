@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene Jacob.unity
     guid: d5138dd9158dbbe45bcdc045e7b18a4b
   - enabled: 1
+    path: Assets/Scenes/Chap1Level3.unity
+    guid: 74eeb0c0669d03744846487411e915b8
+  - enabled: 1
     path: Assets/Scenes/SceneLoopTest.unity
     guid: 23cd5e342ac45944c8f43d3b4e1d4513
   m_configObjects: {}

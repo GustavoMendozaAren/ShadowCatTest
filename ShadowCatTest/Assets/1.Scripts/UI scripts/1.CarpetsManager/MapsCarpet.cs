@@ -31,18 +31,18 @@ public class MapsCarpet : MonoBehaviour
 
     public void PlayLeve4()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
         StateGameController.sceneNo = 4;
     }
     public void PlayLeve5()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
         StateGameController.sceneNo = 5;
     }
 
     public void PlayLeve6()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
         StateGameController.sceneNo = 6;
     }
 
