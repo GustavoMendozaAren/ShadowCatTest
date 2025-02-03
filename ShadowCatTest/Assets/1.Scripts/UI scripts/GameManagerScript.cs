@@ -41,7 +41,9 @@ public class GameManagerScript : MonoBehaviour
             SceneManager.LoadScene("TutScene");
         if (StateGameController.sceneNo == 2)
             SceneManager.LoadScene("SampleScene Jacob");
-        if (StateGameController.sceneNo > 2)
+        if (StateGameController.sceneNo == 3)
+            SceneManager.LoadScene("Chap1Level3");
+        if (StateGameController.sceneNo > 3)
             SceneManager.LoadScene("SceneLoopTest");
         Time.timeScale = 1f;
     }
