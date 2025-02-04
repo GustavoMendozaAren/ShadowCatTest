@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 2982598176825572231}
   - component: {fileID: 2982598176825572228}
   - component: {fileID: 2982598176825572251}
-  - component: {fileID: 2982598176825572250}
   - component: {fileID: 2982598175755880813}
   m_Layer: 0
   m_Name: EnemyBand
@@ -277,21 +276,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2982598176825572250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2982598176825572224}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6df2da819afc9b0418a698668624f72c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1.8
-  GroundCollision: {fileID: 2982598177611732164}
-  LES: {fileID: 2982598177056619207}
 --- !u!114 &2982598175755880813
 MonoBehaviour:
   m_ObjectHideFlags: 0
