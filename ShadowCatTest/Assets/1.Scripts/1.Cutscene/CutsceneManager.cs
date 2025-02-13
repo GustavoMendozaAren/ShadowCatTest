@@ -13,6 +13,7 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private GameObject[] dialogos;
 
     [Header("ESCENA2")]
+    [SerializeField] private GameObject velas;
     [SerializeField] private GameObject[] dialogos2;
     
 
@@ -47,6 +48,24 @@ public class CutsceneManager : MonoBehaviour
     public void Escena1D4()
     {
         dialogos[2].SetActive(false);
+        dialogos[3].SetActive(true);
+    }
+
+    public void Escena1D5()
+    {
+        dialogos[3].SetActive(false);
+        dialogos[4].SetActive(true);
+    }
+
+    public void Escena1D6()
+    {
+        dialogos[4].SetActive(false);
+        dialogos[5].SetActive(true);
+    }
+
+    public void Escena1D7()
+    {
+        dialogos[5].SetActive(false);
         detectiveSorprendido.SetActive(true);
     }
 
@@ -54,17 +73,32 @@ public class CutsceneManager : MonoBehaviour
     {
         escenas[0].SetActive(false);
         detectiveSorprendido.SetActive(false);
-        escenas[1].SetActive(true);
+        StartCoroutine(Escena2Inicio());
     }
 
     public void Escena2D2()
     {
+        dialogos2[0].SetActive(false);
+        StartCoroutine(Escena2Velas());
+    }
+
+    public void Escena2D3End()
+    {
+        escenas[1].SetActive(false);
+        escenas[2].SetActive(true);
+    }
+
+    IEnumerator Escena2Inicio()
+    {
+        escenas[1].SetActive(true);
+        yield return new WaitForSeconds(3f);
         dialogos2[0].SetActive(true);
     }
 
-    public void Escena2D3()
+    IEnumerator Escena2Velas()
     {
-        dialogos2[0].SetActive(false);
+        velas.SetActive(true);
+        yield return new WaitForSeconds(4f);
         dialogos2[1].SetActive(true);
     }
 }
