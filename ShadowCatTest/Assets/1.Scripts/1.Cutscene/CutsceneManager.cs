@@ -15,7 +15,11 @@ public class CutsceneManager : MonoBehaviour
     [Header("ESCENA2")]
     [SerializeField] private GameObject velas;
     [SerializeField] private GameObject[] dialogos2;
-    
+
+    [Header("ESCENA3")]
+    [SerializeField] private GameObject bartenderSurp3;
+    [SerializeField] private GameObject detectiveSurp3;
+    [SerializeField] private GameObject[] dialogos3;
 
 
     void Start()
@@ -82,10 +86,17 @@ public class CutsceneManager : MonoBehaviour
         StartCoroutine(Escena2Velas());
     }
 
-    public void Escena2D3End()
+    public void Escena2D3()
+    {
+        dialogos2[1].SetActive(false);
+        dialogos2[2].SetActive(true);
+    }
+
+    public void Escena2D4End()
     {
         escenas[1].SetActive(false);
         escenas[2].SetActive(true);
+        StartCoroutine(Escena3InicioSBFadeIn());
     }
 
     IEnumerator Escena2Inicio()
@@ -101,4 +112,19 @@ public class CutsceneManager : MonoBehaviour
         yield return new WaitForSeconds(4f);
         dialogos2[1].SetActive(true);
     }
+
+    IEnumerator Escena3InicioSBFadeIn()
+    {
+        yield return new WaitForSeconds(3f);
+        dialogos3[0].SetActive(true);
+    }
+
+    public void Escena3D1()
+    {
+        bartenderSurp3.SetActive(false);
+        dialogos3[0].SetActive(false);
+        dialogos3[1].SetActive(true);
+    }
+
+    
 }
