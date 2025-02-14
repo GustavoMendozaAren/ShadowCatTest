@@ -19,11 +19,15 @@ public class CutsceneManager : MonoBehaviour
     [Header("ESCENA3")]
     [SerializeField] private GameObject bartenderSurp3;
     [SerializeField] private GameObject detectiveSurp3;
+    [SerializeField] private GameObject bartenderNorm3;
+    [SerializeField] private GameObject detectiveNorm3;
     [SerializeField] private GameObject[] dialogos3;
+    private int id3;
 
 
     void Start()
     {
+        id3 = 1;
         StartCoroutine(Escena1D1());
     }
 
@@ -122,8 +126,30 @@ public class CutsceneManager : MonoBehaviour
     public void Escena3D1()
     {
         bartenderSurp3.SetActive(false);
+        bartenderNorm3.SetActive(true);
         dialogos3[0].SetActive(false);
         dialogos3[1].SetActive(true);
+    }
+
+    public void Escena3DN()
+    {
+        if (id3 < 12)
+        {
+            dialogos3[id3].SetActive(false);
+            dialogos3[id3 + 1].SetActive(true);
+        } else if (id3 >= 12)
+        {
+            escenas[2].SetActive(false);
+            escenas[3].SetActive(true);
+        }
+
+        if (id3 == 1)
+        {
+            detectiveSurp3.SetActive(false);
+            detectiveNorm3.SetActive(true);
+        }
+
+        id3++;
     }
 
     
