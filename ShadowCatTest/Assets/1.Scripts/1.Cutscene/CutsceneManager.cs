@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -17,9 +19,8 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private GameObject[] dialogos2;
 
     [Header("ESCENA3")]
-    [SerializeField] private GameObject bartenderSurp3;
+    [SerializeField] private GameObject[] bartender3;
     [SerializeField] private GameObject detectiveSurp3;
-    [SerializeField] private GameObject bartenderNorm3;
     [SerializeField] private GameObject detectiveNorm3;
     [SerializeField] private GameObject[] dialogos3;
     private int id3;
@@ -136,14 +137,20 @@ public class CutsceneManager : MonoBehaviour
 
     public void Escena3D1()
     {
-        bartenderSurp3.SetActive(false);
-        bartenderNorm3.SetActive(true);
+        bartender3[0].SetActive(false);
+        bartender3[1].SetActive(true);
         dialogos3[0].SetActive(false);
         dialogos3[1].SetActive(true);
     }
 
     public void Escena3DN()
     {
+        if (id3 == 2)
+        {
+            bartender3[1].SetActive(false);
+            bartender3[2].SetActive(true);
+        }
+
         if (id3 < 12)
         {
             dialogos3[id3].SetActive(false);
@@ -200,11 +207,33 @@ public class CutsceneManager : MonoBehaviour
             dialogos5[id5 + 1].SetActive(true);
         }else if (id5 >= 2)
         {
-            bartender5[0].SetActive(false);
-            bartender5[1].SetActive(true);
+            StartCoroutine(CambioEscena5aFinal());
         }
 
         id5++;
+    }
+
+    IEnumerator CambioEscena5aFinal()
+    {
+        dialogos5[2].SetActive(false);
+        bartender5[0].SetActive(false);
+        bartender5[1].SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        detective5[0].SetActive(false);
+        detective5[1].SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        detective5[1].SetActive(false);
+        detective5[2].SetActive(true);
+        yield return new WaitForSeconds(1f);
+        detective5[3].SetActive(true);
+        yield return new WaitForSeconds(3f);
+        escenas[4].SetActive(false);
+        escenas[5].SetActive(true);
+    }
+
+    public void ContinueGameplay()
+    {
+        SceneManager.LoadScene("SampleScene Jacob");
     }
 
     
