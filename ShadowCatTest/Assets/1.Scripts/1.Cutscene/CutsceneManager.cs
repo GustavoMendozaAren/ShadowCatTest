@@ -24,10 +24,21 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private GameObject[] dialogos3;
     private int id3;
 
+    [Header("ESCENA4")]
+    [SerializeField] private GameObject[] dialogos4;
+    private int id4;
+
+    [Header("ESCENA5")]
+    [SerializeField] private GameObject[] detective5;
+    [SerializeField] private GameObject[] bartender5;
+    [SerializeField] private GameObject[] dialogos5;
+    private int id5;
 
     void Start()
     {
         id3 = 1;
+        id4 = 0;
+        id5 = 0;
         StartCoroutine(Escena1D1());
     }
 
@@ -139,8 +150,7 @@ public class CutsceneManager : MonoBehaviour
             dialogos3[id3 + 1].SetActive(true);
         } else if (id3 >= 12)
         {
-            escenas[2].SetActive(false);
-            escenas[3].SetActive(true);
+            StartCoroutine(CambioEscenas3a4());
         }
 
         if (id3 == 1)
@@ -150,6 +160,51 @@ public class CutsceneManager : MonoBehaviour
         }
 
         id3++;
+    }
+
+    IEnumerator CambioEscenas3a4()
+    {
+        escenas[2].SetActive(false);
+        escenas[3].SetActive(true);
+        yield return new WaitForSeconds(4f);
+        dialogos4[0].SetActive(true);
+    }
+
+    public void Escena4DN()
+    {
+        if (id4 < 5)
+        {
+            dialogos4[id4].SetActive(false);
+            dialogos4[id4 + 1].SetActive(true);
+        }else if(id4 >= 5)
+        {
+            StartCoroutine(CambioEscenas4a5());
+        }
+
+        id4++;
+    }
+
+    IEnumerator CambioEscenas4a5()
+    {
+        escenas[3].SetActive(false);
+        escenas[4].SetActive(true);
+        yield return new WaitForSeconds(4f);
+        dialogos5[0].SetActive(true);
+    }
+
+    public void Escena5DN()
+    {
+        if (id5 < 2)
+        {
+            dialogos5[id5].SetActive(false);
+            dialogos5[id5 + 1].SetActive(true);
+        }else if (id5 >= 2)
+        {
+            bartender5[0].SetActive(false);
+            bartender5[1].SetActive(true);
+        }
+
+        id5++;
     }
 
     
