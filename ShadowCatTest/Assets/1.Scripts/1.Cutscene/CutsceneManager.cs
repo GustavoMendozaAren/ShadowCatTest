@@ -83,6 +83,7 @@ public class CutsceneManager : MonoBehaviour
         dialogos[5].SetActive(true);
     }
 
+    // BURBUJA DE DIALOGO DE GRITO
     public void Escena1D7()
     {
         dialogos[5].SetActive(false);
