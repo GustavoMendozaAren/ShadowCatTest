@@ -9,46 +9,26 @@ public class Pista1 : MonoBehaviour
 
     public GameObject[] levelUnlocks;
 
-    private int _pistaNo;
-
     private void Start()
     {
-        _pistaNo = StateGameController.sceneNo;
-        if (StateGameController.pista1)
-        {
-            PanelesActivacionMetodo();
-        }
-        if (StateGameController.pista2)
-        {
-            PanelesActivacionMetodo();
-        }
-        if (StateGameController.pista3)
-        {
-            PanelesActivacionMetodo();
-        }
-        if (StateGameController.pista4)
-        {
-            PanelesActivacionMetodo();
-        }
-        if (StateGameController.pista5)
-        {
-            PanelesActivacionMetodo();
-        }
-        if (StateGameController.pista6)
-        {
-            PanelesActivacionMetodo();
-        }
+        ChequeoDePistaRecolectada();
     }
 
-    private void PanelesActivacionMetodo() 
+    private void ChequeoDePistaRecolectada() 
     {
-        pistaPaneles[_pistaNo - 1].SetActive(true);
-        closePistaPanelBttn[_pistaNo - 1].SetActive(true);
-        levelUnlocks[_pistaNo - 1].SetActive(true);
+        if(StateGameController.sceneNo == 1)
+            PanelesActivacionMetodo(StateGameController.sceneNo - 1);
+    }
+
+    private void PanelesActivacionMetodo(int numero) 
+    {
+        pistaPaneles[numero].SetActive(true);
+        closePistaPanelBttn[numero].SetActive(true);
+        levelUnlocks[numero].SetActive(true);
     }
 
     public void ClosePista1PanelBttn()
     {
-        pistaPaneles[_pistaNo - 1].SetActive(false);
+        pistaPaneles[StateGameController.sceneNo - 1].SetActive(false);
     }
 }
