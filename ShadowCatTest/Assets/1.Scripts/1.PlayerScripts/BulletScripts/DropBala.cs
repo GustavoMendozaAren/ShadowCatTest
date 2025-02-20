@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DropBala : MonoBehaviour
 {
-    [SerializeField] private GameObject balaOtlineObj;
     [SerializeField] private GameObject balaSpriteObj;
-    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private GameObject balaOulineSpriteObj;
+    [SerializeField] private Image bulletCountdownImg;
 
     private float timer = 6f; 
+    private float timer2 = 0f; 
     private bool isCounting = false;
 
     float contador = 0, y = 0;
     bool suma;
+
+    private void Start()
+    {
+        bulletCountdownImg.fillAmount = 0; 
+    }
+
     private void Update()
     {
         BalaMovimiento();
@@ -59,8 +67,9 @@ public class DropBala : MonoBehaviour
 
     private void BalaSpritesCondiciones() 
     {
-        balaOtlineObj.SetActive(true);
+        bulletCountdownImg.enabled = true;
         balaSpriteObj.SetActive(false);
+        balaOulineSpriteObj.SetActive(true);
         isCounting = true;
     }
 
@@ -69,25 +78,27 @@ public class DropBala : MonoBehaviour
         if (isCounting)
         {
             timer -= Time.deltaTime;
+            timer2 += Time.deltaTime;
+            bulletCountdownImg.fillAmount = timer2 / 5f;
             if (timer < 1f)
             {
                 isCounting = false;
                 timer = 6f;
                 OnTimerComplete();
             }
-            UpdateTimerText();
+            if (timer2 > 5f)
+            {
+                isCounting = false;
+                timer2 = 0f;
+                OnTimerComplete();
+            }
         }
     }
 
     private void OnTimerComplete()
     {
-        balaOtlineObj.SetActive(false);
         balaSpriteObj.SetActive(true);
-    }
-
-    private void UpdateTimerText()
-    {
-        int timerInt = Mathf.FloorToInt(timer);
-        timerText.text = timerInt.ToString();
+        balaOulineSpriteObj.SetActive(false);
+        bulletCountdownImg.enabled = false;
     }
 }
