@@ -149,6 +149,11 @@ public class Patrollbandido : MonoBehaviour
         {
             //enemyLife = enemyLife - StateGameController.bulletPower;
             enemyLife = enemyLife - StateGameController.revolverPower;
+            if (enemyLife > 0)
+            {
+                Debug.Log("EnemyHit");
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.EnemyHit, this.transform.position);
+            }
             if (enemyLife <= 0)
             {
                 enemyLife = 0;
@@ -164,8 +169,9 @@ public class Patrollbandido : MonoBehaviour
                 moveSpeed = 0f;
                 GetComponent<Patrollbandido>().enabled = false;
                 Invoke(nameof(DeactivateEnemy), 0.8f);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.EnemyDead, this.transform.position);
+                //Debug.Log("EnemyDead");
             }
-
         }
     }
 

@@ -43,6 +43,12 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("PestañaUI")]
     [field: SerializeField] public EventReference pestañaUI { get; private set; }
+    
+    [field: Header("EnemyHit")]
+    [field: SerializeField] public EventReference EnemyHit { get; private set; }
+    
+    [field: Header("EnemyDead")]
+    [field: SerializeField] public EventReference EnemyDead { get; private set; }
     public static FMODEvents instance { get; private set; }
 
     private void Awake()

@@ -9,6 +9,7 @@ public class BandidoEnemy : MonoBehaviour
     public float moveSpeed = 1f;
     private Rigidbody2D MyBody;
     private Animator Anim;
+    //private
 
     private bool moveRight;
 
@@ -89,8 +90,8 @@ public class BandidoEnemy : MonoBehaviour
             LES.DimLight = true;
             Anim.SetBool("Death", true);
             moveSpeed = 0f;
-            GetComponent<BandidoEnemy>().enabled = false;
-            Invoke(nameof(DeactivateEnemy), 1.5f);
+            GetComponent<BandidoEnemy>().enabled = false;           
+            Invoke(nameof(DeactivateEnemy), 1.5f);           
         }
     }
 

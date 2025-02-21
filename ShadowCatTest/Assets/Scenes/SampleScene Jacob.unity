@@ -1959,7 +1959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03806bc6c0f8e0d4d973744710cbbc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicBehaviourInstance: {fileID: 300508675}
 --- !u!1 &330207636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3824,7 +3823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.225001, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 4.176946, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6507,7 +6506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917275495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.225001, y: 3.5099998, z: -10}
+  m_LocalPosition: {x: 4.176946, y: 3.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15518,12 +15517,36 @@ PrefabInstance:
       value: event:/Video/Video
       objectReference: {fileID: 0}
     - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyHit>k__BackingField.Path
+      value: event:/Game Sounds/EnemyHitted
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
       propertyPath: <level1BG>k__BackingField.Path
       value: event:/Music/Level music
       objectReference: {fileID: 0}
     - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
       propertyPath: <mainMenu>k__BackingField.Path
       value: event:/Music/MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyDead>k__BackingField.Path
+      value: event:/Game Sounds/EnemyKilled
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyHit>k__BackingField.Guid.Data1
+      value: -65353892
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyHit>k__BackingField.Guid.Data2
+      value: 1170375781
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyHit>k__BackingField.Guid.Data3
+      value: 88356769
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyHit>k__BackingField.Guid.Data4
+      value: 529655592
       objectReference: {fileID: 0}
     - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
       propertyPath: <level1BG>k__BackingField.Guid.Data1
@@ -15540,6 +15563,22 @@ PrefabInstance:
     - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
       propertyPath: <level1BG>k__BackingField.Guid.Data4
       value: -469612273
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyDead>k__BackingField.Guid.Data1
+      value: 500099053
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyDead>k__BackingField.Guid.Data2
+      value: 1252955850
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyDead>k__BackingField.Guid.Data3
+      value: 761140628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670107446210616059, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
+      propertyPath: <EnemyDead>k__BackingField.Guid.Data4
+      value: 1632226551
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69770ae6dd09a714388f1f1d0acfc6f1, type: 3}
