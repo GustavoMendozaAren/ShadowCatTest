@@ -44,7 +44,7 @@ public class ScoreScript : MonoBehaviour
 
             if (StateGameController.sceneNo == 2)
             {
-                if (StateGameController.level2Coins < 10)
+                if (StateGameController.level2Coins < 21)
                 {
                     StateGameController.level2Coins++;
                     StateGameController.coinsTotal++;

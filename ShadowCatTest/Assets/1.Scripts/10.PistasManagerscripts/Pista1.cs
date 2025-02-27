@@ -6,6 +6,7 @@ public class Pista1 : MonoBehaviour
 {
     public GameObject[] pistaPaneles;
     public GameObject[] closePistaPanelBttn;
+    [SerializeField] private GameObject masInfoPanel;
 
     public GameObject[] levelUnlocks;
 
@@ -16,19 +17,35 @@ public class Pista1 : MonoBehaviour
 
     private void ChequeoDePistaRecolectada() 
     {
-        if(StateGameController.sceneNo == 1)
-            PanelesActivacionMetodo(StateGameController.sceneNo - 1);
+        if(StateGameController.sceneNo>0)
+            PanelesActivacionMetodo(StateGameController.sceneNo-1);
     }
 
     private void PanelesActivacionMetodo(int numero) 
     {
         pistaPaneles[numero].SetActive(true);
         closePistaPanelBttn[numero].SetActive(true);
-        levelUnlocks[numero].SetActive(true);
+        if (numero < 2) 
+        {
+            levelUnlocks[numero].SetActive(true);
+        }
     }
 
     public void ClosePista1PanelBttn()
     {
-        pistaPaneles[StateGameController.sceneNo - 1].SetActive(false);
+        if (pistaPaneles[0])
+        {
+            masInfoPanel.SetActive(true);
+            pistaPaneles[StateGameController.sceneNo - 1].SetActive(false);
+        }
+        else
+        {
+            pistaPaneles[StateGameController.sceneNo-1].SetActive(false);
+        }
+    }
+
+    public void CloseMoreInfoPanel()
+    {
+        masInfoPanel.SetActive(false);
     }
 }
