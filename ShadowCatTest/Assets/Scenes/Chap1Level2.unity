@@ -16149,7 +16149,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3779602773595016337, guid: ee9bcc55d912ca04eb7e018649d60d10, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3779602774130912741, guid: ee9bcc55d912ca04eb7e018649d60d10, type: 3}
       propertyPath: pistaID
@@ -16185,7 +16185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3779602774487023153, guid: ee9bcc55d912ca04eb7e018649d60d10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.25
+      value: 138
       objectReference: {fileID: 0}
     - target: {fileID: 3779602774487023153, guid: ee9bcc55d912ca04eb7e018649d60d10, type: 3}
       propertyPath: m_LocalPosition.y
