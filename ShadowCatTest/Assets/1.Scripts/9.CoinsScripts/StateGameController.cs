@@ -40,7 +40,7 @@ public class StateGameController : MonoBehaviour
 
     // Key to Clue Animation
 
-    public static int[] candado = new int [5];
+    public static int[] candado = new int[5];
 
     // Transform to cat
 
@@ -53,6 +53,8 @@ public class StateGameController : MonoBehaviour
     // Scene Number
 
     public static int sceneNo = 0;
+    public static bool[] pistaAgarrada = new bool[6];
+    public static bool[] pistaCandado = new bool[6];
 
     // TimeScales
 

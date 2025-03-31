@@ -40,7 +40,7 @@ public class GameManagerScript : MonoBehaviour
         if (StateGameController.sceneNo == 1)
             SceneManager.LoadScene("TutScene");
         if (StateGameController.sceneNo == 2)
-            SceneManager.LoadScene("SampleScene Jacob");
+            SceneManager.LoadScene("Chap1Level2");
         if (StateGameController.sceneNo == 3)
             SceneManager.LoadScene("Chap1Level3");
         if (StateGameController.sceneNo > 3)

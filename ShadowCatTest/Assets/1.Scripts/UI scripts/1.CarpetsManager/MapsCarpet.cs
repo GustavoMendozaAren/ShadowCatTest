@@ -15,7 +15,6 @@ public class MapsCarpet : MonoBehaviour
     {
         SceneManager.LoadScene(2);
         StateGameController.sceneNo = 1;
-        Debug.Log("Numero de Escena: " + StateGameController.sceneNo);
     }
 
     public void PlayLeve2()

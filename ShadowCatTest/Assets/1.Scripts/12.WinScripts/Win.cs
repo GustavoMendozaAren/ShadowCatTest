@@ -8,6 +8,8 @@ public class Win : MonoBehaviour
     public GameObject[] panel;
 
     public GameObject Pista1Win;
+    [SerializeField] private int pistaID;
+    private Collider2D colliderPista;
 
     public MusicBridge levelMusic;
 
@@ -22,6 +24,12 @@ public class Win : MonoBehaviour
         damageInstance = playerDamageInstance.GetComponent<PlayerDamage>();
 
         StateGameController.playerCanDie = true;
+
+        if (StateGameController.pistaAgarrada[pistaID])
+        {
+            Pista1Win.SetActive(false);
+            colliderPista.enabled = false;
+        }
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -30,6 +38,8 @@ public class Win : MonoBehaviour
             StartCoroutine(WinConditionCo());
 
             Pista1Win.SetActive(false);
+            StateGameController.pistaAgarrada[pistaID] = true;
+            StateGameController.pistaCandado[pistaID] = true;
 
             StateGameController.playerCanDie = false;
         }

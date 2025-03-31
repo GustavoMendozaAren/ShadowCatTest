@@ -16562,6 +16562,7 @@ MonoBehaviour:
   - {fileID: 890439333}
   - {fileID: 83088984}
   Pista1Win: {fileID: 200874821}
+  pistaID: 2
   levelMusic: {fileID: 0}
   damageInstance: {fileID: 0}
 --- !u!61 &1521781998

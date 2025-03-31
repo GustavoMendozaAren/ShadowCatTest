@@ -1363,7 +1363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &420517644
 Transform:
   m_ObjectHideFlags: 0
@@ -3830,6 +3830,7 @@ MonoBehaviour:
   - {fileID: 890439333}
   - {fileID: 83088984}
   Pista1Win: {fileID: 200874821}
+  pistaID: 3
   levelMusic: {fileID: 0}
   damageInstance: {fileID: 0}
 --- !u!61 &1521781998

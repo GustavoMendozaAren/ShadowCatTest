@@ -9,6 +9,7 @@ public class Pista1 : MonoBehaviour
     [SerializeField] private GameObject masInfoPanel;
 
     public GameObject[] levelUnlocks;
+    //private bool[] levelKey = new bool[2];
 
     private void Start()
     {
@@ -18,30 +19,47 @@ public class Pista1 : MonoBehaviour
     private void ChequeoDePistaRecolectada() 
     {
         if(StateGameController.sceneNo>0)
-            PanelesActivacionMetodo(StateGameController.sceneNo-1);
+            PanelesActivacionMetodo();
     }
 
-    private void PanelesActivacionMetodo(int numero) 
+    private void PanelesActivacionMetodo() 
     {
-        pistaPaneles[numero].SetActive(true);
-        closePistaPanelBttn[numero].SetActive(true);
-        if (numero < 2) 
+        if (StateGameController.pistaAgarrada[0]) 
         {
-            levelUnlocks[numero].SetActive(true);
+            levelUnlocks[0].SetActive(true);
+            if (StateGameController.pistaCandado[0])
+            {
+                pistaPaneles[0].SetActive(true);
+                closePistaPanelBttn[0].SetActive(true);
+                StateGameController.pistaCandado[0] = false;
+            }
         }
+        if (StateGameController.pistaCandado[1])
+        {
+            pistaPaneles[1].SetActive(true);
+            closePistaPanelBttn[1].SetActive(true);
+            StateGameController.pistaCandado[1] = false;
+        }
+        //if (numero < 1) 
+        //{
+        //    levelUnlocks[numero].SetActive(true);
+        //}
     }
 
-    public void ClosePista1PanelBttn()
+    private void ChecarNivelesDesbloqueados()
     {
-        if (pistaPaneles[0])
-        {
-            masInfoPanel.SetActive(true);
-            pistaPaneles[StateGameController.sceneNo - 1].SetActive(false);
-        }
-        else
-        {
-            pistaPaneles[StateGameController.sceneNo-1].SetActive(false);
-        }
+
+    }
+
+    public void ClosePistaPanelBttn()
+    {
+        pistaPaneles[StateGameController.sceneNo - 1].SetActive(false);
+    }
+
+    public void ActivarPanelMasInformacion()
+    {
+        pistaPaneles[StateGameController.sceneNo - 1].SetActive(false);
+        masInfoPanel.SetActive(true);
     }
 
     public void CloseMoreInfoPanel()
