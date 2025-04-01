@@ -8807,7 +8807,7 @@ PrefabInstance:
       objectReference: {fileID: 760383217}
     - target: {fileID: 1831376160827904548, guid: b1183a144af2e95449b9a26fde1e3bee, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1831376160827904553, guid: b1183a144af2e95449b9a26fde1e3bee, type: 3}
       propertyPath: bgMsc
