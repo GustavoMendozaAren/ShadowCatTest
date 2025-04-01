@@ -126,7 +126,7 @@ public class Patrollbandido : MonoBehaviour
         yield return new WaitForSeconds(1.1f);
         
         Anim.SetBool("Shoot", true);
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.2f / (StateGameController.enemiesTime));
         //Debug.Log("Shoot");
         GameObject bullet = Instantiate(FireBall, transform.position, Quaternion.Euler(FireBallRot));
         bullet.GetComponent<FireBallEnemy>().Speed *= transform.localScale.x;

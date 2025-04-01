@@ -15,7 +15,7 @@ public class OneWayPlatform : MonoBehaviour
     IEnumerator DesactivacionPorSegundos()
     {
         platformCollider.SetActive(false);
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1.5f);
         platformCollider.SetActive(true);
     }
 }
