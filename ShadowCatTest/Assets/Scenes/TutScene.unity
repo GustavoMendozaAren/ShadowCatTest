@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1DISPARA!\n\n"
+  m_text: SHOOT!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1SALTA!\n\n"
+  m_text: JUMP!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -887,7 +887,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1OBSERVA!\n"
+  m_text: 'OBSERVE!
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -1301,7 +1303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Presiona el boton para disparar
+  m_text: Press the button to shoot
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -5616,7 +5618,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Presiona el bot\xF3n pra transformarte"
+  m_text: Press the button to transform
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -7542,7 +7544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mant\xE9n presionado el bot\xF3n para correr"
+  m_text: Hold the button to run
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -7783,7 +7785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1TRANSFORMA!\n\n"
+  m_text: TRANSFORM!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -8194,7 +8196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1CORRE!\n\n"
+  m_text: RUN!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -8339,7 +8341,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Los gatos tienen mejor vison en la oscuridad
+  m_text: Cats have better vision in the dark
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -8661,7 +8663,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1ENCUENTRA!\n\n"
+  m_text: FIND!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -11161,7 +11163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: La pista para pasar de nivel
+  m_text: The clue to unlock the next level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -13038,7 +13040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1SALTA!\n\n"
+  m_text: JUMP!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -13284,7 +13286,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1TRANSFORMA!\n"
+  m_text: TRANSFORM!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -13530,7 +13532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1RECOLECTA!\n\n"
+  m_text: COLLECT!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -15346,7 +15348,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1RALENTIZA!\n"
+  m_text: SLOW DOWN!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -15481,7 +15483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Presiona dos veces el bot\xF3n para saltar m\xE1s alto"
+  m_text: Double-tap the button to jump higher
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -16796,7 +16798,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Presiona el boton para ralentizar el timepo '
+  m_text: Press the button to slow down time
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -17699,9 +17701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Presiona el boton para transformarte
-
-'
+  m_text: Press the button to transform
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -17836,7 +17836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Presiona el bot\xF3n pra saltar"
+  m_text: Press the button to jump
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -17976,7 +17976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Municiones y monedas '
+  m_text: Ammunition and coins
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
   m_sharedMaterial: {fileID: -7113989822704741601, guid: ea72bba0785d2e649b7e8d1efcde2359, type: 2}
@@ -18313,7 +18313,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 8279182143077569941, guid: 4268638131b77c743b7f23bae8842090, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8279182143077569944, guid: 4268638131b77c743b7f23bae8842090, type: 3}
       propertyPath: bgMsc
