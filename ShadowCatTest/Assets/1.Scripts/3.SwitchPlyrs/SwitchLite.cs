@@ -39,9 +39,8 @@ public class SwitchLite : MonoBehaviour
 
     public GameObject BalasJugador1, extraBulletsObj;
 
-
     //Script
-    public PlayerDamage PDS;
+    public PlayerDamage playerDamageScript;
 
     //Dash
     private bool canDash = true;
@@ -66,7 +65,6 @@ public class SwitchLite : MonoBehaviour
     //public IMusicObserver MusicObserverInstance { get; set; }
     public MusicBridge levelMusic;
 
-    //Dash button image fill
     [SerializeField] private Image fillImage;
     float waitTime = 30.0f;
     float timerCatBttn = 0f;
@@ -76,8 +74,6 @@ public class SwitchLite : MonoBehaviour
 
     public GameObject slowbutonbarrier;
     float slowMultiplayer = 2f;
-
-    
 
     private void Awake()
     {
@@ -94,7 +90,7 @@ public class SwitchLite : MonoBehaviour
         levelMusic = instanciaMusic.GetComponent<MusicBridge>();
         levelMusic.NotificarCambioMusica("JuegoEnCurso");
 
-        PDS.PuedeRecibirDaño(true);
+        playerDamageScript.PuedeRecibirDaño(true);
 
         for (int i = 0; i < players.Length; i++)
         {
@@ -364,6 +360,13 @@ public class SwitchLite : MonoBehaviour
             //Debug.Log("Shoot");
             gameObject.GetComponent<PlayerDamage>().DealDamage();
         }
+
+        if (collision.CompareTag("RatAttack"))
+        {
+            //Debug.Log("RatAttack");
+            playerDamageScript.RatDamage();
+        }
+
         if (collision.CompareTag("DropBala"))
         {
             BalasIndex++;
@@ -416,7 +419,7 @@ public class SwitchLite : MonoBehaviour
 
     void DeadAnimation()
     {
-        if (PDS.PlayerDead)
+        if (playerDamageScript.IsPlayerDead)
         {
             if (currentPlayerIndex == 1)
             {

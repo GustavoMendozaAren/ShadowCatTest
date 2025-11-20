@@ -40,6 +40,12 @@ public class Pista1 : MonoBehaviour
             closePistaPanelBttn[1].SetActive(true);
             StateGameController.pistaCandado[1] = false;
         }
+        if (StateGameController.pistaCandado[2])
+        {
+            pistaPaneles[2].SetActive(true);
+            closePistaPanelBttn[2].SetActive(true);
+            StateGameController.pistaCandado[2] = false;
+        }
         //if (numero < 1) 
         //{
         //    levelUnlocks[numero].SetActive(true);

@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2025.2.2
+  bundleVersion: 2025.10.8.2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -249,8 +249,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/arenm/Documents/1.PERSONAL/2.ShadowCat/2.KeyBuilds/2025.2.1/user.keystore
-  AndroidKeyaliasName: holas
+  AndroidKeystoreName: C:/Users/arenm/Documents/1.PERSONAL/2.ShadowCat/2.KeyBuilds/2025.10.8/gato.keystore
+  AndroidKeyaliasName: gato2
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1

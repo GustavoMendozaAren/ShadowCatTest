@@ -14636,8 +14636,8 @@ RectTransform:
   m_Children:
   - {fileID: 1120152682}
   - {fileID: 1553847475}
-  - {fileID: 1457450253}
   - {fileID: 2061249146}
+  - {fileID: 1457450253}
   - {fileID: 1616364626}
   - {fileID: 1872979767}
   - {fileID: 2025852518}
@@ -16339,7 +16339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &496967867
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18721,7 +18721,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 155805357}
         m_TargetAssemblyTypeName: Pista1, Assembly-CSharp
-        m_MethodName: ActivarPanelMasInformacion
+        m_MethodName: ClosePistaPanelBttn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34658,7 +34658,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 155805357}
         m_TargetAssemblyTypeName: Pista1, Assembly-CSharp
-        m_MethodName: ClosePista1PanelBttn
+        m_MethodName: ActivarPanelMasInformacion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39656,7 +39656,7 @@ RectTransform:
   - {fileID: 1449152428}
   - {fileID: 750598783}
   m_Father: {fileID: 455042291}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -49487,7 +49487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1834025962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56156,7 +56156,7 @@ RectTransform:
   - {fileID: 1957308094}
   - {fileID: 1276520421}
   m_Father: {fileID: 455042291}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

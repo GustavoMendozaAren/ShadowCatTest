@@ -90,7 +90,6 @@ public class Patrollbandido : MonoBehaviour
 
     void EnemyAttack()
     {
-            
             Exclamacion.SetActive(true);
             if (canShoot)
             {
@@ -176,7 +175,7 @@ public class Patrollbandido : MonoBehaviour
 
     void PlayerDead()
     {
-        if (PDS.PlayerDead)
+        if (PDS.IsPlayerDead)
         {
             if (co != null)
             {

@@ -5,23 +5,19 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
-    public int maxHealth = 3;
-    public float currentHealth;
+    private int maxHealth = 5;
+    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private GameManagerScript gameManager;
+    [SerializeField] private GameObject damagePanel;
 
-    public HealthBar healthBar;
-
+    private float currentHealth;
     private bool canDamage = true;
 
     [HideInInspector]
-    public bool PlayerDead = false;
-
-    public GameManagerScript gameManager;
-
-    public GameObject damagePanel;
+    public bool IsPlayerDead = false;
 
     private void Start()
     {
-        
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -30,18 +26,42 @@ public class PlayerDamage : MonoBehaviour
         if (canDamage)
         {
             if(StateGameController.playerCanDie)
-            currentHealth--;
+                currentHealth--;
             healthBar.SetHealth(currentHealth);
 
             if (currentHealth == 0)
             {
                 gameManager.playerIsDead = true;
-                PlayerDead = true;
+                IsPlayerDead = true;
             }
 
             canDamage = false;
             StartCoroutine(WaitForDamage());
         }
+    }
+
+    public void RatDamage()
+    {
+        if (StateGameController.playerCanDie)
+        {
+            Debug.Log("RatAttack");
+            currentHealth -= 0.5f; ;
+            healthBar.SetHealth(currentHealth);
+
+            if (currentHealth == 0)
+            {
+                gameManager.playerIsDead = true;
+                IsPlayerDead = true;
+            }
+
+            StartCoroutine(PanelDeDanio());
+        }
+    }
+
+    public void PuedeRecibirDaño(bool valor)
+    {
+        if (!valor) canDamage = false;
+        else canDamage = true;
     }
 
     IEnumerator WaitForDamage()
@@ -55,9 +75,13 @@ public class PlayerDamage : MonoBehaviour
         }
     }
 
-    public void PuedeRecibirDaño(bool valor)
+    IEnumerator PanelDeDanio()
     {
-        if (!valor) canDamage = false;
-        else canDamage = true;
+        if (!gameManager.playerIsDead)
+        {
+            damagePanel.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            damagePanel.SetActive(false);
+        }
     }
 }

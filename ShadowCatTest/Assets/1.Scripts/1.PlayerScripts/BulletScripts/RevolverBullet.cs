@@ -6,6 +6,8 @@ public class RevolverBullet : MonoBehaviour
 {
     private float speed = 15f;
 
+    public float Speed { get { return speed; } set { speed = value; } }
+
     void Start()
     {
         StartCoroutine(DisableBullet());
@@ -23,29 +25,17 @@ public class RevolverBullet : MonoBehaviour
         transform.position = temp;
     }
 
-    public float Speed
-    {
-        get
-        {
-            return speed;
-        }
-        set
-        {
-            speed = value;
-        }
-    }
-
     IEnumerator DisableBullet()
     {
         yield return new WaitForSeconds(2f);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("RatEnemy"))
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

@@ -221,7 +221,7 @@ public class BandidoPlatform : MonoBehaviour
 
     void PlayerDead()
     {
-        if (PDS.PlayerDead)
+        if (PDS.IsPlayerDead)
         {
             if (co != null)
             {
