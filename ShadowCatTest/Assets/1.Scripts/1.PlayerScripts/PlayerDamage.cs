@@ -9,7 +9,7 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] private GameManagerScript gameManager;
     [SerializeField] private GameObject damagePanel;
 
-    private int maxHealth = 3;
+    private int maxHealth = 5;
     private float currentHealth;
     private bool canDamage = true;
 
@@ -44,7 +44,7 @@ public class PlayerDamage : MonoBehaviour
     {
         if (StateGameController.playerCanDie)
         {
-            currentHealth -= 1f; ;
+            currentHealth -= 0.5f;
             healthBar.SetHealth(currentHealth);
 
             if (currentHealth == 0)
