@@ -5,15 +5,13 @@ using Cinemachine;
 
 public class CatVisionHability : MonoBehaviour
 {
-    public GameObject catPlatfomrsGroup;
-    public GameObject catVisionPanel;
+    [SerializeField] private GameObject catPlatfomrsGroup;
+    [SerializeField] private GameObject catVisionPanel;
+    [SerializeField] private CinemachineVirtualCamera vcam;
 
-    Animator visionCatAnim;
-
-    public CinemachineVirtualCamera vcam;
-    float counter = 0f;
-
-    bool camTrans = false;
+    private Animator visionCatAnim;
+    private float counter = 0f;
+    private bool camTrans = false;
 
     private void Awake()
     {

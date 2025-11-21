@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
-    private int maxHealth = 5;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameManagerScript gameManager;
     [SerializeField] private GameObject damagePanel;
 
+    private int maxHealth = 3;
     private float currentHealth;
     private bool canDamage = true;
 
@@ -44,8 +44,7 @@ public class PlayerDamage : MonoBehaviour
     {
         if (StateGameController.playerCanDie)
         {
-            Debug.Log("RatAttack");
-            currentHealth -= 0.5f; ;
+            currentHealth -= 1f; ;
             healthBar.SetHealth(currentHealth);
 
             if (currentHealth == 0)

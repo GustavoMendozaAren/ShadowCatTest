@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7441448083108279434}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &391338638
 BoxCollider2D:
@@ -126,7 +126,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7441448083108279434}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1786167784
 BoxCollider2D:
@@ -207,37 +207,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7441448083140303274
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7441448083140303275}
-  m_Layer: 0
-  m_Name: GroundCollision (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7441448083140303275
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7441448083140303274}
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.225, z: 0}
-  m_LocalScale: {x: -0.825, y: 0.825, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7441448083108279434}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &676257652271354719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,7 +249,7 @@ PrefabInstance:
     - target: {fileID: 419046793, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: GroundCollision
       value: 
-      objectReference: {fileID: 7441448083140303275}
+      objectReference: {fileID: 0}
     - target: {fileID: 419046793, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: transformTrasero
       value: 
@@ -298,16 +267,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1660813730, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_Name
+      value: Light2D-Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660813730, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1660813731, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1660813731, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.083
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660813733, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
+      propertyPath: m_Intensity
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1660813733, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_FalloffIntensity
@@ -335,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144208, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_Name
-      value: RataPrefab
+      value: RataObj
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144208, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_Layer
@@ -359,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144213, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.73
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144213, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_LocalPosition.y

@@ -17,8 +17,10 @@ public class RataEnemyIA : MonoBehaviour
     private Vector3 movePosition;
     private Vector3 moveDirection = Vector3.left;
     private PlayerDamage playerDamage;
-    private bool canPatroll = true;
+    private bool isCharging = false;
     private bool isRunning = false;
+
+    public bool startMovRight = false;
 
     void Start()
     {
@@ -30,6 +32,15 @@ public class RataEnemyIA : MonoBehaviour
 
         movePosition = transform.position;
         movePosition.x -= 7f;
+
+        if (!startMovRight)
+        {
+            moveDirection = Vector3.left;
+        }
+        else
+        {
+            moveDirection = Vector3.right;
+        }
     }
 
     void Update()
@@ -39,11 +50,6 @@ public class RataEnemyIA : MonoBehaviour
             if (!rataLife.IsDead)
             {
                 CheckifCanPatroll();
-
-                if (canPatroll)
-                {
-                    Patrullar();
-                }
 
                 if (isRunning)
                 {
@@ -61,6 +67,8 @@ public class RataEnemyIA : MonoBehaviour
         {
             animator.SetBool("IsAttacking", false);
         }
+
+        animator.speed = StateGameController.enemiesTime;
     }
 
     void CheckifCanPatroll()
@@ -68,8 +76,11 @@ public class RataEnemyIA : MonoBehaviour
         //Debug.DrawRay(transform.position, moveDirection * 5f);
         if (!Physics2D.Raycast(transform.position, moveDirection, 5f, playerLayer))
         {
-            canPatroll = true;
             isRunning = false;
+
+            if(!isCharging)
+                Patrullar();
+
             animator.ResetTrigger("Charge");
             animator.SetBool("IsWalking", true);
             animator.SetBool("Run", false);
@@ -77,8 +88,6 @@ public class RataEnemyIA : MonoBehaviour
         }
         else
         {
-            canPatroll = false;
-
             CheckifCanAttack();
         }
     }
@@ -144,11 +153,13 @@ public class RataEnemyIA : MonoBehaviour
 
     void ActivarColliderVida()
     {
+        isCharging = true;
         colliderVida.enabled = true;
     }
 
     void DesactivarColliderVida()
     {
+        isCharging = false;
         colliderVida.enabled = false;
     }
 

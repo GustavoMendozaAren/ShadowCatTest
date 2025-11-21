@@ -6,6 +6,18 @@ public class FireBallEnemy : MonoBehaviour
 {
     private float speed = 5f;
 
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+        set
+        {
+            speed = value;
+        }
+    }
+
     void Start()
     {
         StartCoroutine(DisableBullet());
@@ -23,22 +35,10 @@ public class FireBallEnemy : MonoBehaviour
         transform.position = temp;
     }
 
-    public float Speed
-    {
-        get
-        {
-            return speed;
-        }
-        set
-        {
-            speed = value;
-        }
-    }
-
     IEnumerator DisableBullet()
     {
         yield return new WaitForSeconds(3f);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -51,7 +51,7 @@ public class FireBallEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
     

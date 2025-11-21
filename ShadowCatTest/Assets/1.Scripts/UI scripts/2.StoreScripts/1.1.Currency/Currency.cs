@@ -5,14 +5,16 @@ using TMPro;
 
 public class Currency : MonoBehaviour
 {
-    public GameObject needCoinsPanel, currencyPanel;
-    public GameObject playVideoBttn, playVideoColdDownImg;
-    public GameObject googlePlayPaymentPanel, comingSoonTxt, yourAddImg;
+    [SerializeField] private GameObject needCoinsPanel, currencyPanel;
+    [SerializeField] private GameObject playVideoBttn, playVideoColdDownImg;
+    //[SerializeField] private GameObject googlePlayPaymentPanel;
+    //[SerializeField] private GameObject comingSoonTxt;
+    [SerializeField] private GameObject yourAddImg;
 
     // ComingSoonTxt Aviable
     private bool canAppearCCT = true;
 
-    // Ad
+    // AD
     public GameObject videoCDObj, continueRewardBttn;
     private TMP_Text coinsText;
 
@@ -21,14 +23,14 @@ public class Currency : MonoBehaviour
         coinsText = GameObject.Find("CoinsText").GetComponent<TMP_Text>();
     }
 
-    // NeedCoinsPanel
+    // NEED COINS PANEL
 
     public void NCBackBttnNeedCoinsPanel()
     {
         needCoinsPanel.SetActive(false);
     }
 
-    // CurencyPanel
+    // CURRENCY PANEL
 
     public void CPOpenBttnCurrencyPanel()
     {
@@ -49,29 +51,29 @@ public class Currency : MonoBehaviour
         StartCoroutine(TimeToCloseAdd());
     }
 
-    public void CPPayBttnCurencyPanel()
-    {
-        googlePlayPaymentPanel.SetActive(true);
-    }
+    //public void CPPayBttnCurencyPanel()
+    //{
+    //    googlePlayPaymentPanel.SetActive(true);
+    //}
 
-    // GooglePlayPaymentPanel
+    // GOOGLE PLAY PAYMENT PANEL
 
-    public void GPPPBackPaymentBttn()
-    {
-        googlePlayPaymentPanel.SetActive(false);
-    }
+    //public void GPPPBackPaymentBttn()
+    //{
+    //    googlePlayPaymentPanel.SetActive(false);
+    //}
 
-    public void GPPBuyPaymentBttn()
-    {
-        if (canAppearCCT)
-        {
-            canAppearCCT = false;
-            comingSoonTxt.SetActive(true);
-            StartCoroutine(ComingSoonTxt());
-        }
-    }
+    //public void GPPBuyPaymentBttn()
+    //{
+    //    if (canAppearCCT)
+    //    {
+    //        canAppearCCT = false;
+    //        comingSoonTxt.SetActive(true);
+    //        StartCoroutine(ComingSoonTxt());
+    //    }
+    //}
 
-    // Coorutinas
+    // COORUTINAS
 
     IEnumerator TimeToCloseAdd()
     {
@@ -87,14 +89,14 @@ public class Currency : MonoBehaviour
         playVideoBttn.SetActive(true);
     }
 
-    IEnumerator ComingSoonTxt()
-    {
-        yield return new WaitForSeconds(2f);
-        comingSoonTxt.SetActive(false);
-        canAppearCCT = true;
-    }
+    //IEnumerator ComingSoonTxt()
+    //{
+    //    yield return new WaitForSeconds(2f);
+    //    comingSoonTxt.SetActive(false);
+    //    canAppearCCT = true;
+    //}
 
-    // ContinueRewardButton
+    // CONTINUE REWARD BUTTON
 
     public void ContinueRWButton()
     {
@@ -109,5 +111,22 @@ public class Currency : MonoBehaviour
         playVideoColdDownImg.SetActive(true);
         playVideoBttn.SetActive(false);
         StartCoroutine(PlayVideoColdDown());
+    }
+
+    // INSTAGRAM LINKS
+
+    public void OpenURLPogrammer()
+    {
+        Application.OpenURL("https://gustavomdza-gamedev.itch.io/");
+    }
+
+    public void OpenURLComposer()
+    {
+        Application.OpenURL("https://www.instagram.com/rumo.doodle/");
+    }
+
+    public void OpenURLArtist()
+    {
+        Application.OpenURL("https://www.instagram.com/yam.yell.3/");
     }
 }

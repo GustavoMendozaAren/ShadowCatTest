@@ -10859,6 +10859,10 @@ PrefabInstance:
       value: 192
       objectReference: {fileID: 0}
     - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
+      propertyPath: playerDamageScript
+      value: 
+      objectReference: {fileID: 1954915449}
+    - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
       propertyPath: Balas.Array.data[0]
       value: 
       objectReference: {fileID: 982066004}
@@ -18183,6 +18187,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2482565895311062357, guid: 4268638131b77c743b7f23bae8842090, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2482565895417441772, guid: 4268638131b77c743b7f23bae8842090, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

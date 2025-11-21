@@ -5,14 +5,13 @@ using UnityEngine;
 public class EntrarACallejones : MonoBehaviour
 {
     //[SerializeField] private SpriteRenderer entrarCallejon;
-    private bool isInRange;
-
+    [SerializeField] private GameObject spriteMensaje;
     [SerializeField] private GameObject escenarioNormal;
     [SerializeField] private GameObject escenarioCallejones1;
-    private bool isInAvenue = true;
-
-    [SerializeField] private GameObject spriteMensaje;
     [SerializeField] private bool tieneMensaje;
+
+    private bool isInAvenue = true;
+    private bool isInRange;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
