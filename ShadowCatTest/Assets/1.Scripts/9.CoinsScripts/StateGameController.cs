@@ -38,6 +38,8 @@ public class StateGameController : MonoBehaviour
     public static int currentAmountTxt = 6;
     public static int nextAmountTxt = 8;
 
+    // ***************
+
     // Key to Clue Animation
 
     public static int[] candado = new int[5];
@@ -62,7 +64,7 @@ public class StateGameController : MonoBehaviour
     public static float enemiesTime = 1f;
     public static float globalTime = 1f;
 
-    // LEVEL 1 
+    // LEVEL 1 COINS
 
     public static int level1Coins = 0;
     public static int level2Coins = 0;
@@ -70,4 +72,8 @@ public class StateGameController : MonoBehaviour
     public static int level4Coins = 0;
     public static int level5Coins = 0;
     public static int level6Coins = 0;
+
+    // BRIGHTNESS 
+
+    public static float brightnessScreen = 0.55f;
 }

@@ -1,0 +1,191 @@
+using UnityEngine;
+
+public class RataEnemyIA2 : MonoBehaviour
+{
+    [SerializeField] private float velocidad = 3.6f;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private Collider2D colliderVida;
+    [SerializeField] private Collider2D colliderRata;
+    [SerializeField] private GameObject rataParentObj;
+    [SerializeField] private GameObject rataAtackCollider;
+    [SerializeField] private RataLife rataLife;
+
+    private Animator animator;
+    private Vector3 originPosition;
+    private Vector3 movePosition;
+    private Vector3 moveDirection = Vector3.left;
+    private PlayerDamage playerDamage;
+    private bool isCharging = false;
+    private bool isRunning = false;
+    private bool isAttacking = false;
+
+    public bool startMovRight = false;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        playerDamage = FindObjectOfType<PlayerDamage>();
+
+        originPosition = transform.position;
+        originPosition.x += 7f;
+
+        movePosition = transform.position;
+        movePosition.x -= 7f;
+
+        if (!startMovRight)
+        {
+            moveDirection = Vector3.left;
+        }
+        else
+        {
+            moveDirection = Vector3.right;
+        }
+    }
+
+    void Update()
+    {
+        if (!playerDamage.IsPlayerDead)
+        {
+            if (!rataLife.IsDead)
+            {
+                CheckifCanPatroll();
+
+                if (isRunning)
+                {
+                    MovimientoDeAtaqueCarga();
+                }
+
+                MovimientoAlHacerNuevoAtaque();
+            }
+            else
+            {
+                animator.SetBool("IsWalking", false);
+                animator.ResetTrigger("Dead");
+                animator.SetTrigger("Dead");
+            }
+        }
+        else
+        {
+            //animator.SetBool("IsAttacking", false);
+        }
+
+        animator.speed = StateGameController.enemiesTime;
+    }
+
+    void CheckifCanPatroll()
+    {
+        //Debug.DrawRay(transform.position, moveDirection * 5f);
+        if (!Physics2D.Raycast(transform.position, moveDirection, 5f, playerLayer))
+        {
+            isRunning = false;
+
+            if (!isCharging)
+                Patrullar();
+
+            animator.ResetTrigger("Charge");
+            animator.SetBool("IsWalking", true);
+            animator.SetBool("Run", false);
+            //animator.SetBool("IsAttacking", false);
+        }
+        else
+        {
+            CheckifCanAttack();
+        }
+    }
+
+    void CheckifCanAttack()
+    {
+        //Debug.DrawRay(transform.position, moveDirection * 1.2f);
+        if (!Physics2D.Raycast(transform.position, moveDirection, 1.2f, playerLayer))
+        {
+            //animator.SetBool("IsAttacking", false);
+            animator.ResetTrigger("Attack2");
+            animator.SetBool("IsWalking", false);
+            animator.SetTrigger("Charge");
+            
+        }
+        else
+        {
+            isRunning = false;
+            animator.SetTrigger("Attack2");
+            animator.ResetTrigger("Charge");
+            //animator.SetBool("Run", false);
+            //animator.SetBool("IsAttacking", true);
+        }
+    }
+
+    void Patrullar()
+    {
+        transform.Translate(velocidad * Time.deltaTime * moveDirection * StateGameController.enemiesTime);
+
+        if (transform.position.x >= originPosition.x)
+        {
+            moveDirection = Vector3.left;
+
+            ChangeDirection(-4f);
+
+        }
+        else if (transform.position.x <= movePosition.x)
+        {
+            moveDirection = Vector3.right;
+
+            ChangeDirection(4f);
+        }
+    }
+
+    void MovimientoAlHacerNuevoAtaque()
+    {
+        if (isAttacking)
+            transform.Translate(12f * Time.deltaTime * moveDirection * StateGameController.enemiesTime);
+    }
+
+    void MovimientoDeAtaqueCarga()
+    {
+        transform.Translate(6f * Time.deltaTime * moveDirection * StateGameController.enemiesTime);
+    }
+
+    void ChangeDirection(float direction)
+    {
+        Vector3 tempScale = transform.localScale;
+
+        tempScale.x = direction;
+
+        transform.localScale = tempScale;
+    }
+
+    // METODOS DE EVENTOS EN ANIMACIONES
+
+    void ActivarRunAnimation()
+    {
+        animator.SetBool("Run", true);
+        isRunning = true;
+    }
+
+    void ActivarColliderVida()
+    {
+        isCharging = true;
+        colliderVida.enabled = true;
+    }
+
+    void DesactivarColliderVida()
+    {
+        isCharging = false;
+        colliderVida.enabled = false;
+    }
+
+    void ActivarDesactivarColliderAtaque()
+    {
+        rataAtackCollider.SetActive(!rataAtackCollider.activeSelf);
+    }
+
+    void ActivarDesactivarAtaque()
+    {
+        isAttacking = !isAttacking;
+        colliderRata.enabled = !isAttacking;
+    }
+
+    void RataMuerta()
+    {
+        Destroy(rataParentObj);
+    }
+}

@@ -8,7 +8,6 @@ public class MenuManager : MonoBehaviour
     public GameObject mainBttn, mainImg;
     public GameObject optiosBttn, optionsImg;
     public GameObject creditsBttn, creditsImg;
-    public GameObject photosImages;
 
     public GameObject blackCourtine, pointers;
     public GameObject[] smallButtons, bigButtons;
@@ -31,7 +30,6 @@ public class MenuManager : MonoBehaviour
         optionsImg.SetActive(false);
         creditsBttn.SetActive(true);
         creditsImg.SetActive(false);
-        photosImages.SetActive(true);
     }
 
     public void OptionsBttn()
@@ -42,7 +40,6 @@ public class MenuManager : MonoBehaviour
         optionsImg.SetActive(true);
         creditsBttn.SetActive(true);
         creditsImg.SetActive(false);
-        photosImages.SetActive(true);
     }
 
     public void CreditsBttn()
@@ -53,7 +50,6 @@ public class MenuManager : MonoBehaviour
         optionsImg.SetActive(false);
         creditsBttn.SetActive(false);
         creditsImg.SetActive(true);
-        photosImages.SetActive(false);
 
         pointers.SetActive(true);
         CreditsButtonsRestart();

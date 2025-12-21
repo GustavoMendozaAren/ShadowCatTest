@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public GameObject PausePanel;
-    public GameObject pauseButton;
-    public GameObject[] deadPanel;
-    public GameObject[] fotosSprites;
+    [SerializeField] private GameObject PausePanel;
+    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject[] deadPanel;
+    [SerializeField] private GameObject[] fotosSprites;
 
     public MusicBridge levelMusic;
 
@@ -76,6 +77,16 @@ public class GameManagerScript : MonoBehaviour
         pauseButton.SetActive(true);
         levelMusic.NotificarCambioMusica("Pausa", false);
         Time.timeScale = 1f;
+    }
+
+    public void OptionsButton()
+    {
+        optionsPanel.SetActive(true);
+    }
+
+    public void OptionsButtonBack()
+    {
+        optionsPanel.SetActive(false);
     }
 
     public void FotoCambioSprites()

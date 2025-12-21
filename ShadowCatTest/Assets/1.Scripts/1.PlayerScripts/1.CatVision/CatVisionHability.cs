@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class CatVisionHability : MonoBehaviour
 {
-    [SerializeField] private GameObject catPlatfomrsGroup;
+    [SerializeField] private GameObject[] catPlatfomrsGroup;
     [SerializeField] private GameObject catVisionPanel;
     [SerializeField] private CinemachineVirtualCamera vcam;
 
@@ -34,7 +34,7 @@ public class CatVisionHability : MonoBehaviour
             camTrans = true;
             counter += 2f * Time.deltaTime;
             visionCatAnim.SetBool("VisionCat", true);
-            catPlatfomrsGroup.SetActive(true);
+            ActiveDeactivePlatforms(true);
             vcam.m_Lens.OrthographicSize = 6.5f + counter;
             if (counter > 1f)
             {
@@ -46,7 +46,7 @@ public class CatVisionHability : MonoBehaviour
         {
 
             visionCatAnim.SetBool("VisionCat", false);
-            catPlatfomrsGroup.SetActive(false);
+            ActiveDeactivePlatforms(false);
 
             if (camTrans)
             {
@@ -60,5 +60,13 @@ public class CatVisionHability : MonoBehaviour
             }
         }
         //Debug.Log(vcam.m_Lens.OrthographicSize);
+    }
+
+    private void ActiveDeactivePlatforms(bool state)
+    {
+        for (int i = 0; i < catPlatfomrsGroup.Length; i++)
+        {
+            catPlatfomrsGroup[i].SetActive(state);
+        }
     }
 }

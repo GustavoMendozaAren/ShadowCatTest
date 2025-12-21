@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EntrarACallejones : MonoBehaviour
@@ -7,7 +6,9 @@ public class EntrarACallejones : MonoBehaviour
     //[SerializeField] private SpriteRenderer entrarCallejon;
     [SerializeField] private GameObject spriteMensaje;
     [SerializeField] private GameObject escenarioNormal;
-    [SerializeField] private GameObject escenarioCallejones1;
+    [SerializeField] private GameObject escenarioCallejones;
+    [SerializeField] private GameObject textoAvenida;
+    [SerializeField] private GameObject textoCallejon;
     [SerializeField] private bool tieneMensaje;
 
     private bool isInAvenue = true;
@@ -42,13 +43,19 @@ public class EntrarACallejones : MonoBehaviour
             {
                 isInAvenue = false;
                 escenarioNormal.SetActive(false);
-                escenarioCallejones1.SetActive(true);
+                escenarioCallejones.SetActive(true);
+
+                textoAvenida.SetActive(false);
+                textoCallejon.SetActive(true);
             }
             else
             {
                 isInAvenue = true;
                 escenarioNormal.SetActive(true);
-                escenarioCallejones1.SetActive(false);
+                escenarioCallejones.SetActive(false);
+
+                textoAvenida.SetActive(true);
+                textoCallejon.SetActive(false);
             }
         }
     }
