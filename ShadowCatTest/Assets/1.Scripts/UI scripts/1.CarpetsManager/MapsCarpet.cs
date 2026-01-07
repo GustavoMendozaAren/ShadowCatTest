@@ -30,19 +30,8 @@ public class MapsCarpet : MonoBehaviour
 
     public void PlayLeve4()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(5);
         StateGameController.sceneNo = 4;
-    }
-    public void PlayLeve5()
-    {
-        SceneManager.LoadScene(6);
-        StateGameController.sceneNo = 5;
-    }
-
-    public void PlayLeve6()
-    {
-        SceneManager.LoadScene(6);
-        StateGameController.sceneNo = 6;
     }
 
 
@@ -129,30 +118,6 @@ public class MapsCarpet : MonoBehaviour
     {
         buttons[6].SetActive(true);
         buttons[7].SetActive(false);
-        blackCourtine.SetActive(false);
-    }
-    public void Level5Small()
-    {
-        buttons[8].SetActive(false);
-        buttons[9].SetActive(true);
-        blackCourtine.SetActive(true);
-    }
-    public void Level5BigBack()
-    {
-        buttons[8].SetActive(true);
-        buttons[9].SetActive(false);
-        blackCourtine.SetActive(false);
-    }
-    public void Level6Small()
-    {
-        buttons[10].SetActive(false);
-        buttons[11].SetActive(true);
-        blackCourtine.SetActive(true);
-    }
-    public void Level6BigBack()
-    {
-        buttons[10].SetActive(true);
-        buttons[11].SetActive(false);
         blackCourtine.SetActive(false);
     }
 }

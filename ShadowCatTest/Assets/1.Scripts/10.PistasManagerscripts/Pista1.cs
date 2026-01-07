@@ -4,68 +4,85 @@ using UnityEngine;
 
 public class Pista1 : MonoBehaviour
 {
-    public GameObject[] pistaPaneles;
-    public GameObject[] closePistaPanelBttn;
+    [SerializeField] private GameObject[] pistaPaneles;
+    [SerializeField] private GameObject[] closePistaPanelBttn;
     [SerializeField] private GameObject masInfoPanel;
 
-    public GameObject[] levelUnlocks;
-    //private bool[] levelKey = new bool[2];
+    [SerializeField] private GameObject[] levelUnlocks;
 
     private void Start()
     {
-        ChequeoDePistaRecolectada();
+        PanelesDePistasActivacionMetodo();
+        ChecarNivelesDesbloqueados();
+        //ChequeoDePistaRecolectada();
+        
     }
 
     private void ChequeoDePistaRecolectada() 
     {
+        // Evita que se carguen los paneles al iniciar el juego, en la primera iteracion
         if(StateGameController.sceneNo>0)
-            PanelesActivacionMetodo();
+            PanelesDePistasActivacionMetodo();
     }
 
-    private void PanelesActivacionMetodo() 
+    private void PanelesDePistasActivacionMetodo() 
     {
-        if (StateGameController.pistaAgarrada[0]) 
+        if (StateGameController.pistaCandado[0])
         {
-            levelUnlocks[0].SetActive(true);
-            if (StateGameController.pistaCandado[0])
-            {
-                pistaPaneles[0].SetActive(true);
-                closePistaPanelBttn[0].SetActive(true);
-                StateGameController.pistaCandado[0] = false;
-            }
+            //levelUnlocks[0].SetActive(true);
+            StateGameController.nivelDesbloqueado[0] = true;
+
+            pistaPaneles[0].SetActive(true);
+            //closePistaPanelBttn[0].SetActive(true);
+            StateGameController.pistaCandado[0] = false;
         }
         if (StateGameController.pistaCandado[1])
         {
+            //levelUnlocks[1].SetActive(true);
+            StateGameController.nivelDesbloqueado[1] = true;
+
             pistaPaneles[1].SetActive(true);
-            closePistaPanelBttn[1].SetActive(true);
+            //closePistaPanelBttn[1].SetActive(true);
             StateGameController.pistaCandado[1] = false;
         }
         if (StateGameController.pistaCandado[2])
         {
+            //levelUnlocks[2].SetActive(true);
+            StateGameController.nivelDesbloqueado[2] = true;
+
             pistaPaneles[2].SetActive(true);
-            closePistaPanelBttn[2].SetActive(true);
+            //closePistaPanelBttn[2].SetActive(true);
             StateGameController.pistaCandado[2] = false;
         }
-        //if (numero < 1) 
-        //{
-        //    levelUnlocks[numero].SetActive(true);
-        //}
+        if (StateGameController.pistaCandado[3])
+        {
+            masInfoPanel.SetActive(true);
+            StateGameController.pistaCandado[3] = false;
+        }
     }
 
     private void ChecarNivelesDesbloqueados()
     {
-
+        if (StateGameController.nivelDesbloqueado[0])
+        {
+            //Debug.Log($"Nivel {i} desbloqueado");
+            levelUnlocks[0].SetActive(true);
+        }
+        if (StateGameController.nivelDesbloqueado[1])
+        {
+            //Debug.Log($"Nivel {i} desbloqueado");
+            levelUnlocks[1].SetActive(true);
+        }
+        if (StateGameController.nivelDesbloqueado[2])
+        {
+            //Debug.Log($"Nivel {i} desbloqueado");
+            levelUnlocks[2].SetActive(true);
+        }
     }
 
     public void ClosePistaPanelBttn()
     {
         pistaPaneles[StateGameController.sceneNo - 1].SetActive(false);
-    }
-
-    public void ActivarPanelMasInformacion()
-    {
-        pistaPaneles[StateGameController.sceneNo - 1].SetActive(false);
-        masInfoPanel.SetActive(true);
     }
 
     public void CloseMoreInfoPanel()

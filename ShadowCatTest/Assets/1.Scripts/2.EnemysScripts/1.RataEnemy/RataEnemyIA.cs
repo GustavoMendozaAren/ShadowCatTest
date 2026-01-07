@@ -9,7 +9,8 @@ public class RataEnemyIA : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Collider2D colliderVida;
     [SerializeField] private GameObject rataParentObj;
-    [SerializeField] private GameObject rataAtackCollider;
+    [SerializeField] private GameObject rataAtackSlashAttack;
+    [SerializeField] private Animator slashAnimator;
     [SerializeField] private RataLife rataLife;
     
     private Animator animator;
@@ -26,6 +27,8 @@ public class RataEnemyIA : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerDamage = FindObjectOfType<PlayerDamage>();
+
+        slashAnimator = rataAtackSlashAttack.GetComponent<Animator>();
 
         originPosition = transform.position;
         originPosition.x += 7f;
@@ -163,9 +166,9 @@ public class RataEnemyIA : MonoBehaviour
         colliderVida.enabled = false;
     }
 
-    void ActivarDesactivarColliderAtaque()
+    void ActivarSlashAttack()
     {
-        rataAtackCollider.SetActive(!rataAtackCollider.activeSelf);
+        slashAnimator.SetTrigger("Slash");
     }
 
     void RataMuerta()

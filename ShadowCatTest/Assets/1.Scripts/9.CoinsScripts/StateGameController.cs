@@ -30,6 +30,9 @@ public class StateGameController : MonoBehaviour
 
     public static int bulletsInGame = 6;
 
+    public static int barrasSlowIndex = -1;
+    public static int barrasJumpIndex = -1;
+
     // Text of power
 
     public static int currentDamageText = 10;
@@ -55,7 +58,7 @@ public class StateGameController : MonoBehaviour
     // Scene Number
 
     public static int sceneNo = 0;
-    public static bool[] pistaAgarrada = new bool[6];
+    public static bool[] nivelDesbloqueado = new bool[3];
     public static bool[] pistaCandado = new bool[6];
 
     // TimeScales

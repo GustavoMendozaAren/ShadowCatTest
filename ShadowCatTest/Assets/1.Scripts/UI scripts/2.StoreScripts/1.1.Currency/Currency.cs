@@ -117,7 +117,7 @@ public class Currency : MonoBehaviour
 
     public void OpenURLPogrammer()
     {
-        Application.OpenURL("https://gustavomdza-gamedev.itch.io/");
+        Application.OpenURL("https://itch.io/profile/gustavomendoza-gamedev");
     }
 
     public void OpenURLComposer()

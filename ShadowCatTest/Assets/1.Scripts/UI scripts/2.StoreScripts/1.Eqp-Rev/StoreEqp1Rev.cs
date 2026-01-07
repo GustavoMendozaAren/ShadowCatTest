@@ -5,18 +5,20 @@ using TMPro;
 
 public class StoreEqp1Rev : MonoBehaviour
 {
+    [SerializeField] private TMP_Text currentPowTxt, nextPowtxt;
+    [SerializeField] private TMP_Text currentAmountTxt, nextAmountTxt;
+
+    [SerializeField] private GameObject eqp1RevSmallImg, eqp1RevBigImg;
+    [SerializeField] private GameObject panel1Rev, panel2DoubRev, panel3Incog;
+
+    [SerializeField] private GameObject upgradeButtonPower, upgradeButtonAmount;
+
+    [SerializeField] private GameObject[] barrasPower;
+    [SerializeField] private GameObject[] barrasAmount;
+
+    [SerializeField] private GameObject needCoinsPanel;
+
     private TMP_Text coinsText;
-    public TMP_Text currentPowTxt, nextPowtxt;
-    public TMP_Text currentAmountTxt, nextAmountTxt;
-
-    public GameObject eqp1RevSmallImg, eqp1RevBigImg;
-    public GameObject panel1Rev, panel2DoubRev, panel3Incog;
-
-    public GameObject upgradeButtonPower, upgradeButtonAmount;
-
-    public GameObject[] barrasPower;
-    public GameObject[] barrasAmount;
-    public GameObject needCoinsPanel;
 
     private void Start()
     {

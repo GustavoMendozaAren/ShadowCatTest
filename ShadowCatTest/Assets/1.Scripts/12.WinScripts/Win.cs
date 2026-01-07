@@ -8,7 +8,8 @@ public class Win : MonoBehaviour
     public GameObject[] panel;
 
     public GameObject Pista1Win;
-    [SerializeField] private int pistaID;
+    //[SerializeField] private int pistaID;
+    private int pistaID;
     private Collider2D colliderPista;
 
     public MusicBridge levelMusic;
@@ -17,6 +18,8 @@ public class Win : MonoBehaviour
 
     private void Start()
     {
+
+        pistaID = StateGameController.sceneNo - 1;
         GameObject instanciaMusic = GameObject.Find("Music");
         levelMusic = instanciaMusic.GetComponent<MusicBridge>();
 
@@ -25,7 +28,8 @@ public class Win : MonoBehaviour
 
         StateGameController.playerCanDie = true;
 
-        if (StateGameController.pistaAgarrada[pistaID])
+        // Se desactiva la pista
+        if (StateGameController.pistaCandado[pistaID])
         {
             Pista1Win.SetActive(false);
             colliderPista.enabled = false;
@@ -38,7 +42,7 @@ public class Win : MonoBehaviour
             StartCoroutine(WinConditionCo());
 
             Pista1Win.SetActive(false);
-            StateGameController.pistaAgarrada[pistaID] = true;
+            //StateGameController.pistaAgarrada[pistaID] = true;
             StateGameController.pistaCandado[pistaID] = true;
 
             StateGameController.playerCanDie = false;

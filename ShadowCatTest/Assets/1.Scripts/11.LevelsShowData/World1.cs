@@ -18,11 +18,5 @@ public class World1 : MonoBehaviour
 
         totalCoinsS[2].text = "Coins:" + StateGameController.level4Coins + "/10";
         totalCoinsB[2].text = "Coins:" + StateGameController.level4Coins + "/10";
-
-        totalCoinsS[3].text = "Coins:" + StateGameController.level5Coins + "/10";
-        totalCoinsB[3].text = "Coins:" + StateGameController.level5Coins + "/10";
-
-        totalCoinsS[4].text = "Coins:" + StateGameController.level6Coins + "/10";
-        totalCoinsB[4].text = "Coins:" + StateGameController.level6Coins + "/10";
     }
 }
