@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86.Sse4_2;
 
 public class CoinIDScript : MonoBehaviour
 {
-    public string coinID; // Un identificador único para esta moneda
+    [SerializeField] private string coinID; // Un identificador único para esta moneda
 
     void Start()
     {
-        // Comprobar si la moneda ya ha sido recogida
+        //PlayerPrefs.SetInt(coinID, 0);
+
         if (PlayerPrefs.GetInt(coinID, 0) == 1)
         {
-            // Si la moneda ha sido recogida, la desactivamos
             gameObject.SetActive(false);
         }
     }

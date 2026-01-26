@@ -9,6 +9,7 @@ public class EntrarACallejones : MonoBehaviour
     [SerializeField] private GameObject escenarioCallejones;
     [SerializeField] private GameObject textoAvenida;
     [SerializeField] private GameObject textoCallejon;
+    [SerializeField] private Animator entrarPanel;
     [SerializeField] private bool tieneMensaje;
 
     private bool isInAvenue = true;
@@ -47,6 +48,8 @@ public class EntrarACallejones : MonoBehaviour
 
                 textoAvenida.SetActive(false);
                 textoCallejon.SetActive(true);
+
+                entrarPanel.SetTrigger("FadeOut");
             }
             else
             {
@@ -56,6 +59,8 @@ public class EntrarACallejones : MonoBehaviour
 
                 textoAvenida.SetActive(true);
                 textoCallejon.SetActive(false);
+
+                entrarPanel.SetTrigger("FadeOut");
             }
         }
     }

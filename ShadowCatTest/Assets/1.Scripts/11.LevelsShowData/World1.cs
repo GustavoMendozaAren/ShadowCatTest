@@ -10,8 +10,8 @@ public class World1 : MonoBehaviour
     public TMP_Text[] totalCoinsB;
     private void Start()
     {
-        totalCoinsS[0].text = "Coins:" + StateGameController.level2Coins + "/14";
-        totalCoinsB[0].text = "Coins:" + StateGameController.level2Coins + "/14";
+        totalCoinsS[0].text = "Coins:" + StateGameController.level2Coins + "/45";
+        totalCoinsB[0].text = "Coins:" + StateGameController.level2Coins + "/45";
 
         totalCoinsS[1].text = "Coins:" + StateGameController.level3Coins + "/10";
         totalCoinsB[1].text = "Coins:" + StateGameController.level3Coins + "/10";

@@ -28,8 +28,8 @@ public class StoreEqp2Cat : MonoBehaviour
     [SerializeField] private GameObject needCoinsPanel;
 
     private TMP_Text coinsText;
-    private int currentSlowCount = 10;
-    private int nextSlowCount = 15;
+    private int currentSlowCount = 4;
+    private int nextSlowCount = 6;
     private int currentJumpCount = 6;
     private int nextJumpCount = 8;
 
@@ -38,11 +38,11 @@ public class StoreEqp2Cat : MonoBehaviour
         coinsText = GameObject.Find("CoinsText").GetComponent<TMP_Text>();
         coinsText.text = StateGameController.coinsTotal.ToString();
 
-        currentPowTxt.text = StateGameController.currentDamageText.ToString();
-        nextPowtxt.text = StateGameController.nextPowerText.ToString();
+        currentPowTxt.text = StateGameController.currentSlowText + " s";
+        nextPowtxt.text = StateGameController.nextSlowText + " s";
 
-        currentAmountTxt.text = StateGameController.currentAmountTxt.ToString();
-        nextAmountTxt.text = StateGameController.nextAmountTxt.ToString();
+        //currentAmountTxt.text = StateGameController.currentAmountTxt.ToString();
+        //nextAmountTxt.text = StateGameController.nextAmountTxt.ToString();
 
         BarrasSlowIndexActive();
         BarrasJumpIndexActive();
@@ -81,7 +81,7 @@ public class StoreEqp2Cat : MonoBehaviour
         panel3Incognito.SetActive(true);
     }
 
-    public void UpgradeEqp1PowerBttn()
+    public void UpgradeEqp1GatoSlowBttn()
     {
         if (StateGameController.coinsTotal >= 10)
         {
@@ -95,18 +95,20 @@ public class StoreEqp2Cat : MonoBehaviour
                 StateGameController.barrasSlowIndex++;
                 BarrasSlowIndexActive();
 
-                //StateGameController.revolverPower += 0.5f;
+                StateGameController.slowdownTime += 2;
 
                 StateGameController.coinsTotal -= 10;
                 coinsText.text = StateGameController.coinsTotal.ToString();
 
                 // CurrentDamageTextNumber
-                currentSlowCount += 5;
-                currentPowTxt.text = currentSlowCount.ToString();
+                currentSlowCount += 2;
+                currentPowTxt.text = currentSlowCount + " s";
 
                 // NextDamageTextnumber
-                nextSlowCount += 5;
-                nextPowtxt.text = nextSlowCount.ToString();
+                if (nextSlowCount < 10)
+                    nextSlowCount += 2;
+
+                nextPowtxt.text = nextSlowCount + " s";
             }
         }
         else

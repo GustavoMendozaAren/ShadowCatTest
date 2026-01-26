@@ -390,15 +390,15 @@ public class SwitchLite : MonoBehaviour
             StateGameController.playerTime = 0.8f;
             Anim[0].speed = 0.8f;
             Anim[1].speed = 0.8f;
-            StartCoroutine(SlowMechanicCo());
+            StartCoroutine(SlowMechanicCo(StateGameController.slowdownTime));
             slowBttn = false;
         }
     }
 
-    IEnumerator SlowMechanicCo()
+    IEnumerator SlowMechanicCo(float time)
     {
         levelMusic.NotificarCambioMusica("RalentizarEnUso", true);
-        yield return new WaitForSeconds(4f);        
+        yield return new WaitForSeconds(time);        
         slowbutonbarrier.SetActive(true);
         StateGameController.enemiesTime = 1f;
         StateGameController.playerTime = 1f;

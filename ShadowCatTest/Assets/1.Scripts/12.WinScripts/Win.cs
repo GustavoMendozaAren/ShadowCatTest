@@ -5,21 +5,23 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    public GameObject[] panel;
+    [SerializeField] private GameObject[] panel;
+    [SerializeField] private GameObject Pista1Win;
+    [SerializeField] private int pistaID;
 
-    public GameObject Pista1Win;
-    //[SerializeField] private int pistaID;
-    private int pistaID;
-    private Collider2D colliderPista;
+    private BoxCollider2D colliderPista;
 
     public MusicBridge levelMusic;
-
     public PlayerDamage damageInstance;
+
+    private void Awake()
+    {
+        colliderPista = GetComponent<BoxCollider2D>();
+    }
 
     private void Start()
     {
 
-        pistaID = StateGameController.sceneNo - 1;
         GameObject instanciaMusic = GameObject.Find("Music");
         levelMusic = instanciaMusic.GetComponent<MusicBridge>();
 
@@ -28,12 +30,12 @@ public class Win : MonoBehaviour
 
         StateGameController.playerCanDie = true;
 
-        // Se desactiva la pista
-        if (StateGameController.pistaCandado[pistaID])
-        {
-            Pista1Win.SetActive(false);
-            colliderPista.enabled = false;
-        }
+        //// Se desactiva la pista
+        //if (StateGameController.pistaCandado[pistaID])
+        //{
+        //    Pista1Win.SetActive(false);
+        //    colliderPista.enabled = false;
+        //}
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -42,7 +44,7 @@ public class Win : MonoBehaviour
             StartCoroutine(WinConditionCo());
 
             Pista1Win.SetActive(false);
-            //StateGameController.pistaAgarrada[pistaID] = true;
+
             StateGameController.pistaCandado[pistaID] = true;
 
             StateGameController.playerCanDie = false;

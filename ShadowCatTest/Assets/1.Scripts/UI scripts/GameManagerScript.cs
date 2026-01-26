@@ -25,6 +25,8 @@ public class GameManagerScript : MonoBehaviour
         //    deadCoroutine = DeadCorutine();
         GameObject instanciaMusic = GameObject.Find("Music");
         levelMusic = instanciaMusic.GetComponent<MusicBridge>();
+
+        Debug.Log(StateGameController.sceneNo);
     }
 
     private void Update()
@@ -39,13 +41,22 @@ public class GameManagerScript : MonoBehaviour
         levelMusic.NotificarCambioMusica("EsGato", false);
         levelMusic.NotificarCambioMusica("JuegoEnCurso");
         if (StateGameController.sceneNo == 1)
-            SceneManager.LoadScene("TutScene");
-        if (StateGameController.sceneNo == 2)
-            SceneManager.LoadScene("Chap1Level2");
-        if (StateGameController.sceneNo == 3)
-            SceneManager.LoadScene("Chap1Level3");
-        if (StateGameController.sceneNo > 3)
-            SceneManager.LoadScene("SceneLoopTest");
+        {
+            SceneManager.LoadScene(2);
+        }
+        else if (StateGameController.sceneNo == 2)
+        {
+            SceneManager.LoadScene(3);
+        }
+        else if (StateGameController.sceneNo == 3)
+        {
+            SceneManager.LoadScene(5);
+        }
+        else if (StateGameController.sceneNo == 4)
+        {
+            SceneManager.LoadScene(5);
+        }
+
         Time.timeScale = 1f;
     }
 

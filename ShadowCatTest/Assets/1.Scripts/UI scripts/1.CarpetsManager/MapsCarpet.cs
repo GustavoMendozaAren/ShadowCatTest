@@ -60,7 +60,15 @@ public class MapsCarpet : MonoBehaviour
 
     public void City3Panel()
     {
-        comingSoon.SetTrigger("Coming");
+        //comingSoon.SetTrigger("Coming");
+        for (int i = 1; i < 16; i++)
+        {
+            PlayerPrefs.SetInt("2N" + i, 0);
+            PlayerPrefs.SetInt("2C" + i, 0);
+            PlayerPrefs.SetInt("2H" + i, 0);
+        }
+
+        StateGameController.level2Coins = 0;
     }
 
     // SMALL AND BIG BUTTONS

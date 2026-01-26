@@ -7,10 +7,13 @@ using TMPro;
 public class ScoreScript : MonoBehaviour
 {
     private TMP_Text coinTextScore;
-    void Start()
+
+    private void Awake()
     {
         coinTextScore = GameObject.Find("TextCoins").GetComponent<TMP_Text>();
-
+    }
+    void Start()
+    {
         if (StateGameController.sceneNo == 1)
             coinTextScore.text = StateGameController.level1Coins.ToString();
         if (StateGameController.sceneNo == 2)
@@ -19,10 +22,6 @@ public class ScoreScript : MonoBehaviour
             coinTextScore.text = StateGameController.level3Coins.ToString();
         if (StateGameController.sceneNo == 4)
             coinTextScore.text = StateGameController.level4Coins.ToString();
-        if (StateGameController.sceneNo == 5)
-            coinTextScore.text = StateGameController.level5Coins.ToString();
-        if (StateGameController.sceneNo == 6)
-            coinTextScore.text = StateGameController.level6Coins.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D target)
@@ -44,13 +43,12 @@ public class ScoreScript : MonoBehaviour
 
             if (StateGameController.sceneNo == 2)
             {
-                if (StateGameController.level2Coins < 21)
+                if (StateGameController.level2Coins < 46)
                 {
                     StateGameController.level2Coins++;
                     StateGameController.coinsTotal++;
+                    coinTextScore.text = StateGameController.level2Coins.ToString();
                 }
-
-                coinTextScore.text = StateGameController.level2Coins.ToString();
             }
 
             if (StateGameController.sceneNo == 3)
@@ -59,9 +57,8 @@ public class ScoreScript : MonoBehaviour
                 {
                     StateGameController.level3Coins++;
                     StateGameController.coinsTotal++;
+                    coinTextScore.text = StateGameController.level3Coins.ToString();
                 }
-
-                coinTextScore.text = StateGameController.level3Coins.ToString();
             }
 
             if (StateGameController.sceneNo == 4)
@@ -73,28 +70,6 @@ public class ScoreScript : MonoBehaviour
                 }
 
                 coinTextScore.text = StateGameController.level4Coins.ToString();
-            }
-
-            if (StateGameController.sceneNo == 5)
-            {
-                if (StateGameController.level5Coins < 10)
-                {
-                    StateGameController.level5Coins++;
-                    StateGameController.coinsTotal++;
-                }
-
-                coinTextScore.text = StateGameController.level5Coins.ToString();
-            }
-
-            if (StateGameController.sceneNo == 6)
-            {
-                if (StateGameController.level6Coins < 10)
-                {
-                    StateGameController.level6Coins++;
-                    StateGameController.coinsTotal++;
-                }
-
-                coinTextScore.text = StateGameController.level6Coins.ToString();
             }
         }
 

@@ -7,6 +7,7 @@ public class Patrollbandido : MonoBehaviour
     public float moveSpeed = 1f;
     private Rigidbody2D MyBody;
     private Animator Anim;
+    private BoxCollider2D boxCollider;
 
     private Vector3 moveDirection = Vector3.right;
     private Vector3 originPosition;
@@ -37,6 +38,7 @@ public class Patrollbandido : MonoBehaviour
     {
         MyBody = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     void Start()
@@ -120,19 +122,6 @@ public class Patrollbandido : MonoBehaviour
         transform.localScale = tempScale;
     }
 
-    private IEnumerator ShootAnim()
-    {
-        yield return new WaitForSeconds(1.1f);
-        
-        Anim.SetBool("Shoot", true);
-        yield return new WaitForSeconds(.2f / (StateGameController.enemiesTime));
-        //Debug.Log("Shoot");
-        GameObject bullet = Instantiate(FireBall, transform.position, Quaternion.Euler(FireBallRot));
-        bullet.GetComponent<FireBallEnemy>().Speed *= transform.localScale.x;
-        canShoot = true;
-        canMove = true;
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -146,25 +135,28 @@ public class Patrollbandido : MonoBehaviour
     {
         if (target.gameObject.CompareTag("Bullet"))
         {
-            //enemyLife = enemyLife - StateGameController.bulletPower;
-            enemyLife = enemyLife - StateGameController.revolverPower;
-            if (enemyLife <= 0)
+            RecibirDañoPorBala();
+        }
+    }
+
+    private void RecibirDañoPorBala()
+    {
+        enemyLife = enemyLife - StateGameController.revolverPower;
+        if (enemyLife <= 0)
+        {
+            enemyLife = 0;
+
+            if (co != null)
             {
-                enemyLife = 0;
-            }
-            if(enemyLife == 0)
-            {
-                if (co != null)
-                {
-                    StopCoroutine(co);
-                }
-                LES.DimLight = true;
-                Anim.SetBool("Death", true);
-                moveSpeed = 0f;
-                GetComponent<Patrollbandido>().enabled = false;
-                Invoke(nameof(DeactivateEnemy), 0.8f);
+                StopCoroutine(co);
             }
 
+            LES.DimLight = true;
+            Anim.SetBool("Death", true);
+            moveSpeed = 0f;
+            boxCollider.enabled = false;
+            GetComponent<Patrollbandido>().enabled = false;
+            Invoke(nameof(DeactivateEnemy), 0.8f);
         }
     }
 
@@ -183,5 +175,18 @@ public class Patrollbandido : MonoBehaviour
             }
             this.enabled = false;
         }
+    }
+
+    private IEnumerator ShootAnim()
+    {
+        yield return new WaitForSeconds(1.1f);
+
+        Anim.SetBool("Shoot", true);
+        yield return new WaitForSeconds(.2f / (StateGameController.enemiesTime));
+        //Debug.Log("Shoot");
+        GameObject bullet = Instantiate(FireBall, transform.position, Quaternion.Euler(FireBallRot));
+        bullet.GetComponent<FireBallEnemy>().Speed *= transform.localScale.x;
+        canShoot = true;
+        canMove = true;
     }
 }

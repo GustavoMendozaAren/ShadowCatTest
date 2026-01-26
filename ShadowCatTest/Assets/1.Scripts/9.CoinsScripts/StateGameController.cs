@@ -19,21 +19,24 @@ public class StateGameController : MonoBehaviour
 
     public static int coinsTotal = 0;
 
-    // Actual Power
+    // POWER AND BULLETS
 
     public static float revolverPower = 1f;
+    public static int bulletsInGame = 6;
+
+    // SLOW AND JUMP
+
+    public static float slowdownTime = 4f;
 
     // Barras
 
     public static int barrasPowerIndex = -1;
     public static int barrasAmountIndex = -1;
 
-    public static int bulletsInGame = 6;
-
     public static int barrasSlowIndex = -1;
     public static int barrasJumpIndex = -1;
 
-    // Text of power
+    // TEXT OF POWERS AND AMOUNT
 
     public static int currentDamageText = 10;
     public static int nextPowerText = 15;
@@ -41,11 +44,12 @@ public class StateGameController : MonoBehaviour
     public static int currentAmountTxt = 6;
     public static int nextAmountTxt = 8;
 
+    // TEXT OF SLOW AND JUMP
+
+    public static int currentSlowText = 4;
+    public static int nextSlowText = 6;
+
     // ***************
-
-    // Key to Clue Animation
-
-    public static int[] candado = new int[5];
 
     // Transform to cat
 
@@ -73,8 +77,6 @@ public class StateGameController : MonoBehaviour
     public static int level2Coins = 0;
     public static int level3Coins = 0;
     public static int level4Coins = 0;
-    public static int level5Coins = 0;
-    public static int level6Coins = 0;
 
     // BRIGHTNESS 
 

@@ -7,6 +7,7 @@ public class BandidoPlatform : MonoBehaviour
     public float moveSpeed = 1f;
     private Rigidbody2D rb;
     private Animator Anim;
+    private BoxCollider2D boxCollider;
 
     private Vector3 moveDirection = Vector3.right;
     private Vector3 originPosition;
@@ -36,12 +37,13 @@ public class BandidoPlatform : MonoBehaviour
     public LightEnemy LES;
 
     //Life
-    private float enemyLife = 3f;
+    private float enemyLife = 2f;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     void Start()
@@ -194,23 +196,29 @@ public class BandidoPlatform : MonoBehaviour
     {
         if (target.gameObject.CompareTag("Bullet"))
         {
-            enemyLife = enemyLife - StateGameController.revolverPower;
-            if (enemyLife <= 0)
+            ReducirDañoPorBalaMetodo();
+        }
+    }
+
+    private void ReducirDañoPorBalaMetodo()
+    {
+        enemyLife = enemyLife - StateGameController.revolverPower;
+        if (enemyLife <= 0)
+        {
+            enemyLife = 0;
+        }
+        if (enemyLife == 0)
+        {
+            if (co != null)
             {
-                enemyLife = 0;
+                StopCoroutine(co);
             }
-            if (enemyLife == 0)
-            {
-                if (co != null)
-                {
-                    StopCoroutine(co);
-                }
-                LES.DimLight = true;
-                Anim.SetBool("Death", true);
-                moveSpeed = 0f;
-                GetComponent<BandidoPlatform>().enabled = false;
-                Invoke(nameof(DeactivateEnemy), 0.8f);
-            }
+            LES.DimLight = true;
+            Anim.SetBool("Death", true);
+            moveSpeed = 0f;
+            boxCollider.enabled = false;
+            GetComponent<BandidoPlatform>().enabled = false;
+            Invoke(nameof(DeactivateEnemy), 0.8f);
         }
     }
 

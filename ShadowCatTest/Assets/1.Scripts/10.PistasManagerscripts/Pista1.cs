@@ -5,7 +5,6 @@ using UnityEngine;
 public class Pista1 : MonoBehaviour
 {
     [SerializeField] private GameObject[] pistaPaneles;
-    [SerializeField] private GameObject[] closePistaPanelBttn;
     [SerializeField] private GameObject masInfoPanel;
 
     [SerializeField] private GameObject[] levelUnlocks;
@@ -29,29 +28,28 @@ public class Pista1 : MonoBehaviour
     {
         if (StateGameController.pistaCandado[0])
         {
-            //levelUnlocks[0].SetActive(true);
+
             StateGameController.nivelDesbloqueado[0] = true;
 
             pistaPaneles[0].SetActive(true);
-            //closePistaPanelBttn[0].SetActive(true);
+
             StateGameController.pistaCandado[0] = false;
         }
         if (StateGameController.pistaCandado[1])
         {
-            //levelUnlocks[1].SetActive(true);
+
             StateGameController.nivelDesbloqueado[1] = true;
 
             pistaPaneles[1].SetActive(true);
-            //closePistaPanelBttn[1].SetActive(true);
+
             StateGameController.pistaCandado[1] = false;
         }
         if (StateGameController.pistaCandado[2])
         {
-            //levelUnlocks[2].SetActive(true);
+
             StateGameController.nivelDesbloqueado[2] = true;
 
             pistaPaneles[2].SetActive(true);
-            //closePistaPanelBttn[2].SetActive(true);
             StateGameController.pistaCandado[2] = false;
         }
         if (StateGameController.pistaCandado[3])
