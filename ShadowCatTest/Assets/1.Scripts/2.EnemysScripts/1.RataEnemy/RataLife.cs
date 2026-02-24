@@ -4,8 +4,8 @@ using UnityEngine;
 public class RataLife : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer rataSprite;
+    [SerializeField] private int rataLife = 2;
 
-    private int rataLife = 2;
     private Coroutine damageCoroutine;
 
     public bool IsDead = false;

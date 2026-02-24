@@ -37,7 +37,7 @@ public class BandidoPlatform : MonoBehaviour
     public LightEnemy LES;
 
     //Life
-    private float enemyLife = 2f;
+    [SerializeField] private float enemyLife = 2f;
 
     private void Awake()
     {

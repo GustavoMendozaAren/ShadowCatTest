@@ -7,14 +7,19 @@ public class StoreEqp1Rev : MonoBehaviour
 {
     [SerializeField] private TMP_Text currentPowTxt, nextPowtxt;
     [SerializeField] private TMP_Text currentAmountTxt, nextAmountTxt;
+    [SerializeField] private TMP_Text currentEscopetaDamageTxt, nextEscopetaDamageTxt;
+    [SerializeField] private TMP_Text currentEscopetaAuraTxt, nextEscopetaAuraTxt;
 
     [SerializeField] private GameObject eqp1RevSmallImg, eqp1RevBigImg;
     [SerializeField] private GameObject panel1Rev, panel2DoubRev, panel3Incog;
+    [SerializeField] private GameObject panelBlackEscopeta;
 
-    [SerializeField] private GameObject upgradeButtonPower, upgradeButtonAmount;
+    [SerializeField] private GameObject upgradeButtonPower, upgradeButtonAmount, upgradeButtonEscopetaDamage, upgradeButtonEscopetaAura;
 
     [SerializeField] private GameObject[] barrasPower;
     [SerializeField] private GameObject[] barrasAmount;
+    [SerializeField] private GameObject[] barrasEscopetaDamage;
+    [SerializeField] private GameObject[] barrasEscopetaAura;
 
     [SerializeField] private GameObject needCoinsPanel;
 
@@ -31,8 +36,17 @@ public class StoreEqp1Rev : MonoBehaviour
         currentAmountTxt.text = StateGameController.currentAmountTxt.ToString();
         nextAmountTxt.text = StateGameController.nextAmountTxt.ToString();
 
-        BarrasDamageIndexActive();
-        BarrasAmountIndexActive();
+        currentEscopetaDamageTxt.text = StateGameController.currentEscopetaDamageTxt.ToString();
+        nextEscopetaDamageTxt.text = StateGameController.nextEscopetaDamageTxt.ToString();
+
+        currentEscopetaAuraTxt.text = StateGameController.currentEscopetaAuraTxt.ToString();
+        nextEscopetaAuraTxt.text = StateGameController.nextEscopetaAuraTxt.ToString();
+
+        //BarrasDamageIndexActive();
+        //BarrasAmountIndexActive();
+        ActualizarBarrasImagenes(StateGameController.barrasPowerIndex, barrasPower, upgradeButtonPower);
+        ActualizarBarrasImagenes(StateGameController.barrasAmountIndex, barrasAmount, upgradeButtonAmount);
+        ActualizarBarrasImagenes(StateGameController.barrasEscopetaDamageIndex, barrasEscopetaDamage, upgradeButtonEscopetaDamage);
     }
 
     public void Eqp1RevSmallBttnDeact()
@@ -68,6 +82,21 @@ public class StoreEqp1Rev : MonoBehaviour
         panel3Incog.SetActive(true);
     }
 
+    public void DesactivarPanelBlackEscopeta()
+    {
+        if (StateGameController.coinsTotal >= 25)
+        {
+            StateGameController.isShotgunUnlock = true;
+            panelBlackEscopeta.SetActive(false);
+            StateGameController.coinsTotal -= 25;
+            coinsText.text = StateGameController.coinsTotal.ToString();
+        }
+        else
+        {
+            needCoinsPanel.SetActive(true);
+        }
+    }
+
     public void UpgradeEqp1PowerBttn()
     {
         if(StateGameController.coinsTotal >= 10)
@@ -80,7 +109,8 @@ public class StoreEqp1Rev : MonoBehaviour
             else
             {
                 StateGameController.barrasPowerIndex++;
-                BarrasDamageIndexActive();
+                //BarrasDamageIndexActive();
+                ActualizarBarrasImagenes(StateGameController.barrasPowerIndex, barrasPower, upgradeButtonPower);
 
                 StateGameController.revolverPower += 0.5f;
                 
@@ -116,7 +146,8 @@ public class StoreEqp1Rev : MonoBehaviour
             else
             {
                 StateGameController.barrasAmountIndex++;
-                BarrasAmountIndexActive();
+                //BarrasAmountIndexActive();
+                ActualizarBarrasImagenes(StateGameController.barrasAmountIndex, barrasAmount, upgradeButtonAmount);
 
                 StateGameController.bulletsInGame += 2;
 
@@ -140,51 +171,105 @@ public class StoreEqp1Rev : MonoBehaviour
 
     }
 
-    public void BarrasDamageIndexActive()
+    public void UpgradeEqp1EscopetaDamageBttn()
     {
-        if (StateGameController.barrasPowerIndex == 0)
+        if (StateGameController.coinsTotal >= 10)
         {
-            barrasPower[0].SetActive(true);
-        }
-        else if (StateGameController.barrasPowerIndex == 1)
-        {
-            barrasPower[0].SetActive(true);
-            barrasPower[1].SetActive(true);
-        }
-        else if (StateGameController.barrasPowerIndex == 2)
-        {
-            barrasPower[0].SetActive(true);
-            barrasPower[1].SetActive(true);
-            barrasPower[2].SetActive(true);
-        }
 
-        if (StateGameController.barrasPowerIndex == 2)
+            if (StateGameController.barrasEscopetaDamageIndex >= 3)
+            {
+                StateGameController.barrasEscopetaDamageIndex = 3;
+            }
+            else
+            {
+                StateGameController.barrasEscopetaDamageIndex++;
+                //BarrasAmountIndexActive();
+                ActualizarBarrasImagenes(StateGameController.barrasEscopetaDamageIndex, barrasEscopetaDamage, upgradeButtonEscopetaDamage);
+
+                StateGameController.EscopetaDamage += 10;
+
+                StateGameController.coinsTotal -= 10;
+                coinsText.text = StateGameController.coinsTotal.ToString();
+
+                // CurrentAmountTextNumber
+                StateGameController.currentEscopetaDamageTxt += 10;
+                currentEscopetaDamageTxt.text = StateGameController.currentEscopetaDamageTxt.ToString();
+
+                // NextAmountTextnumber
+                if (StateGameController.barrasEscopetaDamageIndex < 2)
+                {
+                    StateGameController.nextEscopetaDamageTxt += 10;
+                    nextEscopetaDamageTxt.text = StateGameController.nextEscopetaDamageTxt.ToString();
+                }
+            }
+        }
+        else
         {
-            upgradeButtonPower.SetActive(false);
+            needCoinsPanel.SetActive(true);
+            //ToClosePanelSeeCurrencyScript
         }
     }
 
-    public void BarrasAmountIndexActive()
+    public void UpgradeEqp1EscopetaAuraBttn()
     {
-        if (StateGameController.barrasAmountIndex == 0)
+        if (StateGameController.coinsTotal >= 10)
         {
-            barrasAmount[0].SetActive(true);
+
+            if (StateGameController.barrasEscopetaAuraIndex >= 3)
+            {
+                StateGameController.barrasEscopetaAuraIndex = 3;
+            }
+            else
+            {
+                StateGameController.barrasEscopetaAuraIndex++;
+                //BarrasAmountIndexActive();
+                ActualizarBarrasImagenes(StateGameController.barrasEscopetaAuraIndex, barrasEscopetaAura, upgradeButtonEscopetaAura);
+
+                StateGameController.AuraFarming += 3;
+
+                StateGameController.coinsTotal -= 10;
+                coinsText.text = StateGameController.coinsTotal.ToString();
+
+                // CurrentAmountTextNumber
+                StateGameController.currentEscopetaAuraTxt += 3;
+                currentEscopetaAuraTxt.text = StateGameController.currentEscopetaAuraTxt.ToString();
+
+                // NextAmountTextnumber
+                if (StateGameController.barrasEscopetaAuraIndex < 2)
+                {
+                    StateGameController.nextEscopetaAuraTxt += 3;
+                    nextEscopetaAuraTxt.text = StateGameController.nextEscopetaAuraTxt.ToString();
+                }
+            }
         }
-        else if (StateGameController.barrasAmountIndex == 1)
+        else
         {
-            barrasAmount[0].SetActive(true);
-            barrasAmount[1].SetActive(true);
+            needCoinsPanel.SetActive(true);
+            //ToClosePanelSeeCurrencyScript
         }
-        else if (StateGameController.barrasAmountIndex == 2)
+    }
+
+    private void ActualizarBarrasImagenes(int cantidad, GameObject[] barras, GameObject button)
+    {
+        if (cantidad == 0)
         {
-            barrasAmount[0].SetActive(true);
-            barrasAmount[1].SetActive(true);
-            barrasAmount[2].SetActive(true);
+            barras[0].SetActive(true);
+        }
+        else if (cantidad == 1)
+        {
+            barras[0].SetActive(true);
+            barras[1].SetActive(true);
+        }
+        else if (cantidad == 2)
+        {
+            barras[0].SetActive(true);
+            barras[1].SetActive(true);
+            barras[2].SetActive(true);
         }
 
-        if (StateGameController.barrasAmountIndex == 2)
+        if (cantidad == 2)
         {
-            upgradeButtonAmount.SetActive(false);
+            button.SetActive(false);
         }
     }
 }

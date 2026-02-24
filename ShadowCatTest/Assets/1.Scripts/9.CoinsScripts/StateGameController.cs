@@ -17,12 +17,19 @@ public class StateGameController : MonoBehaviour
 
     // COINS
 
-    public static int coinsTotal = 0;
+    public static int coinsTotal = 55;
+
+    // ARMAS DESBLOQUEADAS
+
+    public static bool isShotgunUnlock = false;
 
     // POWER AND BULLETS
 
     public static float revolverPower = 1f;
     public static int bulletsInGame = 6;
+
+    public static int EscopetaDamage = 20;
+    public static int AuraFarming = 1;
 
     // SLOW AND JUMP
 
@@ -32,6 +39,9 @@ public class StateGameController : MonoBehaviour
 
     public static int barrasPowerIndex = -1;
     public static int barrasAmountIndex = -1;
+
+    public static int barrasEscopetaDamageIndex = -1;
+    public static int barrasEscopetaAuraIndex = -1;
 
     public static int barrasSlowIndex = -1;
     public static int barrasJumpIndex = -1;
@@ -43,6 +53,12 @@ public class StateGameController : MonoBehaviour
 
     public static int currentAmountTxt = 6;
     public static int nextAmountTxt = 8;
+
+    public static int currentEscopetaDamageTxt = 20;
+    public static int nextEscopetaDamageTxt = 30;
+
+    public static int currentEscopetaAuraTxt = 1;
+    public static int nextEscopetaAuraTxt = 4;
 
     // TEXT OF SLOW AND JUMP
 

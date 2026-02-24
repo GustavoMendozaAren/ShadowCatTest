@@ -31,13 +31,15 @@ public class SwitchLite : MonoBehaviour
     float speed = 5f;
     private float h;
 
-
     //Shoot
     public GameObject gunImage;
     public GameObject[] Balas;
     int BalasIndex = 0;
 
     public GameObject BalasJugador1, extraBulletsObj;
+
+    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private Transform wallCheck;
 
     //Script
     public PlayerDamage playerDamageScript;
@@ -110,23 +112,19 @@ public class SwitchLite : MonoBehaviour
 
     void Update()
     {
-        //SwitchPlayers();
-        //SwitchButtons();
         ShootAnim();
         CheckIfOnGround();
-        //PlayerJump();
+
         Player1Stats();
         DeadAnimation();
-        //SlowMechanic();
     }
 
     void FixedUpdate()
     {
         PlayerWalk();
         PlayerJump();
-
-        SwitchButtons(); //Estaba en Update(), pero lo moví para disminuir el desfase entre las capas de audio cuando el jugador cambia mucho entre gato y detective.
-        SlowMechanic(); //Estaba en Update(), pero lo moví para disminuir el desfase entre las capas de audio cuando el jugador cambia mucho entre gato y detective.
+        SwitchButtons();
+        SlowMechanic();
     }
 
     public void SwitchPlayers()
