@@ -26,7 +26,7 @@ public class GameManagerScript : MonoBehaviour
         GameObject instanciaMusic = GameObject.Find("Music");
         levelMusic = instanciaMusic.GetComponent<MusicBridge>();
 
-        Debug.Log(StateGameController.sceneNo);
+        //Debug.Log(StateGameController.sceneNo);
     }
 
     private void Update()

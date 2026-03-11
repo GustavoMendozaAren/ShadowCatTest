@@ -9,7 +9,10 @@ public class SwitchLite : MonoBehaviour
     //Players Array
     public GameObject[] players;
     private int currentPlayerIndex = 0;
-    public GameObject RevolverBullet;
+    [SerializeField] private GameObject revolverBullet;
+    [SerializeField] private GameObject escopetaBullet;
+    private bool isShotgunShoot = false;
+    private float shotgunTimer = 0;
 
     //CheckIfOnGround
     public Transform GroundCheck;
@@ -31,15 +34,8 @@ public class SwitchLite : MonoBehaviour
     float speed = 5f;
     private float h;
 
-    //Shoot
-    public GameObject gunImage;
-    public GameObject[] Balas;
-    int BalasIndex = 0;
-
-    public GameObject BalasJugador1, extraBulletsObj;
-
-    [SerializeField] private LayerMask wallLayer;
-    [SerializeField] private Transform wallCheck;
+    //BalasUIImages
+    [SerializeField] private BalasUIManager balasUIManager;
 
     //Script
     public PlayerDamage playerDamageScript;
@@ -107,7 +103,7 @@ public class SwitchLite : MonoBehaviour
             }
         }
 
-        BalasIndex = StateGameController.bulletsInGame - 1;
+        //BalasIndex = StateGameController.bulletsInGame - 1;
     }
 
     void Update()
@@ -117,6 +113,8 @@ public class SwitchLite : MonoBehaviour
 
         Player1Stats();
         DeadAnimation();
+
+        ShootgunCooldown();
     }
 
     void FixedUpdate()
@@ -314,68 +312,100 @@ public class SwitchLite : MonoBehaviour
     {
         if (currentPlayerIndex != 0)
         {
-            BalasJugador1.SetActive(false);
-            extraBulletsObj.SetActive(false);
-            gunImage.SetActive(false);
+            balasUIManager.ActivarDesactivarTodasLasBalas(false);
         }
         else
         {
-            BalasJugador1.SetActive(true);
-            extraBulletsObj.SetActive(true);
-            gunImage.SetActive(true);
+            balasUIManager.ActivarDesactivarTodasLasBalas(true);
         }
 
         if (currentPlayerIndex == 0 && (Input.GetKeyDown(KeyCode.W) || ShootBttn))
         {
-            if (BalasIndex > -1)
+            if (StateGameController.NumeroDeArmaEquipada == 0) // Si arma es revolver
             {
-                Debug.Log(BalasIndex);
-                GameObject bullet = Instantiate(RevolverBullet, transform.position, Quaternion.identity);
-                bullet.GetComponent<RevolverBullet>().Speed *= transform.localScale.x;
+                if (balasUIManager.RevolverBalasIndex > -1)
+                {
+                    GameObject bullet = Instantiate(revolverBullet, transform.position, Quaternion.identity);
+                    bullet.GetComponent<RevolverBullet>().Speed *= transform.localScale.x;
 
-                Anim[0].SetTrigger("Shoot");
-                Balas[BalasIndex].SetActive(false);
+                    Anim[0].SetTrigger("Shoot");
 
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.shoot, this.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.shoot, this.transform.position);
 
-                BalasIndex--;
-            }
-            else if (BalasIndex <= -1)
-            {
-                BalasIndex = -1;
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.emptyGun, this.transform.position);
+                    balasUIManager.RemoverBalasRevolver();
+                }
+                else if (balasUIManager.RevolverBalasIndex <= -1)
+                {
+                    balasUIManager.RevolverBalasIndex = -1;
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.emptyGun, this.transform.position);
+                }
+            } 
+            else if (StateGameController.NumeroDeArmaEquipada == 1) // Si arma es escopeta
+            {  
+                if (!isShotgunShoot)
+                {
+                    if (balasUIManager.EscopetaBalasIndex > -1)
+                    {
+                        float[] angles = { -10f, 0f, 10f };
+
+                        foreach (float angle in angles)
+                        {
+                            GameObject bullet = Instantiate(escopetaBullet, transform.position, Quaternion.identity);
+
+                            float directionX = transform.localScale.x;
+                            Vector2 baseDirection = new Vector2(directionX, 0f);
+
+                            Vector2 rotatedDirection = Quaternion.Euler(0, 0, angle) * baseDirection;
+
+                            bullet.GetComponent<EscopetaBulletPrefab>().SetDirection(rotatedDirection);
+                        }
+
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.shoot, this.transform.position);
+                        Anim[0].SetTrigger("Shotgun");
+                        balasUIManager.RemoverBalasEscopeta();
+                    }
+                    else if (balasUIManager.EscopetaBalasIndex <= -1)
+                    {
+                        balasUIManager.EscopetaBalasIndex = -1;
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.emptyGun, this.transform.position);
+                    }
+                }
+
+                isShotgunShoot = true;
             }
             ShootBttn = false;
-
         }
+    }
 
+    private void ShootgunCooldown()
+    {
+        if (isShotgunShoot)
+        {
+            shotgunTimer += Time.deltaTime;
+            if (shotgunTimer > 0.5f)
+            {
+                isShotgunShoot = false;
+                shotgunTimer = 0;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("FireBall"))
         {
-            //Debug.Log("Shoot");
             gameObject.GetComponent<PlayerDamage>().DealDamage();
         }
 
         if (collision.CompareTag("RatAttack"))
         {
-            //Debug.Log("RatAttack");
             playerDamageScript.RatDamage();
         }
 
         if (collision.CompareTag("DropBala"))
         {
-            BalasIndex++;
-
-            if (BalasIndex >= StateGameController.bulletsInGame - 1)
-            {
-                BalasIndex = StateGameController.bulletsInGame - 1;
-            }
-
-            Balas[BalasIndex].SetActive(true);
-
+            balasUIManager.AgregarBalasRevolver();
+            balasUIManager.AgregarBalasEscopeta();
         }
     }
 

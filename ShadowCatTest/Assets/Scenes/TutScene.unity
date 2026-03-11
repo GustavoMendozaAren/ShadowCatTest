@@ -2297,11 +2297,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &345512919 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8968455730105146494, guid: 4268638131b77c743b7f23bae8842090, type: 3}
-  m_PrefabInstance: {fileID: 8279182142924700113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &351046183
 GameObject:
   m_ObjectHideFlags: 0
@@ -8998,11 +8993,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8968455730445593501, guid: 4268638131b77c743b7f23bae8842090, type: 3}
   m_PrefabInstance: {fileID: 8279182142924700113}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1273312620 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8968455730259783233, guid: 4268638131b77c743b7f23bae8842090, type: 3}
-  m_PrefabInstance: {fileID: 8279182142924700113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1273312621 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8968455729853142584, guid: 4268638131b77c743b7f23bae8842090, type: 3}
@@ -9011,11 +9001,6 @@ GameObject:
 --- !u!1 &1273312622 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8968455730045718321, guid: 4268638131b77c743b7f23bae8842090, type: 3}
-  m_PrefabInstance: {fileID: 8279182142924700113}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1273312623 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8968455729904822393, guid: 4268638131b77c743b7f23bae8842090, type: 3}
   m_PrefabInstance: {fileID: 8279182142924700113}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1273312624 stripped
@@ -9583,7 +9568,7 @@ PrefabInstance:
     - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
       propertyPath: Balas.Array.data[1]
       value: 
-      objectReference: {fileID: 1855708147}
+      objectReference: {fileID: 0}
     - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
       propertyPath: Balas.Array.data[2]
       value: 
@@ -9595,7 +9580,7 @@ PrefabInstance:
     - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
       propertyPath: Balas.Array.data[4]
       value: 
-      objectReference: {fileID: 345512919}
+      objectReference: {fileID: 0}
     - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
       propertyPath: Balas.Array.data[5]
       value: 
@@ -9607,7 +9592,7 @@ PrefabInstance:
     - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
       propertyPath: Balas.Array.data[7]
       value: 
-      objectReference: {fileID: 1273312623}
+      objectReference: {fileID: 0}
     - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
       propertyPath: Balas.Array.data[8]
       value: 
@@ -9619,7 +9604,7 @@ PrefabInstance:
     - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
       propertyPath: Balas.Array.data[10]
       value: 
-      objectReference: {fileID: 1273312620}
+      objectReference: {fileID: 0}
     - target: {fileID: 987042752540572856, guid: 95dd9a2a5bc1a0845a79bdb620e210c4, type: 3}
       propertyPath: Balas.Array.data[11]
       value: 
@@ -13265,11 +13250,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846644794}
   m_CullTransparentMesh: 1
---- !u!1 &1855708147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8968455730587998790, guid: 4268638131b77c743b7f23bae8842090, type: 3}
-  m_PrefabInstance: {fileID: 8279182142924700113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1867219607
 GameObject:
   m_ObjectHideFlags: 0
@@ -15574,6 +15554,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 760383217}
+    - target: {fileID: 2482565895311062357, guid: 4268638131b77c743b7f23bae8842090, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2482565895417441772, guid: 4268638131b77c743b7f23bae8842090, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -15702,6 +15686,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 8279182143077569941, guid: 4268638131b77c743b7f23bae8842090, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8279182143077569944, guid: 4268638131b77c743b7f23bae8842090, type: 3}
       propertyPath: bgMsc
       value: 

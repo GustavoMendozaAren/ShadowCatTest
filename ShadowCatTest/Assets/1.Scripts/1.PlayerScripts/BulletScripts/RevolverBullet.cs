@@ -5,12 +5,18 @@ using UnityEngine;
 public class RevolverBullet : MonoBehaviour
 {
     private float speed = 15f;
+    private Vector3 temp;
 
-    public float Speed { get { return speed; } set { speed = value; } }
+    public float Speed 
+    { 
+        get { return speed; } 
+        set { speed = value; } 
+    }
 
     void Start()
     {
         StartCoroutine(DisableBullet());
+        temp = transform.position;
     }
 
     void Update()
@@ -20,7 +26,6 @@ public class RevolverBullet : MonoBehaviour
 
     void Move()
     {
-        Vector3 temp = transform.position;
         temp.x += speed * Time.deltaTime;
         transform.position = temp;
     }

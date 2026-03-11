@@ -22,6 +22,7 @@ public class StateGameController : MonoBehaviour
     // ARMAS DESBLOQUEADAS
 
     public static bool isShotgunUnlock = false;
+    public static int NumeroDeArmaEquipada = 0; // 0 - Revolver / 1 - Escopeta / 2 - Otro
 
     // POWER AND BULLETS
 
