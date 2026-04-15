@@ -15,6 +15,7 @@ TagManager:
   - IgnorePlayer
   - RatEnemy
   - RatAttack
+  - FinalBoss
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RevolverBullet : MonoBehaviour
 {
-    private float speed = 15f;
+    private float speed = 18f;
+    private float lifeTime = 2f;
     private Vector3 temp;
 
     public float Speed 
@@ -15,8 +16,8 @@ public class RevolverBullet : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(DisableBullet());
         temp = transform.position;
+        Destroy(gameObject, lifeTime);
     }
 
     void Update()
@@ -30,15 +31,9 @@ public class RevolverBullet : MonoBehaviour
         transform.position = temp;
     }
 
-    IEnumerator DisableBullet()
-    {
-        yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("RatEnemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("RatEnemy") || collision.CompareTag("FinalBoss"))
         {
             Destroy(gameObject);
         }

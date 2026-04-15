@@ -30,6 +30,7 @@ public class StateGameController : MonoBehaviour
     public static int bulletsInGame = 6;
 
     public static int EscopetaDamage = 20;
+    public static int NumeroBalasEscopeta = 3;
     public static int AuraFarming = 1;
 
     // SLOW AND JUMP

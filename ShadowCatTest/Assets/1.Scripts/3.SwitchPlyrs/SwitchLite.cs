@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,6 +72,10 @@ public class SwitchLite : MonoBehaviour
     public GameObject slowbutonbarrier;
     float slowMultiplayer = 2f;
 
+    //Cosas BosFight
+
+    [HideInInspector] public bool isInCinematic = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -119,10 +122,20 @@ public class SwitchLite : MonoBehaviour
 
     void FixedUpdate()
     {
-        PlayerWalk();
-        PlayerJump();
-        SwitchButtons();
-        SlowMechanic();
+        if (!isInCinematic)
+        {
+            PlayerWalk();
+            PlayerJump();
+            SwitchButtons();
+            SlowMechanic();
+        }
+        else
+        {
+            for (int i = 0; i < Anim.Length; i++)
+            {
+                Anim[i].SetInteger("Speed", 0);
+            }
+        }
     }
 
     public void SwitchPlayers()
@@ -325,7 +338,7 @@ public class SwitchLite : MonoBehaviour
             {
                 if (balasUIManager.RevolverBalasIndex > -1)
                 {
-                    GameObject bullet = Instantiate(revolverBullet, transform.position, Quaternion.identity);
+                    GameObject bullet = Instantiate(revolverBullet, transform.position + new Vector3(0.25f,0.17f,0), Quaternion.identity);
                     bullet.GetComponent<RevolverBullet>().Speed *= transform.localScale.x;
 
                     Anim[0].SetTrigger("Shoot");
@@ -346,11 +359,16 @@ public class SwitchLite : MonoBehaviour
                 {
                     if (balasUIManager.EscopetaBalasIndex > -1)
                     {
-                        float[] angles = { -10f, 0f, 10f };
+                        float[] angles = new float[StateGameController.NumeroBalasEscopeta];
+
+                        for (int i = 0; i < angles.Length; i++)
+                        {
+                            angles[i] = Random.Range(-3f,4f);
+                        }
 
                         foreach (float angle in angles)
                         {
-                            GameObject bullet = Instantiate(escopetaBullet, transform.position, Quaternion.identity);
+                            GameObject bullet = Instantiate(escopetaBullet, transform.position + new Vector3(0.25f, 0.21f, 0), Quaternion.identity);
 
                             float directionX = transform.localScale.x;
                             Vector2 baseDirection = new Vector2(directionX, 0f);

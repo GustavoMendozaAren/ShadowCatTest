@@ -9,6 +9,7 @@ public class WriteTextDialogoUI : MonoBehaviour
     string writer;
 
     [SerializeField] float delayBeforeStart = 0f;
+    [SerializeField] float delayAtTheEnd = 0f;
     [SerializeField] float timeBtwChars = 0.1f;
     [SerializeField] string leadingChar = "";
     [SerializeField] bool leadingCharBeforeDelay = false;
@@ -17,7 +18,9 @@ public class WriteTextDialogoUI : MonoBehaviour
     [SerializeField] private GameObject sigueinteTexto;
 
     [SerializeField] private bool esTextoFinal;
+    [SerializeField] private bool esTextoTriggerBF;
     [SerializeField] private DialogosUIManager dialogoManager;
+    [SerializeField] private DialogueUITriggerFB dialogoTrigger;
 
     // Use this for initialization
     void Start()
@@ -62,11 +65,16 @@ public class WriteTextDialogoUI : MonoBehaviour
             _tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
         }
 
-        if(tieneTextoAlFinal)
+        yield return new WaitForSeconds(delayAtTheEnd);
+
+        if (tieneTextoAlFinal)
             sigueinteTexto.SetActive(true);
 
         if (esTextoFinal)
             Invoke(nameof(DesactivarDialogoAnims), 1f);
+
+        if (esTextoTriggerBF)
+            Invoke(nameof(DesactivarDialogoTriggerAnims), 1f);
 
         Invoke(nameof(DeactiveText), 1f);
     }
@@ -74,6 +82,11 @@ public class WriteTextDialogoUI : MonoBehaviour
     private void DesactivarDialogoAnims()
     {
         dialogoManager.DesactivarDialogosAniamciones();
+    }
+
+    private void DesactivarDialogoTriggerAnims()
+    {
+        dialogoTrigger.DesactivarDialogosAniamciones();
     }
 
     private void DeactiveText()

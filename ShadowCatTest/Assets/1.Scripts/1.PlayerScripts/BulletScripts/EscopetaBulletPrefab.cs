@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EscopetaBulletPrefab : MonoBehaviour
 {
-    private float speed = 15f;
-    private float lifeTime = 1f;
+    private float speed = 22f;
+    private float lifeTime = 1.5f;
 
     private Vector2 direction;
 
@@ -26,7 +26,7 @@ public class EscopetaBulletPrefab : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("RatEnemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("RatEnemy") || collision.CompareTag("FinalBoss"))
         {
             Destroy(gameObject);
         }

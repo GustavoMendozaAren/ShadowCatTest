@@ -27,8 +27,7 @@ public class Pista1 : MonoBehaviour
     private void PanelesDePistasActivacionMetodo() 
     {
         if (StateGameController.pistaCandado[0])
-        {
-
+        { 
             StateGameController.nivelDesbloqueado[0] = true;
 
             pistaPaneles[0].SetActive(true);
@@ -37,7 +36,6 @@ public class Pista1 : MonoBehaviour
         }
         if (StateGameController.pistaCandado[1])
         {
-
             StateGameController.nivelDesbloqueado[1] = true;
 
             pistaPaneles[1].SetActive(true);
@@ -46,7 +44,6 @@ public class Pista1 : MonoBehaviour
         }
         if (StateGameController.pistaCandado[2])
         {
-
             StateGameController.nivelDesbloqueado[2] = true;
 
             pistaPaneles[2].SetActive(true);
@@ -54,6 +51,8 @@ public class Pista1 : MonoBehaviour
         }
         if (StateGameController.pistaCandado[3])
         {
+            StateGameController.nivelDesbloqueado[2] = true;
+
             masInfoPanel.SetActive(true);
             StateGameController.pistaCandado[3] = false;
         }

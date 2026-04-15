@@ -15,13 +15,13 @@ public class CambioDeArmasInGame : MonoBehaviour
 
     public void AbrirMenuDeAramas()
     {
-        if (StateGameController.isShotgunUnlock)
+        //if (StateGameController.isShotgunUnlock)
             botonesArmas.SetActive(true);
     }
 
     public void CerrarMenuDeArmas()
     {
-        if (StateGameController.isShotgunUnlock)
+        //if (StateGameController.isShotgunUnlock)
             botonesArmas.SetActive(false);
     }
 

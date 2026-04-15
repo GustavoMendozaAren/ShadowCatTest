@@ -25,7 +25,6 @@ public class GameManagerScript : MonoBehaviour
         //    deadCoroutine = DeadCorutine();
         GameObject instanciaMusic = GameObject.Find("Music");
         levelMusic = instanciaMusic.GetComponent<MusicBridge>();
-
         //Debug.Log(StateGameController.sceneNo);
     }
 
@@ -54,7 +53,7 @@ public class GameManagerScript : MonoBehaviour
         }
         else if (StateGameController.sceneNo == 4)
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(6);
         }
 
         Time.timeScale = 1f;
