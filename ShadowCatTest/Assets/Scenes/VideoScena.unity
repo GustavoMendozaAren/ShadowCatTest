@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -566,7 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 907457869}
@@ -1605,7 +1604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1445263111}
@@ -2007,7 +2006,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &246594743
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2024,7 +2023,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &249637437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,7 +2526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 977011952}
@@ -2717,7 +2717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 998045905}
@@ -3179,7 +3179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1541691307}
@@ -3830,7 +3830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 989659246}
@@ -4700,7 +4700,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &600777662
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4717,7 +4717,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &656615090
 GameObject:
   m_ObjectHideFlags: 0
@@ -4771,7 +4772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 705793107}
@@ -5060,7 +5061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1937895968}
@@ -5791,7 +5792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1351320716}
@@ -5983,7 +5984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1109388983}
@@ -6885,7 +6886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 355407853}
@@ -7376,7 +7377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 857106561}
@@ -7557,7 +7558,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &889636825
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7574,7 +7575,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &907457869
 GameObject:
   m_ObjectHideFlags: 0
@@ -7750,7 +7752,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &921649914
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7767,7 +7769,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &921649915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7982,7 +7985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 161255017}
@@ -9303,7 +9306,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &1052769444
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9320,7 +9323,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1063054907
 GameObject:
   m_ObjectHideFlags: 0
@@ -9643,7 +9647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 558622372}
@@ -11064,7 +11068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 958241171}
@@ -11255,7 +11259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 798830938}
@@ -11563,7 +11567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1563946518}
@@ -11859,7 +11863,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1315141361
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11876,7 +11880,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1315141362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11968,7 +11973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1410301286}
@@ -12122,7 +12127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1812078975}
@@ -12720,6 +12725,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -13025,7 +13031,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &1405458085
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13042,7 +13048,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1410301286
 GameObject:
   m_ObjectHideFlags: 0
@@ -13500,7 +13507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 555804230}
@@ -13654,7 +13661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1895994977}
@@ -13942,7 +13949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1750889037}
@@ -14806,7 +14813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 2091048095}
@@ -15134,7 +15141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1145529541}
@@ -15191,7 +15198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 435312161}
@@ -15545,7 +15552,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1661050287
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -15562,7 +15569,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1661050288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15654,7 +15662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1559320275}
@@ -16046,7 +16054,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &1715977046
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16063,7 +16071,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1735561224
 GameObject:
   m_ObjectHideFlags: 0
@@ -16291,7 +16300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 24720163}
@@ -16512,7 +16521,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1792830352
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16529,7 +16538,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1792830353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16947,7 +16957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 577184278}
@@ -17434,7 +17444,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &1827423136
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -17451,7 +17461,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1833129168
 GameObject:
   m_ObjectHideFlags: 0
@@ -17544,7 +17555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 284983786}
@@ -17774,7 +17785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1342094598}
@@ -18871,7 +18882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 675403582}
@@ -19591,7 +19602,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2042438064
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -19608,7 +19619,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2042438065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20121,7 +20133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.075
+  timeBtwChars: 0.065
   leadingChar: 
   leadingCharBeforeDelay: 0
   continueBttn: {fileID: 1123487443}

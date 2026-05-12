@@ -12,6 +12,8 @@ public class HealthBarBartender : MonoBehaviour
     public bool SecondFaseEnded { get; set; }
     public bool ThirdFaseEnded { get; set; }
 
+    public bool IsBartenderDead { get; set; }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
@@ -46,6 +48,7 @@ public class HealthBarBartender : MonoBehaviour
                 {
                     healthBar[2].fillAmount = 0;
                     ThirdFaseEnded = true;
+                    IsBartenderDead = true;
                     faseCount = 4;
                 }
             }

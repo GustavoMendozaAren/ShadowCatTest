@@ -11,6 +11,10 @@ public class FBDialogueManager : MonoBehaviour
     [SerializeField] private SwitchLite playerMove;
     [SerializeField] private GameObject winPanel;
 
+    [Header("ENEMIGO")]
+    [SerializeField] private BartenderThrowAttack bartederThrowSc;
+    [SerializeField] private BartenderFly2 bartenderFly;
+
     [Header("BARRA DE VIDA")]
     [SerializeField] private SpriteRenderer bartenderSprite;
     [SerializeField] private GameObject[] healthBarActive;
@@ -54,6 +58,7 @@ public class FBDialogueManager : MonoBehaviour
             healthBarActive[0].SetActive(true);
             proteccionControles.SetActive(false);
             dialogueUI1.DialogueImgDeactive = false;
+            bartederThrowSc.enabled = true;
         }
 
         // PRIMERA FASE FINAL
@@ -69,6 +74,8 @@ public class FBDialogueManager : MonoBehaviour
         if (dialogueUI2.DialogueImgDeactive)
         {
             healthBarActive[1].SetActive(true);
+            bartenderFly.enabled = true;
+            bartederThrowSc.IsAimingAtPlayer = true;
             dialogueUI2.DialogueImgDeactive = false;
         }
 

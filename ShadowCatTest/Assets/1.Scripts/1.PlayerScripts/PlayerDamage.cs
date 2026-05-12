@@ -25,18 +25,21 @@ public class PlayerDamage : MonoBehaviour
     {
         if (canDamage)
         {
-            if(StateGameController.playerCanDie)
-                currentHealth--;
-            healthBar.SetHealth(currentHealth);
-
-            if (currentHealth == 0)
+            if (StateGameController.playerCanDie)
             {
-                gameManager.playerIsDead = true;
-                IsPlayerDead = true;
-            }
+                currentHealth--;
+                healthBar.SetHealth(currentHealth);
 
-            canDamage = false;
-            StartCoroutine(WaitForDamage());
+                if (currentHealth <= 0)
+                {
+                    currentHealth = 0;
+                    gameManager.playerIsDead = true;
+                    IsPlayerDead = true;
+                }
+
+                canDamage = false;
+                StartCoroutine(WaitForDamage());
+            }
         }
     }
 
@@ -47,8 +50,27 @@ public class PlayerDamage : MonoBehaviour
             currentHealth -= 0.5f;
             healthBar.SetHealth(currentHealth);
 
-            if (currentHealth == 0)
+            if (currentHealth <= 0)
             {
+                currentHealth = 0;
+                gameManager.playerIsDead = true;
+                IsPlayerDead = true;
+            }
+
+            StartCoroutine(PanelDeDanio());
+        }
+    }
+
+    public void BottleDamage(float damage)
+    {
+        if (StateGameController.playerCanDie)
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
                 gameManager.playerIsDead = true;
                 IsPlayerDead = true;
             }

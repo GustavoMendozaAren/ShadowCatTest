@@ -76,8 +76,8 @@ public class RataEnemyIA : MonoBehaviour
 
     void CheckifCanPatroll()
     {
-        //Debug.DrawRay(transform.position, moveDirection * 5f);
-        if (!Physics2D.Raycast(transform.position, moveDirection, 5f, playerLayer))
+        //Debug.DrawRay(transform.position + new Vector3(0,-.4f,0), moveDirection * 5f);
+        if (!Physics2D.Raycast(transform.position + new Vector3(0, -.4f, 0), moveDirection, 5f, playerLayer))
         {
             isRunning = false;
 
@@ -98,7 +98,7 @@ public class RataEnemyIA : MonoBehaviour
     void CheckifCanAttack()
     {
         //Debug.DrawRay(transform.position, moveDirection * 1.2f);
-        if (!Physics2D.Raycast(transform.position, moveDirection, 1.2f, playerLayer))
+        if (!Physics2D.Raycast(transform.position + new Vector3(0, -.4f, 0), moveDirection, 1.2f, playerLayer))
         {
             animator.SetBool("IsAttacking", false);
             animator.SetBool("IsWalking", false);

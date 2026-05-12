@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -75,6 +74,8 @@ public class SwitchLite : MonoBehaviour
     //Cosas BosFight
 
     [HideInInspector] public bool isInCinematic = false;
+
+    public bool IsOnGround => isOnGround;
 
     private void Awake()
     {
@@ -257,10 +258,20 @@ public class SwitchLite : MonoBehaviour
             Anim[i].SetInteger(animationParameter, Mathf.Abs((int)h));
         }
     }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawCube(GroundCheck.position, new Vector2(1, 1));
+    //}
 
     void CheckIfOnGround()
     {
-        isOnGround = Physics2D.Raycast(GroundCheck.position, Vector2.down, 0.1f, GroundLayer);
+        if (currentPlayerIndex == 0)
+            isOnGround = Physics2D.BoxCast(GroundCheck.position, new Vector2(.5f, .1f), 0f, Vector2.down, 0.1f, GroundLayer);
+        else
+            isOnGround = Physics2D.BoxCast(GroundCheck.position + new Vector3(0.6f, 0, 0), new Vector2(1.125f, .1f), 0f, Vector2.down, 0.1f, GroundLayer);
+
+        //Debug.DrawLine(GroundCheck.position + new Vector3(0.6f, 0, 0), GroundCheck.position + new Vector3(.63f, 0, 0),Color.red);
+        //Debug.DrawLine(GroundCheck.position + new Vector3(0.6f, 0, 0), GroundCheck.position + new Vector3(-.51f, 0, 0),Color.red);
 
         if (isOnGround)
         {

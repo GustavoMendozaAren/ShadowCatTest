@@ -13,6 +13,7 @@ public class StoreEqp1Rev : MonoBehaviour
     [SerializeField] private GameObject eqp1RevSmallImg, eqp1RevBigImg;
     [SerializeField] private GameObject panel1Rev, panel2DoubRev, panel3Incog;
     [SerializeField] private GameObject panelBlackEscopeta;
+    [SerializeField] private GameObject instructionsPanel;
 
     [SerializeField] private GameObject upgradeButtonPower, upgradeButtonAmount, upgradeButtonEscopetaDamage, upgradeButtonEscopetaAura;
 
@@ -88,6 +89,7 @@ public class StoreEqp1Rev : MonoBehaviour
         {
             StateGameController.isShotgunUnlock = true;
             panelBlackEscopeta.SetActive(false);
+            instructionsPanel.SetActive(true);
             StateGameController.coinsTotal -= 25;
             coinsText.text = StateGameController.coinsTotal.ToString();
         }
@@ -95,6 +97,11 @@ public class StoreEqp1Rev : MonoBehaviour
         {
             needCoinsPanel.SetActive(true);
         }
+    }
+
+    public void CloseInstructionsPanel()
+    {
+        instructionsPanel.SetActive(false);
     }
 
     public void UpgradeEqp1PowerBttn()

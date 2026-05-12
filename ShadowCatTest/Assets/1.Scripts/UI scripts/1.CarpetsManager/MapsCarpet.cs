@@ -8,7 +8,6 @@ public class MapsCarpet : MonoBehaviour
     public GameObject[] buttons;
     public GameObject[] panels;
     public GameObject mapsMenu, nydeactivate, nyActive;
-    public Animator comingSoon;
     public GameObject blackCourtine;
 
     public void PlayLevel1()
@@ -30,7 +29,7 @@ public class MapsCarpet : MonoBehaviour
 
     public void PlayLeve4()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
         StateGameController.sceneNo = 4;
     }
 
@@ -51,11 +50,6 @@ public class MapsCarpet : MonoBehaviour
         mapsMenu.SetActive(true);
         nydeactivate.SetActive(false);
         nyActive.SetActive(true);
-    }
-
-    public void City2Panel()
-    {
-        comingSoon.SetTrigger("Coming");
     }
 
     public void City3Panel()

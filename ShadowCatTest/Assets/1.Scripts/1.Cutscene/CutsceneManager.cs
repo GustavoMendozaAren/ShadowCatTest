@@ -234,7 +234,7 @@ public class CutsceneManager : MonoBehaviour
 
     public void ContinueGameplay()
     {
-        SceneManager.LoadScene("Chap1Level2");
+        SceneManager.LoadScene(4);
     }
 
     
