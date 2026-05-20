@@ -94,7 +94,7 @@ public class FBDialogueManager : MonoBehaviour
         {
             healthBarActive[2].SetActive(true);
             bartederThrowSc.throwCooldown = 0.75f;
-            bartenderFly.moveSpeed = 10f;
+            bartenderFly.moveSpeed = 8f;
             bartenderFly.CanCharge = true;
             dialogueUI3.DialogueImgDeactive = false;
         }

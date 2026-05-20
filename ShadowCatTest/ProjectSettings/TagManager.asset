@@ -18,6 +18,7 @@ TagManager:
   - FinalBoss
   - Bottle1
   - RatCollision
+  - Veneno
   layers:
   - Default
   - TransparentFX

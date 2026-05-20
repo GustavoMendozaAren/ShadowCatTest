@@ -6,15 +6,21 @@ using UnityEngine;
 public class PlayerDamage : MonoBehaviour
 {
     [SerializeField] private HealthBar healthBar;
-    [SerializeField] private GameManagerScript gameManager;
+    [SerializeField] private GameManagerScript gameManager; 
     [SerializeField] private GameObject damagePanel;
 
+    private SwitchLite playerScript;
     private int maxHealth = 5;
     private float currentHealth;
     private bool canDamage = true;
 
     [HideInInspector]
     public bool IsPlayerDead = false;
+
+    private void Awake()
+    {
+        playerScript = FindFirstObjectByType<SwitchLite>();
+    }
 
     private void Start()
     {
@@ -46,6 +52,8 @@ public class PlayerDamage : MonoBehaviour
 
     public void DealDamageQuantity(float damage)
     {
+        if (playerScript.isInCinematic) return;
+
         if (StateGameController.playerCanDie)
         {
             currentHealth -= damage;
@@ -59,6 +67,19 @@ public class PlayerDamage : MonoBehaviour
             }
 
             StartCoroutine(PanelDeDanio());
+        }
+    }
+
+    public void GainHealth(float health)
+    {
+        if (IsPlayerDead) return;
+
+        currentHealth += health;
+        healthBar.SetHealth(currentHealth);
+
+        if (currentHealth > 5)
+        {
+            currentHealth = 5;
         }
     }
 

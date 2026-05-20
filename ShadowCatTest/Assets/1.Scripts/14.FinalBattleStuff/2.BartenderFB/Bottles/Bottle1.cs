@@ -6,6 +6,8 @@ public class Bottle1 : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
     [SerializeField] private float rotationSpeed = 360f;
+    [SerializeField] private bool[] isBottle;
+    [SerializeField] private GameObject prefab;
 
     private Vector2 moveDirection = Vector2.left;
     private Rigidbody2D rb;
@@ -14,7 +16,13 @@ public class Bottle1 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        Invoke(nameof(DestroyBottle), 5f);
+        if (isBottle[0])
+        {
+            float randomTime = Random.Range(2.8f, 5.2f);
+            Invoke(nameof(DestroyVenenoBottle), randomTime);
+        }   
+        else
+            Invoke(nameof(DestroyBottle), 8f);
     }
 
     private void Update()
@@ -35,10 +43,46 @@ public class Bottle1 : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            DamageByBottleType();
+        }
+    }
+
+    private void DamageByBottleType()
+    {
+        if (isBottle[0])
+        {
+            DestroyVenenoBottle();
+        }
+        else if (isBottle[1])
+        {
             PlayerDamage playerDamage = FindFirstObjectByType<PlayerDamage>();
-            playerDamage.DealDamageQuantity(0.15f);
+            playerDamage.DealDamageQuantity(0.25f);
             DestroyBottle();
         }
+        else if (isBottle[2])
+        {
+            PlayerDamage playerDamage = FindFirstObjectByType<PlayerDamage>();
+            playerDamage.DealDamageQuantity(0.5f);
+            DestroyBottle();
+        }
+        else if (isBottle[3])
+        {
+            PlayerDamage playerDamage = FindFirstObjectByType<PlayerDamage>();
+            playerDamage.GainHealth(0.25f);
+            DestroyBottle();
+        }
+        else if (isBottle[4])
+        {
+            PlayerDamage playerDamage = FindFirstObjectByType<PlayerDamage>();
+            playerDamage.GainHealth(1f);
+            DestroyBottle();
+        }
+    }
+
+    private void DestroyVenenoBottle()
+    {
+        Instantiate(prefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     private void DestroyBottle()

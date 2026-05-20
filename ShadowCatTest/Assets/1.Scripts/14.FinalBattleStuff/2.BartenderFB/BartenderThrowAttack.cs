@@ -8,6 +8,10 @@ public class BartenderThrowAttack : MonoBehaviour
     [SerializeField] private PlayerDamage playerLife;
     [SerializeField] private HealthBarBartender healthBartender;
     [SerializeField] private GameObject bottle1Prefab;
+    [SerializeField] private GameObject bottle2Prefab;
+    [SerializeField] private GameObject bottle3Prefab;
+    [SerializeField] private GameObject bottle4Prefab;
+    [SerializeField] private GameObject bottle5Prefab;
     [SerializeField] private Transform throwPoint;
 
     private Transform player;
@@ -53,7 +57,35 @@ public class BartenderThrowAttack : MonoBehaviour
 
     private void ThrowBotlle()
     {
-        GameObject bottleObj = Instantiate(bottle1Prefab, throwPoint.position, Quaternion.identity);
+        float randomValue = Random.Range(0,100);
+        GameObject prefabToThrow;
+
+        if (randomValue >= 0 && randomValue < 15)
+        {
+            prefabToThrow = bottle1Prefab;
+        }
+        else if (randomValue >= 15 && randomValue < 45)
+        {
+            prefabToThrow = bottle2Prefab;
+        }
+        else if (randomValue >= 45 && randomValue < 70)
+        {
+            prefabToThrow = bottle3Prefab;
+        }
+        else if (randomValue >= 70 && randomValue < 90)
+        {
+            prefabToThrow = bottle4Prefab;
+        }
+        else if (randomValue >= 90 && randomValue < 100)
+        {
+            prefabToThrow = bottle5Prefab;
+        }
+        else
+        {
+            prefabToThrow = bottle3Prefab;
+        }
+
+        GameObject bottleObj = Instantiate(prefabToThrow, throwPoint.position, Quaternion.identity);
 
         Bottle1 bottle = bottleObj.GetComponent<Bottle1>();
 

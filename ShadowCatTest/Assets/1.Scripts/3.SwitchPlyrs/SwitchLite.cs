@@ -139,6 +139,7 @@ public class SwitchLite : MonoBehaviour
             for (int i = 0; i < Anim.Length; i++)
             {
                 Anim[i].SetInteger("Speed", 0);
+                Anim[0].SetBool("Run", false);
             }
         }
     }
@@ -445,6 +446,16 @@ public class SwitchLite : MonoBehaviour
         {
             balasUIManager.AgregarBalasRevolver();
             balasUIManager.AgregarBalasEscopeta();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (playerDamageScript.IsPlayerDead) return;
+
+        if (collision.CompareTag("Veneno"))
+        {
+            playerDamageScript.DealDamageQuantity(0.005f);
         }
     }
 
