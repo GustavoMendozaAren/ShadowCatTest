@@ -5,7 +5,7 @@ using UnityEngine;
 public class EntrarACallejones2 : MonoBehaviour
 {
     //[SerializeField] private SpriteRenderer entrarCallejon;
-    [SerializeField] private GameObject spriteMensaje;
+    [SerializeField] private Animator spriteMensaje;
     [SerializeField] private GameObject escenarioActivado;
     [SerializeField] private GameObject EscenarioDesactivado;
     [SerializeField] private GameObject textoActivado;
@@ -22,7 +22,7 @@ public class EntrarACallejones2 : MonoBehaviour
             isInRange = true;
 
             if (tieneMensaje)
-                spriteMensaje.SetActive(true);
+                spriteMensaje.SetBool("IsFadeIn", true);
         }
     }
 
@@ -33,7 +33,7 @@ public class EntrarACallejones2 : MonoBehaviour
             isInRange = false;
 
             if (tieneMensaje)
-                spriteMensaje.SetActive(false);
+                spriteMensaje.SetBool("IsFadeIn", false);
         }
     }
     private void OnMouseDown()

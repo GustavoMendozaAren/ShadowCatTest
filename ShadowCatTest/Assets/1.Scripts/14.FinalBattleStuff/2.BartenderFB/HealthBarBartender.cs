@@ -20,7 +20,7 @@ public class HealthBarBartender : MonoBehaviour
         {
             if (faseCount == 1)
             {
-                healthBar[0].fillAmount -= 0.5f;
+                healthBar[0].fillAmount -= 0.35f;
 
                 if (healthBar[0].fillAmount <= 0)
                 {
@@ -31,7 +31,7 @@ public class HealthBarBartender : MonoBehaviour
             }
             else if (faseCount == 2)
             {
-                healthBar[1].fillAmount -= 0.5f;
+                healthBar[1].fillAmount -= 0.25f;
 
                 if (healthBar[1].fillAmount <= 0)
                 {
@@ -42,7 +42,7 @@ public class HealthBarBartender : MonoBehaviour
             }
             else if (faseCount == 3)
             {
-                healthBar[2].fillAmount -= 0.25f;
+                healthBar[2].fillAmount -= 0.15f;
 
                 if (healthBar[2].fillAmount <= 0)
                 {

@@ -132,7 +132,7 @@ public class StoreEqp2Cat : MonoBehaviour
                 StateGameController.barrasJumpIndex++;
                 BarrasJumpIndexActive();
 
-                //StateGameController.bulletsInGame += 2;
+                StateGameController.jumpPower += 0.1f;
 
                 StateGameController.coinsTotal -= 10;
                 coinsText.text = StateGameController.coinsTotal.ToString();

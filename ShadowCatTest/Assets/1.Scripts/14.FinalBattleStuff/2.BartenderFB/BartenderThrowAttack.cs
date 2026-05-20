@@ -5,15 +5,18 @@ using UnityEngine;
 public class BartenderThrowAttack : MonoBehaviour
 {
     [SerializeField] private SwitchLite playerMove;
+    [SerializeField] private PlayerDamage playerLife;
     [SerializeField] private HealthBarBartender healthBartender;
     [SerializeField] private GameObject bottle1Prefab;
     [SerializeField] private Transform throwPoint;
-    [SerializeField] private float throwCooldown = 7f;
 
     private Transform player;
     private float timer;
 
+    public float throwCooldown = 1f;
+
     public bool IsAimingAtPlayer { get; set; }
+    public bool CanThrow { get; set; } = true;
 
     private void Start()
     {
@@ -24,6 +27,9 @@ public class BartenderThrowAttack : MonoBehaviour
 
     private void Update()
     {
+        if (playerLife.IsPlayerDead)
+            return;
+
         if (healthBartender.IsBartenderDead)
             return;
 
@@ -33,12 +39,15 @@ public class BartenderThrowAttack : MonoBehaviour
 
     private void TimerMethod()
     {
-        timer += Time.deltaTime;
-
-        if (timer > throwCooldown)
+        if (CanThrow)
         {
-            ThrowBotlle();
-            timer = 0;
+            timer += Time.deltaTime;
+
+            if (timer > throwCooldown)
+            {
+                ThrowBotlle();
+                timer = 0;
+            }
         }
     }
 

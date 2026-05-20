@@ -37,6 +37,8 @@ public class StateGameController : MonoBehaviour
 
     public static float slowdownTime = 4f;
 
+    public static float jumpPower = 1f;
+
     // Barras
 
     public static int barrasPowerIndex = -1;
@@ -66,6 +68,9 @@ public class StateGameController : MonoBehaviour
 
     public static int currentSlowText = 4;
     public static int nextSlowText = 6;
+
+    public static int currentJumpTxt = 4;
+    public static int nextJumpTxt = 6;
 
     // ***************
 

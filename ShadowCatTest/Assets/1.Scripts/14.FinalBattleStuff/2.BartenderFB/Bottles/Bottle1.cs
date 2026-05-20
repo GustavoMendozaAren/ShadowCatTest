@@ -36,7 +36,7 @@ public class Bottle1 : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerDamage playerDamage = FindFirstObjectByType<PlayerDamage>();
-            playerDamage.BottleDamage(0.15f);
+            playerDamage.DealDamageQuantity(0.15f);
             DestroyBottle();
         }
     }

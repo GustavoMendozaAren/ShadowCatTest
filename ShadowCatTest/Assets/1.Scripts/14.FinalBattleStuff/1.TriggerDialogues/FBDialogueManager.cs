@@ -76,6 +76,7 @@ public class FBDialogueManager : MonoBehaviour
             healthBarActive[1].SetActive(true);
             bartenderFly.enabled = true;
             bartederThrowSc.IsAimingAtPlayer = true;
+            bartederThrowSc.throwCooldown = 1f;
             dialogueUI2.DialogueImgDeactive = false;
         }
 
@@ -92,6 +93,9 @@ public class FBDialogueManager : MonoBehaviour
         if (dialogueUI3.DialogueImgDeactive)
         {
             healthBarActive[2].SetActive(true);
+            bartederThrowSc.throwCooldown = 0.75f;
+            bartenderFly.moveSpeed = 10f;
+            bartenderFly.CanCharge = true;
             dialogueUI3.DialogueImgDeactive = false;
         }
 

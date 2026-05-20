@@ -73,13 +73,17 @@ public class SwitchLite : MonoBehaviour
 
     //Cosas BosFight
 
+    [SerializeField] private GameObject proteccionBtns;
+    [SerializeField] private SpriteRenderer interrogacionImg;
     [HideInInspector] public bool isInCinematic = false;
+    private bool isLeftDir = false;
 
     public bool IsOnGround => isOnGround;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerDamageScript = GetComponent<PlayerDamage>();
     }
 
     void Start()
@@ -173,7 +177,7 @@ public class SwitchLite : MonoBehaviour
         {
             BttnsDetective.SetActive(true);
             BttnsCat.SetActive(false);
-            StateGameController.isCat = false;    
+            StateGameController.isCat = false;
             
         }
         if (currentPlayerIndex == 1)
@@ -205,6 +209,8 @@ public class SwitchLite : MonoBehaviour
                 //rb.velocity = new Vector2(speed *1.5f, rb.velocity.y);
                 transform.position += new Vector3(h * speed * Time.fixedDeltaTime * StateGameController.playerTime, 0, 0);
             }
+
+            isLeftDir = false;
             //Dash
             /*if ((dashBttn || Input.GetKeyDown(KeyCode.LeftShift)) && canDash && currentPlayerIndex == 1)
             {
@@ -226,6 +232,8 @@ public class SwitchLite : MonoBehaviour
                 //rb.velocity = new Vector2(-speed * 1.5f, rb.velocity.y);
                 transform.position += new Vector3(h * speed * Time.fixedDeltaTime * StateGameController.playerTime, 0, 0);
             }
+
+            isLeftDir = true;
             //Dash
             /*if ((dashBttn || Input.GetKeyDown(KeyCode.LeftShift)) && canDash && currentPlayerIndex == 1)
             {
@@ -300,7 +308,7 @@ public class SwitchLite : MonoBehaviour
             if (isOnGround)
             {
                 hasJumped = true;
-                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+                rb.velocity = new Vector2(rb.velocity.x, jumpPower * StateGameController.jumpPower);
                 AnimationParameters("Jump", true);
                 doubleJump = true;
 
@@ -313,7 +321,7 @@ public class SwitchLite : MonoBehaviour
                 {
                     hasdoubleJumped = true;
                     AnimationParameters("DoubleJump", true);
-                    rb.velocity = new Vector2(rb.velocity.x, jump2Power);
+                    rb.velocity = new Vector2(rb.velocity.x, jump2Power * StateGameController.jumpPower);
                     doubleJump = false;
                 }
             }
@@ -421,14 +429,16 @@ public class SwitchLite : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (playerDamageScript.IsPlayerDead) return;
+
         if (collision.CompareTag("FireBall"))
         {
             gameObject.GetComponent<PlayerDamage>().DealDamage();
         }
 
-        if (collision.CompareTag("RatAttack"))
+        if (collision.gameObject.CompareTag("RatAttack"))
         {
-            playerDamageScript.RatDamage();
+            playerDamageScript.DealDamageQuantity(0.5f);
         }
 
         if (collision.CompareTag("DropBala"))
@@ -436,6 +446,39 @@ public class SwitchLite : MonoBehaviour
             balasUIManager.AgregarBalasRevolver();
             balasUIManager.AgregarBalasEscopeta();
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (playerDamageScript.IsPlayerDead) return;
+
+        if (collision.gameObject.CompareTag("RatCollision"))
+        {
+            playerDamageScript.DealDamageQuantity(0.5f);
+        }
+
+        if (collision.gameObject.CompareTag("FinalBoss"))
+        {
+            playerDamageScript.DealDamageQuantity(0.75f);
+
+            isInCinematic = true;
+            proteccionBtns.SetActive(true);
+            interrogacionImg.enabled = true;
+
+            if (!isLeftDir)
+                interrogacionImg.flipX = false;
+            else
+                interrogacionImg.flipX = true;
+
+            Invoke(nameof(PostCharge), 1f);
+        }
+    }
+
+    private void PostCharge()
+    {
+        isInCinematic = false;
+        proteccionBtns.SetActive(false);
+        interrogacionImg.enabled = false;
     }
 
     private void SlowMechanic()

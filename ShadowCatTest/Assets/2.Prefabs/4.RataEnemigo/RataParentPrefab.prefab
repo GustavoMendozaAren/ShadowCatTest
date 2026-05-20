@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rataSprite: {fileID: 7441448083108279433}
+  rataLife: 2
   IsDead: 0
 --- !u!1 &1368030153
 GameObject:
@@ -184,7 +185,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &1368030155
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -201,7 +202,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1368030158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144208, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: RatCollision
       objectReference: {fileID: 0}
     - target: {fileID: 7937551851458144212, guid: 9d899d28b24888a4b96e325338dafe13, type: 3}
       propertyPath: m_BodyType

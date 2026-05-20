@@ -21,6 +21,7 @@ public class PlayerDamage : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
+
     public void DealDamage()
     {
         if (canDamage)
@@ -43,25 +44,7 @@ public class PlayerDamage : MonoBehaviour
         }
     }
 
-    public void RatDamage()
-    {
-        if (StateGameController.playerCanDie)
-        {
-            currentHealth -= 0.5f;
-            healthBar.SetHealth(currentHealth);
-
-            if (currentHealth <= 0)
-            {
-                currentHealth = 0;
-                gameManager.playerIsDead = true;
-                IsPlayerDead = true;
-            }
-
-            StartCoroutine(PanelDeDanio());
-        }
-    }
-
-    public void BottleDamage(float damage)
+    public void DealDamageQuantity(float damage)
     {
         if (StateGameController.playerCanDie)
         {
