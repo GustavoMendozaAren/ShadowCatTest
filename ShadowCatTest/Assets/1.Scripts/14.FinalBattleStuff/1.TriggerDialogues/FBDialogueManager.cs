@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -20,7 +21,7 @@ public class FBDialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] healthBarActive;
     [SerializeField] private HealthBarBartender healthBarBartender;
 
-    [Header ("DIALOGOS")]
+    [Header("DIALOGOS")]
     [SerializeField] private DialogueUITriggerFB dialogueUI1;
     [SerializeField] private DialogueUITriggerFB dialogueUI2;
     [SerializeField] private DialogueUITriggerFB dialogueUI3;
@@ -28,6 +29,10 @@ public class FBDialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogueUIFirstFase;
     [SerializeField] private GameObject dialogueUISecondFase;
     [SerializeField] private GameObject dialogueUIThirdFase;
+
+    [Header("PLATAFROMAS FASES")]
+    [SerializeField] private GameObject plataformasFase1;
+    [SerializeField] private GameObject plataformasFase2;
 
     public MusicBridge levelMusic;
     public PlayerDamage damageInstance;
@@ -46,10 +51,10 @@ public class FBDialogueManager : MonoBehaviour
     private void Update()
     {
         // PRIMERA FASE COMIENZO
-        if (dialogueUI1.DialogueAnimDeactive)
+        if (dialogueUI1.DialogueStart)
         {
             bartenderSprite.color = Color.white;
-            dialogueUI1.DialogueAnimDeactive = false;
+            dialogueUI1.DialogueStart = false;
 
         }
 
@@ -73,6 +78,7 @@ public class FBDialogueManager : MonoBehaviour
         // SEGUNDA FASE COMIENZO
         if (dialogueUI2.DialogueImgDeactive)
         {
+            CambioDePlataformas();
             healthBarActive[1].SetActive(true);
             bartenderFly.enabled = true;
             bartederThrowSc.IsAimingAtPlayer = true;
@@ -118,5 +124,11 @@ public class FBDialogueManager : MonoBehaviour
 
             StateGameController.playerCanDie = false;
         }
+    }
+
+    private void CambioDePlataformas()
+    {
+        plataformasFase1.SetActive(false);
+        plataformasFase2.SetActive(true);
     }
 }

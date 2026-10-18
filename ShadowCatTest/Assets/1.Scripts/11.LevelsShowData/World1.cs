@@ -10,6 +10,11 @@ public class World1 : MonoBehaviour
     public TMP_Text[] totalCoinsB;
     private void Start()
     {
+        ActualizarMonedasEnNiveles();
+    }
+
+    public void ActualizarMonedasEnNiveles()
+    {
         totalCoinsS[0].text = "Coins:" + StateGameController.level2Coins + "/45";
         totalCoinsB[0].text = "Coins:" + StateGameController.level2Coins + "/45";
 

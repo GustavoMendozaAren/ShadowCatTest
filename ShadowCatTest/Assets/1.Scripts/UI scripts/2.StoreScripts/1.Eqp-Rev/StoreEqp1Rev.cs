@@ -48,6 +48,35 @@ public class StoreEqp1Rev : MonoBehaviour
         ActualizarBarrasImagenes(StateGameController.barrasPowerIndex, barrasPower, upgradeButtonPower);
         ActualizarBarrasImagenes(StateGameController.barrasAmountIndex, barrasAmount, upgradeButtonAmount);
         ActualizarBarrasImagenes(StateGameController.barrasEscopetaDamageIndex, barrasEscopetaDamage, upgradeButtonEscopetaDamage);
+        ActualizarBarrasImagenes(StateGameController.barrasEscopetaAuraIndex, barrasEscopetaAura, upgradeButtonEscopetaAura);
+
+        ActulaizarDatosGuardados();
+    }
+
+    public void ActulaizarDatosGuardados()
+    {
+        if (StateGameController.isShotgunUnlock)
+            panelBlackEscopeta.SetActive(false);
+        else
+            panelBlackEscopeta.SetActive(true);
+
+        coinsText.text = StateGameController.coinsTotal.ToString();
+
+        currentPowTxt.text = StateGameController.currentDamageText.ToString();
+        nextPowtxt.text = StateGameController.nextPowerText.ToString();
+        ActualizarBarrasImagenes(StateGameController.barrasPowerIndex, barrasPower, upgradeButtonPower);
+
+        nextPowtxt.text = StateGameController.nextPowerText.ToString();
+        nextAmountTxt.text = StateGameController.nextAmountTxt.ToString();
+        ActualizarBarrasImagenes(StateGameController.barrasAmountIndex, barrasAmount, upgradeButtonAmount);
+
+        currentEscopetaDamageTxt.text = StateGameController.currentEscopetaDamageTxt.ToString();
+        nextEscopetaAuraTxt.text = StateGameController.nextEscopetaAuraTxt.ToString();
+        ActualizarBarrasImagenes(StateGameController.barrasEscopetaDamageIndex, barrasEscopetaDamage, upgradeButtonEscopetaDamage);
+
+        currentEscopetaAuraTxt.text = StateGameController.currentEscopetaAuraTxt.ToString();
+        nextEscopetaDamageTxt.text = StateGameController.nextEscopetaDamageTxt.ToString();
+        ActualizarBarrasImagenes(StateGameController.barrasEscopetaAuraIndex, barrasEscopetaAura, upgradeButtonEscopetaAura);
     }
 
     public void Eqp1RevSmallBttnDeact()
@@ -92,6 +121,10 @@ public class StoreEqp1Rev : MonoBehaviour
             instructionsPanel.SetActive(true);
             StateGameController.coinsTotal -= 25;
             coinsText.text = StateGameController.coinsTotal.ToString();
+
+            PlayerPrefs.SetInt("IsShotgunUnlock", StateGameController.isShotgunUnlock ? 1 : 0);
+            PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+            PlayerPrefs.Save();
         }
         else
         {
@@ -131,6 +164,13 @@ public class StoreEqp1Rev : MonoBehaviour
                 // NextDamageTextnumber
                 StateGameController.nextPowerText += 5;
                 nextPowtxt.text = StateGameController.nextPowerText.ToString();
+
+                PlayerPrefs.SetInt("BarrasPowerIndex", StateGameController.barrasPowerIndex);
+                PlayerPrefs.SetFloat("RevolverPower", StateGameController.revolverPower);
+                PlayerPrefs.SetInt("CurrentDamageText", StateGameController.currentDamageText);
+                PlayerPrefs.SetInt("NextPowerText", StateGameController.nextPowerText);
+                PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+                PlayerPrefs.Save();
             }
         }
         else
@@ -168,6 +208,13 @@ public class StoreEqp1Rev : MonoBehaviour
                 // NextAmountTextnumber
                 StateGameController.nextAmountTxt += 2;
                 nextAmountTxt.text = StateGameController.nextAmountTxt.ToString();
+
+                PlayerPrefs.SetInt("BarrasAmountIndex", StateGameController.barrasAmountIndex);
+                PlayerPrefs.SetInt("BulletsInGame", StateGameController.bulletsInGame);
+                PlayerPrefs.SetInt("CurrentDamageText", StateGameController.currentAmountTxt);
+                PlayerPrefs.SetInt("CurrentAmountTxt", StateGameController.nextAmountTxt);
+                PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+                PlayerPrefs.Save();
             }
         }
         else
@@ -208,6 +255,13 @@ public class StoreEqp1Rev : MonoBehaviour
                     StateGameController.nextEscopetaDamageTxt += 10;
                     nextEscopetaDamageTxt.text = StateGameController.nextEscopetaDamageTxt.ToString();
                 }
+
+                PlayerPrefs.SetInt("BarrasEscopetaDamageIndex", StateGameController.barrasEscopetaDamageIndex);
+                PlayerPrefs.SetInt("EscopetaDamage", StateGameController.EscopetaDamage);
+                PlayerPrefs.SetInt("CurrentEscopetaDamageTxt", StateGameController.currentEscopetaDamageTxt);
+                PlayerPrefs.SetInt("NextEscopetaDamageTxt", StateGameController.nextEscopetaDamageTxt);
+                PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+                PlayerPrefs.Save();
             }
         }
         else
@@ -247,6 +301,13 @@ public class StoreEqp1Rev : MonoBehaviour
                     StateGameController.nextEscopetaAuraTxt += 3;
                     nextEscopetaAuraTxt.text = StateGameController.nextEscopetaAuraTxt.ToString();
                 }
+
+                PlayerPrefs.SetInt("BarrasEscopetaAuraIndex", StateGameController.barrasEscopetaAuraIndex);
+                PlayerPrefs.SetInt("AuraFarming", StateGameController.AuraFarming);
+                PlayerPrefs.SetInt("CurrentEscopetaAuraTxt", StateGameController.currentEscopetaAuraTxt);
+                PlayerPrefs.SetInt("NextEscopetaAuraTxt", StateGameController.nextEscopetaAuraTxt);
+                PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+                PlayerPrefs.Save();
             }
         }
         else
@@ -258,7 +319,14 @@ public class StoreEqp1Rev : MonoBehaviour
 
     private void ActualizarBarrasImagenes(int cantidad, GameObject[] barras, GameObject button)
     {
-        if (cantidad == 0)
+        if (cantidad == -1)
+        {
+            barras[0].SetActive(false);
+            barras[1].SetActive(false);
+            barras[2].SetActive(false);
+            button.SetActive(true);
+        }
+        else if (cantidad == 0)
         {
             barras[0].SetActive(true);
         }

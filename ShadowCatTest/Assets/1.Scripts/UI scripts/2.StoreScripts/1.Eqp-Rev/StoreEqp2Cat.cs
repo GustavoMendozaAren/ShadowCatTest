@@ -46,6 +46,17 @@ public class StoreEqp2Cat : MonoBehaviour
 
         BarrasSlowIndexActive();
         BarrasJumpIndexActive();
+
+        ActualizarDatosGuardadosDeGato();
+    }
+
+    public void ActualizarDatosGuardadosDeGato()
+    {
+        coinsText.text = StateGameController.coinsTotal.ToString();
+
+        currentPowTxt.text = StateGameController.currentSlowText + " s";
+        nextPowtxt.text = StateGameController.nextSlowText + " s";
+        BarrasSlowIndexActive();
     }
 
     public void Eqp2RevSmallBttnDeact()
@@ -109,6 +120,13 @@ public class StoreEqp2Cat : MonoBehaviour
                     nextSlowCount += 2;
 
                 nextPowtxt.text = nextSlowCount + " s";
+
+                PlayerPrefs.SetInt("BarrasSlowIndex", StateGameController.barrasSlowIndex);
+                PlayerPrefs.SetFloat("SlowdownTime", StateGameController.slowdownTime);
+                PlayerPrefs.SetInt("CurrentSlowText", StateGameController.currentSlowText);
+                PlayerPrefs.SetInt("NextSlowText", StateGameController.nextSlowText);
+                PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+                PlayerPrefs.Save();
             }
         }
         else
@@ -132,7 +150,7 @@ public class StoreEqp2Cat : MonoBehaviour
                 StateGameController.barrasJumpIndex++;
                 BarrasJumpIndexActive();
 
-                StateGameController.jumpPower += 0.1f;
+                StateGameController.catJumpPower += 0.1f;
 
                 StateGameController.coinsTotal -= 10;
                 coinsText.text = StateGameController.coinsTotal.ToString();
@@ -155,7 +173,14 @@ public class StoreEqp2Cat : MonoBehaviour
 
     public void BarrasSlowIndexActive()
     {
-        if (StateGameController.barrasSlowIndex == 0)
+        if (StateGameController.barrasSlowIndex == -1)
+        {
+            barrasSlow[0].SetActive(false);
+            barrasSlow[1].SetActive(false);
+            barrasSlow[2].SetActive(false);
+            upgradeButtonSlow.SetActive(true);
+        }
+        else if (StateGameController.barrasSlowIndex == 0)
         {
             barrasSlow[0].SetActive(true);
         }
@@ -179,7 +204,14 @@ public class StoreEqp2Cat : MonoBehaviour
 
     public void BarrasJumpIndexActive()
     {
-        if (StateGameController.barrasJumpIndex == 0)
+        if (StateGameController.barrasJumpIndex == -1)
+        {
+            barrasJump[0].SetActive(false);
+            barrasJump[1].SetActive(false);
+            barrasJump[2].SetActive(false);
+            upgradeButtonJump.SetActive(true);
+        }
+        else if (StateGameController.barrasJumpIndex == 0)
         {
             barrasJump[0].SetActive(true);
         }

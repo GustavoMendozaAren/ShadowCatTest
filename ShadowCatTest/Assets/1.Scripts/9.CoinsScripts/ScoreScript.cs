@@ -15,13 +15,21 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         if (StateGameController.sceneNo == 1)
+        {
             coinTextScore.text = StateGameController.level1Coins.ToString();
+        }
         if (StateGameController.sceneNo == 2)
+        { 
             coinTextScore.text = StateGameController.level2Coins.ToString();
+        }
         if (StateGameController.sceneNo == 3)
+        {
             coinTextScore.text = StateGameController.level3Coins.ToString();
+        }
         if (StateGameController.sceneNo == 4)
+        {
             coinTextScore.text = StateGameController.level4Coins.ToString();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D target)
@@ -36,6 +44,10 @@ public class ScoreScript : MonoBehaviour
                 {
                     StateGameController.level1Coins++;
                     StateGameController.coinsTotal++;
+
+                    PlayerPrefs.SetInt("Level1Coins", StateGameController.level1Coins);
+                    PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+                    PlayerPrefs.Save();
                 }
 
                 coinTextScore.text = StateGameController.level1Coins.ToString();
@@ -47,6 +59,11 @@ public class ScoreScript : MonoBehaviour
                 {
                     StateGameController.level2Coins++;
                     StateGameController.coinsTotal++;
+
+                    PlayerPrefs.SetInt("Level2Coins", StateGameController.level2Coins);
+                    PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+                    PlayerPrefs.Save();
+
                     coinTextScore.text = StateGameController.level2Coins.ToString();
                 }
             }
@@ -57,6 +74,11 @@ public class ScoreScript : MonoBehaviour
                 {
                     StateGameController.level3Coins++;
                     StateGameController.coinsTotal++;
+
+                    PlayerPrefs.SetInt("Level3Coins", StateGameController.level3Coins);
+                    PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+                    PlayerPrefs.Save();
+
                     coinTextScore.text = StateGameController.level3Coins.ToString();
                 }
             }
@@ -67,6 +89,10 @@ public class ScoreScript : MonoBehaviour
                 {
                     StateGameController.level4Coins++;
                     StateGameController.coinsTotal++;
+
+                    PlayerPrefs.SetInt("Level4Coins", StateGameController.level4Coins);
+                    PlayerPrefs.SetInt("CoinsTotal", StateGameController.coinsTotal);
+                    PlayerPrefs.Save();
                 }
 
                 coinTextScore.text = StateGameController.level4Coins.ToString();

@@ -15,10 +15,12 @@ public class DialogueUITriggerFB : MonoBehaviour
 
     public bool DialogueImgDeactive { get; set; }
     public bool DialogueAnimDeactive { get; set; }
+    public bool DialogueStart { get; set; }
 
     private void Start()
     {
         Invoke(nameof(ActivarTextos), 2.1f);
+        DialogueStart = true;
     }
 
     private void ActivarTextos()

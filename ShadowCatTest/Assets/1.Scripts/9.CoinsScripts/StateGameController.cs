@@ -37,7 +37,7 @@ public class StateGameController : MonoBehaviour
 
     public static float slowdownTime = 4f;
 
-    public static float jumpPower = 1f;
+    public static float catJumpPower = 1f;
 
     // Barras
 

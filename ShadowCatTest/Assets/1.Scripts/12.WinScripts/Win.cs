@@ -37,6 +37,7 @@ public class Win : MonoBehaviour
         //    colliderPista.enabled = false;
         //}
     }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))

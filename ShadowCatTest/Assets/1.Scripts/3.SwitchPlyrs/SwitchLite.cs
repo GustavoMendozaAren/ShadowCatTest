@@ -27,6 +27,7 @@ public class SwitchLite : MonoBehaviour
     private bool hasJumped;
     private bool hasdoubleJumped;
     private bool doubleJump;
+    private float jumpGroundIgnoreTimer;
 
     //Walk
     float speed = 5f;
@@ -274,13 +275,20 @@ public class SwitchLite : MonoBehaviour
 
     void CheckIfOnGround()
     {
+        if (jumpGroundIgnoreTimer > 0)
+        {
+            jumpGroundIgnoreTimer -= Time.deltaTime;
+            return;
+        }
+
         if (currentPlayerIndex == 0)
             isOnGround = Physics2D.BoxCast(GroundCheck.position, new Vector2(.5f, .1f), 0f, Vector2.down, 0.1f, GroundLayer);
         else
-            isOnGround = Physics2D.BoxCast(GroundCheck.position + new Vector3(0.6f, 0, 0), new Vector2(1.125f, .1f), 0f, Vector2.down, 0.1f, GroundLayer);
+            isOnGround = Physics2D.BoxCast(GroundCheck.position + new Vector3(0.05f, 0, 0), new Vector2(1.2f, .1f), 0f, Vector2.down, 0.1f, GroundLayer);
 
-        //Debug.DrawLine(GroundCheck.position + new Vector3(0.6f, 0, 0), GroundCheck.position + new Vector3(.63f, 0, 0),Color.red);
-        //Debug.DrawLine(GroundCheck.position + new Vector3(0.6f, 0, 0), GroundCheck.position + new Vector3(-.51f, 0, 0),Color.red);
+        //Debug.DrawLine(GroundCheck.position + new Vector3(0.05f, 0, 0), GroundCheck.position + new Vector3(.65f, 0, 0), Color.red);
+        //Debug.DrawLine(GroundCheck.position + new Vector3(0.05f, 0, 0), GroundCheck.position + new Vector3(-.55f, 0, 0), Color.red);
+        //Debug.DrawLine(GroundCheck.position + new Vector3(0.0f, 0, 0), GroundCheck.position + new Vector3(-.0f, -0.1f, 0), Color.red);
 
         if (isOnGround)
         {
@@ -309,9 +317,19 @@ public class SwitchLite : MonoBehaviour
             if (isOnGround)
             {
                 hasJumped = true;
-                rb.velocity = new Vector2(rb.velocity.x, jumpPower * StateGameController.jumpPower);
+                jumpGroundIgnoreTimer = 0.15f;
+
+                if (currentPlayerIndex == 1)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jumpPower * StateGameController.catJumpPower);
+                }
+                else
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+                }
+
                 AnimationParameters("Jump", true);
-                doubleJump = true;
+                doubleJump = true;             
 
                 BtnJmpCat.SetActive(false);
                 BtnDblCat.SetActive(true);
@@ -322,7 +340,7 @@ public class SwitchLite : MonoBehaviour
                 {
                     hasdoubleJumped = true;
                     AnimationParameters("DoubleJump", true);
-                    rb.velocity = new Vector2(rb.velocity.x, jump2Power * StateGameController.jumpPower);
+                    rb.velocity = new Vector2(rb.velocity.x, jump2Power * StateGameController.catJumpPower);
                     doubleJump = false;
                 }
             }
